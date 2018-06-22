@@ -1,0 +1,67 @@
+<VirtualHost *:443>
+	<Directory "/var/www/html/6686sky.cc">
+    Options -Indexes FollowSymLinks
+    Allow from all
+    AllowOverride All
+	Order allow,deny
+	Allow from all
+    </Directory>
+	ServerName  6686sky.cc
+	ServerName  *.6686sky.cc
+	DocumentRoot /var/www/html/6686sky.cc
+	SSLEngine on
+	SSLCertificateFile /root/ssl/apache/6686sky.cc/public.pem
+	SSLCertificateKeyFile /root/ssl/apache/6686sky.cc/214071830650067.key
+	SSLCertificateChainFile /root/ssl/apache/6686sky.cc/chain.pem
+</VirtualHost>
+
+<VirtualHost *:443>
+	<Directory "/var/www/html/6686sky.co">
+    Options -Indexes FollowSymLinks
+    Allow from all
+    AllowOverride All
+	Order allow,deny
+	Allow from all
+    </Directory>
+	ServerName  6686sky.co
+	ServerName  *.6686sky.co
+	DocumentRoot /var/www/html/6686sky.co
+	SSLEngine on
+	SSLCertificateFile /root/ssl/apache/6686sky.co/public.pem
+	SSLCertificateKeyFile /root/ssl/apache/6686sky.co/214071830650067.key
+	SSLCertificateChainFile /root/ssl/apache/6686sky.co/chain.pem
+</VirtualHost>
+
+<VirtualHost *:443>
+	<Directory "/var/www/html/6686sky.com">
+    Options -Indexes FollowSymLinks
+    Allow from all
+    AllowOverride All
+	Order allow,deny
+	Allow from all
+    </Directory>
+	ServerName  6686sky.com
+	ServerName  *.6686sky.com
+	DocumentRoot /var/www/html/6686sky.com
+	SSLEngine on
+	SSLCertificateFile /root/ssl/apache/6686sky.com/public.pem
+	SSLCertificateKeyFile /root/ssl/apache/6686sky.com/214071830650067.key
+	SSLCertificateChainFile /root/ssl/apache/6686sky.com/chain.pem
+</VirtualHost>
+
+<VirtualHost *:443>
+	<Directory "/var/www/html/6686sky.net">
+    Options -Indexes FollowSymLinks
+    Allow from all
+    AllowOverride All
+	Order allow,deny
+	Allow from all
+    </Directory>
+	ServerName  6686sky.net
+	ServerName  *.6686sky.net
+	DocumentRoot /var/www/html/6686sky.net
+	SSLEngine on
+	SSLCertificateFile /root/ssl/apache/6686sky.net/public.pem
+	SSLCertificateKeyFile /root/ssl/apache/6686sky.net/214071830650067.key
+	SSLCertificateChainFile /root/ssl/apache/6686sky.net/chain.pem
+</VirtualHost>

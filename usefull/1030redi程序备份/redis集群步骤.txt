@@ -1,0 +1,92 @@
+1.编译安装redis
+2.编译安装ruby 2.2.8
+wget https://cache.ruby-lang.org/pub/ruby/2.2/ruby-2.2.8.tar.gz
+cd /usr/local/
+tar zxvf /root/ruby-2.2.8.tar.gz
+mv ruby-2.2.8 ruby
+cd ruby
+./configure
+make -j8
+make install
+
+3.安装gem
+
+4.gem 安装redis
+gem install redis
+
+如果zlib报错
+cd /ruby/ext/zlib
+ruby extconf.rb
+make && make install
+
+如果报错：Unable to require openssl, install OpenSSL and rebuild ruby (preferred) or use non-HTTPS sources
+删除 https 源 
+gem source -r https://rubygems.org/ to remove 
+添加 http 源 
+gem source -a http://rubygems.org/ to read 
+
+软连接：cp /usr/local/redis/src/redis-trib.rb /usr/local/bin
+
+
+5.更改redis配置 该台机器上布置几个redis节点 就放几个redis配置
+
+port 6380 监听端口
+pidfile /var/redis/run/redis-6380.pid
+logfile  /var/redis/log/redis-6380.log
+dbfilename dump-6380.rdb
+appendfilename "appendonly-6380.aof"
+cluster-config-file nodes-6380.conf
+
+6.编辑/etc/sysctl.conf ，改vm.overcommit_memory=1，然后sysctl -p 使配置文件生效
+0， 表示内核将检查是否有足够的可用内存供应用进程使用；如果有足够的可用内存，内存申请允许；否则，内存申请失败，并把错误返回给应用进程。
+1， 表示内核允许分配所有的物理内存，而不管当前的内存状态如何。
+2， 表示内核允许分配超过所有物理内存和交换空间总和的内存
+
+redis-trib.rb create --replicas 1  192.168.12.56:6380 192.168.12.56:6381 192.168.12.56:6382 192.168.12.56:6383 192.168.12.56:6384  192.168.12.56:6385 192.168.12.102:6380 192.168.12.102:6381 192.168.12.102:6382 192.168.12.102:6383 192.168.12.102:6384 192.168.12.102:6385 192.168.12.103:6380 192.168.12.103:6381 192.168.12.104:6380 192.168.12.104:6381 
+
+升级phpredis扩展
+wget http://pecl.php.net/get/redis-3.1.0.tgz
+cd /usr/local/src/
+tar zxvf /root/redis-3.1.0.tgz
+cd redis-3.1.0 
+phpize
+./configure --with-php-config=/usr/bin/php-config
+make
+make install
+
+关闭所有redis节点
+pkill redis
+启动节点
+redis-server /etc/redis/redis-6380.conf
+pkill 
+清除集群信息保存文件
+cd /etc/redis && rm -rf *
+
+清除redis 持久化数据文件
+
+
+启动redis
+redis-server /etc/redis/redis-6380.conf && redis-server /etc/redis/redis-6381.conf && redis-server /etc/redis/redis-6382.conf && redis-server /etc/redis/redis-6383.conf && redis-server /etc/redis/redis-6384.conf && redis-server /etc/redis/redis-6385.conf 
+
+69服务器： redis-trib.rb create --replicas 1 192.168.12.102:6380 192.168.12.102:6381 192.168.12.102:6382 192.168.12.102:6383 192.168.12.102:6384 192.168.12.102:6385 
+
+
+检查集群节点运行状态
+redis-trib.rb check 192.168.12.56:6380
+
+往集群中添加新的节点
+redis-trib.rb add-node 新节点IP:端口 已存在的节点IP:端口
+redis-trib.rb add-node 192.168.12.102:6380 192.168.12.56:6380
+redis-trib.rb add-node 192.168.12.102:6381 192.168.12.102:6380
+redis-trib.rb add-node 192.168.12.102:6382 192.168.12.102:6380
+
+往集群中添加slave节点
+redis-trib.rb add-node --slave 新节点IP:端口 已存在的节点IP:端口
+redis-trib.rb add-node --slave 192.168.12.102:6383 192.168.12.102:6380
+redis-trib.rb add-node --slave 192.168.12.102:6384 192.168.12.102:6381
+redis-trib.rb add-node --slave 192.168.12.102:6385 192.168.12.102:6382
+
+redis-trib.rb add-node --slave 192.168.12.103:6381 192.168.12.102:6380
+
+像上面那样半路添加的节点是没有分配哈希槽的，没有哈希槽就不能存储数据，进入redis客户端之后，可以通过cluster nodes 查看节点的实际情况
+http://www.cnblogs.com/wt11/p/5918728.html

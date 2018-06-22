@@ -1,0 +1,47 @@
+1、投注区：
+      6686sky.com 独立配置
+      6686sky.cc 所有其他域名跳转到这里
+2、广告站：
+      sky6686.com 独立配置，登入口跳转到6686sky.com
+      sky6686.cc 除代理域名外均跳转至这里，登入口跳转到6686sky.cc
+3、代理广告站
+      sky6676.com 去除2个注册
+4、代理投注区 
+      sky6676.cc 去除注册
+5、代理管理端 
+      sky6676.co ssl加密
+
+
+
+
+
+
+
+
+
+
+
+
+
+<VirtualHost *:80>
+    <Directory "/var/www/html/html/ad_hg6686_new">
+         Options -Indexes FollowSymLinks
+         Allow from all
+         AllowOverride All
+    </Directory>
+	DocumentRoot /var/www/html/html/ad_hg6686_new
+	 ServerName sky6686
+	 ServerAlias sky6686.com
+	 ServerAlias www.sky6686.com
+	 ServerAlias www.sky6686.cc
+	 ServerAlias www.sky6686.net
+	 ServerAlias sky6686.cc
+	 ServerAlias sky6686.net
+   #DirectoryIndex index.php
+    RewriteEngine on
+    #RewriteCond %{HTTP_HOST} !^{HTTP_HOST} [NC]
+    #RewriteRule ^(.*) https://%{HTTP_HOST}/ [L]
+    <FilesMatch ".(flv|gif|jpg|jpeg|png|ico|swf|css|txt|pdf)$">
+	Header set Cache-Control "max-age=36000"
+    </FilesMatch>
+</VirtualHost>

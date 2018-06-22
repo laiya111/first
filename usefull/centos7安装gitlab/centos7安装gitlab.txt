@@ -1,0 +1,29 @@
+1.centos7安装gitlab：
+https://www.jianshu.com/p/7fd054527b7e
+
+安装必要的依赖：
+sudo yum install -y curl policycoreutils-python openssh-server
+sudo systemctl enable sshd
+sudo systemctl start sshd
+有防火墙的情况下需要以下步骤
+#sudo firewall-cmd --permanent --add-service=http
+#sudo systemctl reload firewalld
+
+安装邮件服务:
+sudo yum install postfix
+sudo systemctl enable postfix
+sudo systemctl start postfix
+
+http://blog.csdn.net/wh211212/article/details/53040620
+
+
+添加gitlab仓库安装包
+curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ee/script.rpm.sh | sudo bash
+
+sudo EXTERNAL_URL="http://gitlab.example.com" yum install -y gitlab-ee
+
+
+
+使用域名登录：
+默认账户是root
+第一次登录会需要更改密码

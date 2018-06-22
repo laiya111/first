@@ -1,0 +1,96 @@
+查看SELinux状态：
+1、/usr/sbin/sestatus -v      ##如果SELinux status参数为enabled即为开启状态
+SELinux status:                 enabled
+2、getenforce                 ##也可以用这个命令检查
+
+
+关闭SELinux：
+1、临时关闭（不用重启机器）：
+setenforce 0                  ##设置SELinux 成为permissive模式
+                              ##setenforce 1 设置SELinux 成为enforcing模式
+2、修改配置文件需要重启机器：
+修改/etc/selinux/config 文件
+将SELINUX=enforcing改为SELINUX=disabled
+重启机器即可
+
+3.临时开启SELinux
+setenforce 1
+
+cenos 搭建lamp环境：
+yum --enablerepo=remi install mysql mysql-server php-mysql php-common httpd php php-mbstring php-gd  php-ldap php-odbc php-pear php-xml php-xmlrpc php-mcrypt
+
+
+压缩，解压缩（进到目录中）
+
+tar zcvf agents.tar.gz agents
+tar zxvf agents.tar.gz
+
+删除文件夹
+rm -rf /var/log
+
+内网传文件（先压缩）
+在web1的html中，往web2传
+scp agents.tar.gz root@192.168.12.102:/var/www/html
+
+ncdu工具  查看软件占用磁盘空间
+df -hl 查看磁盘剩余空间
+
+df -h 查看每个根路径的分区大小
+
+du -sh [目录名] 返回该目录的大小
+
+du -sm [文件夹] 返回该文件夹总M数
+
+1.查看cpu
+more /proc/cpuinfo | grep "model name" 或者 grep "model name" /proc/cpuinfo
+
+2查看内存
+grep MemTotal /proc/meminfo
+
+3.查看CPU位数(32 or 64)
+getconf LONG_BIT
+
+4.查看linux版本
+more /etc/redhat-release 或者 more /etc/issue
+
+5.查看内核版本
+uname
+
+6.查看时区
+date -R
+
+7.已经安装的软件包
+ rpm -qa | wc -l
+  yum list installed | wc
+
+8.redis安装
+http://www.jianshu.com/p/257afa87d30d
+
+9.redis集群
+http://www.jianshu.com/p/0a2f8f80983a
+http://blog.51yip.com/nosql/1725.html
+解决zlib问题 http://www.dataguru.cn/thread-50201-1-1.html
+
+10.美东时区设定
+cp /usr/share/zoneinfo/Etc/GMT+4 /etc/localtime 中东时区
+yum -y install rdate 时区软件
+rdate -s stdtime.gov.hk   加入运行时文件
+date  查看时间
+
+11.yum 卸载
+1.使用yum正常安装软件，例如： 
+]# yum install tomcat
+2.要清理之前输入如下命令：
+]# yum history list tomcat
+ID     | Command line             | Date and time    | Action(s)      | Altered
+-------------------------------------------------------------------------------
+     3 | install tomcat           | 2017-03-28 15:15 | I, U           |   56   
+
+3.看到ID那列的数字了吗,只需要输入：
+]# yum history undo 3
+
+
+12.查看系统登录日志
+more /var/log/secure |grep Accepted
+
+

@@ -1,0 +1,12 @@
+发动攻击易，防御难。七层好防，四层难防；小型能防，大型烧钱
+
+http://www.centoscn.com/CentosSecurity/SoftSecurity/2015/0525/5528.html
+
+http://xrong.net/2015/05/07/Nginx%E9%98%B2CC%E6%94%BB%E5%87%BB/
+
+https://www.52os.net/articles/nginx-anti-ddos-setting.html
+
+https://www.centos.bz/2012/12/openresty-nginx-block-cc-attack-deploy/
+
+
+http://blog.csdn.net/zimuxin/article/details/45742999

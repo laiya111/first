@@ -1,0 +1,7 @@
+pm2 start handler.php--name pk10 -- 10001 && pm2 start handler.php--name cqssc -- 10002 && pm2 start handler.php --name xyft -- 10003 && pm2 start handler.php --name pcdd -- 10004  && pm2 start handler.php --name cqxync -- 10005 && pm2 start handler.php --name gdklsf -- 10006 &&pm2 start handler.php --name hk6 -- 10007 && pm2 start handler.php --name jsk3 -- 10008
+
+1.cd socket
+2.npm install（有node_modules就不需要该步骤）
+3.npm i -g pm2  （安装pm2）
+4.pm2 start server.js -h（开启socket）
+5.pm2 start server.js --watch

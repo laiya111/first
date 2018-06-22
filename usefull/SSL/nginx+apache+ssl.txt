@@ -1,0 +1,250 @@
+﻿SSL+https证书安装要点：
+
+
+1.apache  安装SSL
+
+安装openssl  
+yum -y install openssl 
+
+修改apache配置文件httpd.conf 
+在80端口的下面，添加443端口
+listen       80;
+listen       443;
+
+引用mod_ssl :
+LoadModule ssl_module modules/mod_ssl.so
+添加下面代码：
+NameVirtualHost *:443
+
+在/usr/lib64/httpd/modules 目录下，看看有没有mod_ssl.so这个文件，没有就从别的有的服务器上面拷贝一个过来
+
+将ssl证书复制到服务器上，目录我都是放在 /root/ssl 下面，这个路径可以自定义。
+
+2.nginx 安装SSL
+由于我们现在的源都是过转发的，所以光源上安装了ssl是不够的，转发上面也需要安装
+目录我都是放在 /root/ssl 下面，这个路径可以自定义。
+然后这样就安装好了，只需要在配置文件里面引用就行。
+
+
+最重要的就是配置域名，我们以 vip.i4411.com  这条为例：
+
+在源服务器上配置文件里面添加：
+
+<VirtualHost *:443>
+	<Directory "/var/www/html/client_x">
+    Options -Indexes FollowSymLinks
+    Allow from all
+    AllowOverride All
+	Order allow,deny
+	Allow from all
+    </Directory>
+	ServerAdmin qm
+	ServerName  vip.i4411.com  
+	DocumentRoot /var/www/html/client_x
+	SSLEngine on
+	SSLCertificateFile /root/ssl/qm/vip.i4411.com.crt 
+	SSLCertificateKeyFile /root/ssl/qm/vip.i4411.com.key 
+	SSLCertificateChainFile /root/qm/vip.i4411.com.ca-bundle
+</VirtualHost>
+
+重启apache，这样源就安装好了，可是当我们访问的时候，发现就这个域名对应的页面（登陆口）可以访问https，其他页面都访问不了（提示NOT FOUND）
+这个是CI的问题，CI自己本身是没有启用SSL的，这里我们需要去修改框架代码：
+
+/config/config.php 找到 enable_hooks 设置成TURE 
+/config/hooks.php  添加代码：
+$hook['post_controller_constructor'][] = array(
+    'function' => 'check_ssl',
+    'filename' => 'ssl.php',
+    'filepath' => 'hooks',
+);
+找到文件夹 hooks  ,新建ssl.php文件
+添加如下代码
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
+function check_ssl(){
+    $CI =& get_instance();
+    $class = $CI->router->fetch_class();
+    $method = $CI->router->fetch_method();
+    $ssl = $CI->config->item('ssl_class_method');
+    $partial = $CI->config->item('no_ssl_class_method');
+    //if(in_array($class.'/'.$method,$ssl)){
+	//需要跳转的域名
+    $url = array(
+        'vip.i4411.com'
+    );
+    if(in_array($_SERVER['SERVER_NAME'],$url)){ 
+
+        $CI =&get_instance();
+        $CI->config->config['base_url'] = str_replace('http://', 'https://', $CI->config->config['base_url']);
+        if ($_SERVER['SERVER_PORT'] != 443) redirect($CI->uri->uri_string());
+    }
+    else if(in_array($class.'/'.$method,$partial))
+    {
+        return;
+    }
+    else{
+
+        $CI =&get_instance();
+        $CI->config->config['base_url'] = str_replace('https://', 'http://', $CI->config->config['base_url']);
+        if ($_SERVER['SERVER_PORT'] == 443) redirect($CI->uri->uri_string());
+    }
+}
+//config 配置需要使用https的 class method
+//app/config/config.php
+$config['ssl_class_method'] = array(
+    'U_class/A_method',
+    'V_class/B_method',
+    'W_class/C_method',
+    'X_class/D_method',
+); //强制使用ssl
+$config['no_ssl_class_method'] = array(); //强制不使用ssl
+
+这个文件的作用是，强制将http跳转到https
+这样直接hosts访问源是没有问题的，一切ok！！！
+
+另外要加上我们的防御nginx
+	   server {
+        listen      443; 
+         ssl on;
+        ssl_certificate      /root/ssl/qm/vip.i4411.com.crt;
+        ssl_certificate_key  /root/ssl/qm/vip.i4411.com.key;
+        server_name  vip.i4411.com ; 
+        location / {
+        proxy_pass https://182.16.47.68:443; 
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Via "nginx";
+        }
+       }
+这样经过转发之后一样可以访问https，如果转发不加ssl是访问不了的。
+全民的是他们自己请的防御，所以如果要做SSL一定要和他们防御配合，不然如果他们的CDN节点没有都安装SSL的话，域名就会打不开哦。
+
+另外一种情况就是原生代码，不是用的框架，比如广告站：
+源服务器还是一样的，只是不用去改代码：
+
+	   
+	转发，广告站   
+	   server {    
+        listen      443; 
+         ssl on;
+        ssl_certificate      /root/ssl/sf/sf7700.com_bundle.crt;
+        ssl_certificate_key  /root/ssl/sf/sf7700.com.key;
+        server_name  sf7700.com sf7711.com sf7722.com sf7733.com  sf7744.com sf7755.com sf7766.com *.sf7700.com *.sf7711.com *.sf7722.com *.sf7733.com *.sf7744.com *.sf7755.com *.sf7766.com; 
+        location / {
+        proxy_pass https://182.16.6.46:443; 
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Via "nginx";
+        }
+       }
+	   
+	   配置好nginx之后，发现http不会跳转到https，再添加一条声明下就行了，如下：
+	   
+	   server {        
+	   listen       80;        
+	   server_name  sf7700.com sf7711.com sf7722.com sf7733.com  sf7744.com sf7755.com sf7766.com *.sf7700.com *.sf7711.com *.sf7722.com *.sf7733.com *.sf7744.com *.sf7755.com *.sf7766.com;
+	   rewrite ^(.*)$ https://$host$1 permanent;   
+        location / {            
+		root   html;           
+		index  index.html index.htm;       
+		}
+		}
+		
+		
+
+		
+		
+		
+		
+		
+体育添加SSL 
+
+因为台湾服务器都是比较老的服务器，可能系统的版本不一样，导致cp的那一套配置文件在体育用不了，这里我们重新写一个就行，其他的操作一样。
+以9393hg.me为例
+源服务器如下：
+SSLPassPhraseDialog  builtin
+SSLSessionCache         shmcb:/var/cache/mod_ssl/scache(512000)
+SSLSessionCacheTimeout  300
+SSLMutex default
+SSLRandomSeed startup file:/dev/urandom  256
+SSLRandomSeed connect builtin
+SSLCryptoDevice builtin
+
+<VirtualHost _default_:443>
+ServerAdmin le4
+DocumentRoot "/var/www/html/zhenghe/member_new"
+ServerName 9393hg.me:443
+ServerAlias 125.252.74.34:443
+ErrorLog logs/ssl_error_log
+TransferLog logs/ssl_access_log
+LogLevel warn
+SSLEngine on
+SSLProtocol all -SSLv2
+SSLCipherSuite ALL:!ADH:!EXPORT:!SSLv2:RC4+RSA:+HIGH:+MEDIUM:+LOW
+	SSLCertificateFile /root/ssl/le4/9393hg.me/9393hg.me.crt 
+	SSLCertificateKeyFile /root/ssl/le4/9393hg.me/9393hg.me.key 
+	SSLCertificateChainFile /root/ssl/le4/9393hg.me/9393hg.me.ca-bundle
+
+#<Location />
+#SSLRequire (    %{SSL_CIPHER} !~ m/^(EXP|NULL)/ \
+#            and %{SSL_CLIENT_S_DN_O} eq "Snake Oil, Ltd." \
+#            and %{SSL_CLIENT_S_DN_OU} in {"Staff", "CA", "Dev"} \
+#            and %{TIME_WDAY} >= 1 and %{TIME_WDAY} <= 5 \
+#            and %{TIME_HOUR} >= 8 and %{TIME_HOUR} <= 20       ) \
+#           or %{REMOTE_ADDR} =~ m/^192\.76\.162\.[0-9]+$/
+#</Location>
+
+<Files ~ "\.(cgi|shtml|phtml|php3?)$">
+    SSLOptions +StdEnvVars
+</Files>
+<Directory "/var/www/cgi-bin">
+    SSLOptions +StdEnvVars
+</Directory>
+
+SetEnvIf User-Agent ".*MSIE.*" \
+         nokeepalive ssl-unclean-shutdown \
+         downgrade-1.0 force-response-1.0
+CustomLog logs/ssl_request_log \
+          "%t %h %{SSL_PROTOCOL}x %{SSL_CIPHER}x \"%r\" %b"
+
+</VirtualHost>   
+
+
+然后在/var/www/html/zhenghe/member_new/app/member/include/address.mem.php
+加上这些代码指定需要跳转的域名：
+
+$global_vars = array(
+	"BROWSER_IP"		=>	"http://".$_SERVER['SERVER_NAME'],
+	"CASINO"            =>  "SI2",
+);
+$url  = array(
+    '9393hg.me'
+);
+if(in_array($_SERVER['SERVER_NAME'],$url)){
+    $global_vars = array(
+        "BROWSER_IP"		=>	"https://".$_SERVER['SERVER_NAME'],
+        "CASINO"            =>  "SI2",
+    );
+} 
+
+http跳转https:
+适用没有过转发的广告站
+<VirtualHost *:80>
+    <Directory "/var/www/html/html/ad_hg6686">
+         Options -Indexes FollowSymLinks
+         Allow from all
+         AllowOverride All
+    </Directory>
+    DocumentRoot /var/www/html/html/ad_hg6686
+	 ServerName hghg6686.cc  
+	 ServerAlias www.hghg6686.cc
+    DirectoryIndex index.php
+    RewriteEngine on
+    #RewriteCond %{HTTP_HOST} !^{HTTP_HOST} [NC]
+    RewriteRule ^(.*) https://%{HTTP_HOST}/ [L]
+    <FilesMatch ".(flv|gif|jpg|jpeg|png|ico|swf|css|txt|pdf)$">
+	Header set Cache-Control "max-age=36000"
+    </FilesMatch>
+</VirtualHost>

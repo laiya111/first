@@ -1,0 +1,51 @@
+[mysqld]
+#datadir=/var/lib/mysql 
+datadir=/SSD/mysql_data/mysql 
+#socket=/var/lib/mysql/mysql.sock
+socket=/SSD/mysql_data/mysql/mysql.sock 
+user=mysql
+symbolic-links=0
+#back_log = 600
+skip-name-resolve
+#thread_concurrency =16
+thread-cache-size               = 300
+table-open-cache                = 9068
+table-definition-cache          = 4096
+query-cache-size                = 128M
+query-cache-limit               = 1M
+sort-buffer-size                = 16M
+read-buffer-size                = 16M
+read-rnd-buffer-size            = 16M
+join-buffer-size                = 16M
+long_query_time = 1
+#init-connect='insert into crown8886686.accesslog values(connection_id(),now(),user(),current_user());'
+binlog_format =mixed
+log-slow-queries = /sas/binlog/sl.log
+log-queries-not-using-indexes
+expire_logs_day = 7
+log-bin= /sas/binlog/mysqlslave
+replicate-ignore-table=crown8886686.match_sports
+server-id       = 1
+max_allowed_packet = 32M
+max_binlog_size=500M
+log-slave-updates
+max-relay-log-size = 1000M
+relay-log-space-limit = 1000M
+binlog-do-db=crown8886686
+innodb_buffer_pool_size=2048M
+innodb_flush_log_at_trx_commit=0
+sync_binlog=100
+tmp-table-size                  = 256M
+max-heap-table-size             = 256M
+back-log                        = 900
+max-connections                = 1500
+max-connect-errors              = 10000
+max-allowed-packet              = 16M
+interactive-timeout             = 3600
+wait-timeout                    = 20
+key-buffer-size                 = 5120M
+myisam-sort-buffer-size         = 1024M
+[mysqld_safe]
+log-error=/var/log/mysqld.log
+pid-file=/var/run/mysqld/mysqld.pid
+open-files-limit                = 65535

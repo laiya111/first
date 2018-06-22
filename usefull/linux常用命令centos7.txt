@@ -1,0 +1,4 @@
+1.centos7安装gitlab：
+https://www.jianshu.com/p/7fd054527b7e
+
+sudo EXTERNAL_URL="http://testgit.lyl1.com" yum install -y gitlab-ee

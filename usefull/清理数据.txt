@@ -1,0 +1,14 @@
+数据清理
+
+清理数据：
+
+数据清理均在58.64.191.74上操作
+
+* 1、先把后台manage/app/agents/include/config.inc.php里面有个参数$qingli=0改成$qingli=1(注意需要把58.64.191.75后台也进行维护)
+*       (打开后台看是否有维护，有才进行后面的动作);
+        * 2、把后台manage/cc/fixed66.php的日期改成当月的1号。http://58.64.191.74/cc/fixed66.php直接执行。（有的站会多保留一个月，把那个日期改下就好）  等执行完优化表。
+* 3、把后台manage/app/agents/include/config.inc.php里面参数$qingli改成0，
+* 4、把后台manage/app/agents/accounts/fixed.php这个文件改成100%全表扫描的if($***>=80)改成if($***>=0),http://58.64.191.74/app/agents/accounts/fixed.php执行下这个文件修复额度。
+* 5、查询：select * from web_member_data where money<>money2;找出维护前和维护后不相同的。如果有不同的，在web_report_data这个表会有一条0000-00-00 00:00:00的记录，在m_result字段进行相应的加减。然后把会员额度改成跟money2一样。
+* 6、SELECT * FROM web_sys800_data WHERE gold =0 最后把web_sys800_data表gold字段为0的记录删除delete FROM web_sys800_data WHERE gold =0，优化表。
+* 注意：需要将后台域名本地指向源服务器

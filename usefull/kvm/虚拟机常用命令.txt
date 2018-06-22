@@ -1,0 +1,60 @@
+
+    列出所有的虚拟机
+
+virsh list --all
+
+    1
+
+    显示虚拟机信息
+
+virsh dominfo kvm-1
+
+    1
+
+    显示虚拟机内存和cpu的使用情况
+
+yum install virt-top -y
+virt-top
+
+    1
+    2
+
+    显示虚拟机分区信息
+
+virt-df kvm-1
+
+    1
+
+    关闭虚拟机（shutodwn）
+
+virsh shutdown kvm-1
+
+    1
+
+    启动虚拟机
+
+virsh start kvm-1
+
+    1
+
+    设置虚拟机（kvm-1）跟随系统自启
+
+virsh autostart kvm-1
+
+    1
+
+    关闭虚拟及自启
+
+virsh autostart --disable kvm-1
+
+    1
+
+    删除虚拟机
+
+virsh undefine kvm-1
+
+    1
+
+    通过控制窗口登录虚拟机
+
+virsh console kvm-1

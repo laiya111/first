@@ -1,0 +1,112 @@
+#
+# HTTPS server configuration
+#
+
+#server {
+#    listen       443 ssl http2 default_server;
+#    listen       [::]:443 ssl;
+#    server_name  _;
+#    root         /usr/share/nginx/html;
+#
+#    ssl_certificate cert.pem;
+#    ssl_certificate_key cert.key;
+#    ssl_session_cache shared:SSL:1m;
+#    ssl_session_timeout  10m;
+#    ssl_ciphers HIGH:!aNULL:!MD5;
+#    ssl_prefer_server_ciphers on;
+#
+#    # Load configuration files for the default server block.
+#    include /etc/nginx/default.d/*.conf;
+#
+#    location / {
+#    }
+#
+#    error_page 404 /404.html;
+#        location = /40x.html {
+#    }
+#
+#    error_page 500 502 503 504 /50x.html;
+#        location = /50x.html {
+#    }
+#}
+
+server {    
+        listen      443; 
+        #listen      80; 
+         ssl on;
+        ssl_certificate      /root/ssl/6686sky.cc/214071830650067.pem;
+        ssl_certificate_key  /root/ssl/6686sky.cc/214071830650067.key;
+        server_name  *.6686sky.cc 6686sky.cc;
+		#rewrite ^(.*)$ https://$host$1 permanent;
+        location / {
+        proxy_pass https://58.64.191.69; 
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Via "nginx";
+        }
+       }
+	   
+	   
+server {    
+        listen      443; 
+        #listen      80; 
+         ssl on;
+        ssl_certificate      /root/ssl/6686sky.com/214060378380067.pem;
+        ssl_certificate_key  /root/ssl/6686sky.com/214060378380067.key;
+        server_name  *.6686sky.com 6686sky.com; 
+        location / {
+        proxy_pass https://58.64.191.69; 
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Via "nginx";
+        }
+       }
+	   
+server {    
+        listen      443; 
+        #listen      80; 
+         ssl on;
+        ssl_certificate      /root/ssl/6686sky.net/214071830630067.pem;
+        ssl_certificate_key  /root/ssl/6686sky.net/214071830630067.key;
+        server_name  *.6686sky.net 6686sky.net ; 
+        location / {
+        proxy_pass https://58.64.191.69; 
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Via "nginx";
+        }
+       }
+server {    
+        listen      443; 
+        #listen      80; 
+         ssl on;
+        ssl_certificate      /root/ssl/pay.bjllxz.com/pay.bjllxz.com.crt;
+        ssl_certificate_key  /root/ssl/pay.bjllxz.com/pay.bjllxz.com.key;
+        server_name  pay.bjllxz.com ; 
+        location / {
+        proxy_pass https://58.64.191.69; 
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Via "nginx";
+        }
+       }	
+server {    
+        listen      443; 
+        #listen      80; 
+         ssl on;
+        ssl_certificate      /root/ssl/pay1.live6686.com/pay1.live6686.com.crt;
+        ssl_certificate_key  /root/ssl/pay1.live6686.com/pay1.live6686.com.key;
+        server_name  pay1.live6686.com pay2.live6686.com pay3.live6686.com pay4.live6686.com pay5.live6686.com pay6.live6686.com pay7.live6686.com pay8.live6686.com pay9.live6686.com pay10.live6686.com pay11.live6686.com pay12.live6686.com pay13.live6686.com pay14.live6686.com pay15.live6686.com pay16.live6686.com pay17.live6686.com pay18.live6686.com pay19.live6686.com pay20.live6686.com pay.lgdzd.top pay.xjlwe.top pay.mingzc7.com pay3.xjlwe.top pay4.xjlwe.top ; 
+        location / {
+        proxy_pass https://58.64.191.69; 
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Via "nginx";
+        }
+       }		   
+

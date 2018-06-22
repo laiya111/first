@@ -1,0 +1,148 @@
+配置ssl证书：
+1.apache  安装SSL
+
+安装openssl  
+yum -y install openssl 
+
+https协议默认走443端口
+修改apache配置文件httpd.conf 
+在80端口的下面，添加443端口
+listen       80;
+listen       443;
+
+引用mod_ssl :
+LoadModule ssl_module modules/mod_ssl.so
+httpd添加下面代码：
+NameVirtualHost *:443
+
+在/usr/lib64/httpd/modules 目录下，看看有没有mod_ssl.so这个文件，没有就从别的有的服务器上面拷贝一个过来
+将ssl证书复制到服务器上，目录我都是放在 /root/ssl 下面，这个路径可以自定义。然后这样就安装好了，只需要在配置文件里面引用就行。
+
+配置域名，以6686sky.cc为例：
+（另外单独新建一个ssl的配置文件，可以以域名为名每个域名单独创建一个ssl的配置文件，也可以所有域名放入一个配置文件，这里我是放在一起的，命名为ssl.conf）
+
+<VirtualHost *:443>
+	<Directory "/var/www/html/member_new">
+	Options -Indexes FollowSymLinks
+	Allow from all
+	AllowOverride All
+	Order allow,deny
+	</Directory>
+	ServerName  6686sky.cc
+	ServerName  *.6686sky.cc
+	DocumentRoot /var/www/html/member_new
+	SSLEngine on
+	SSLCertificateFile /root/ssl/6686sky.co/public.pem
+	SSLCertificateKeyFile /root/ssl/6686sky.co/214071830640067.key
+	SSLCertificateChainFile /root/ssl/6686sky.co/chain.pem
+</VirtualHost>
+重启apache，证书就生效了
+
+如果域名过转发，转发上也需要配置ssl证书，通常我们现在用的转发都是nginx，配置如下：
+
+server {   
+	listen      443;
+	ssl on;
+	ssl_certificate      /root/ssl/nginx/6686sky.co/214071830640067.pem;
+	ssl_certificate_key  /root/ssl/nginx/6686sky.co/214071830640067.key;
+	server_name  *.6686sky.cc 6686sky.cc;
+	location /  {
+	proxy_pass https://58.64.191.70; 
+	proxy_set_header Host $host;
+	proxy_set_header X-Real-IP $remote_addr;
+	proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+	proxy_set_header Via "nginx";
+		}
+	}
+同样，配置好以后重启nginx
+
+
+由于域名众多，将6686sky.cc作为主域名来访问，需要将其他的没有ssl证书的域名重定向到6686sky.cc,可以直接在80端口的配置文件里开启重定向引擎，示例如下：
+
+<VirtualHost *:80>
+    <Directory "/var/www/html/member_new">
+         Options -Indexes FollowSymLinks
+         Allow from all
+         AllowOverride All
+    </Directory>
+    DocumentRoot /var/www/html/member_new	
+	ServerName 27.98.201.138
+	ServerAlias 6686hg.cc
+	ServerAlias www.6686hg.cc
+	RewriteEngine on
+    	RewriteCond %{HTTP_HOST} !^6686sky.cc [NC]
+    	RewriteCond %{HTTP_HOST} !^www.6686sky.cc [NC] 
+	RewriteRule ^(.*) https://www.6686sky.cc/ [L]
+	<FilesMatch ".(flv|gif|jpg|jpeg|png|ico|swf|css|txt|pdf)$">
+    	Header set Cache-Control "max-age=36000"
+    	</FilesMatch>
+</VirtualHost>
+
+这样在80端口开启了重定向以后，所有的在配置的域名都会被重定向到https://www.6686sky.cc,如果将来6686sky.cc的证书停用了，我们可以关闭掉重定向，不会影响到域名的80端口的正常访问。
+对于部分域名不需要证书访问的，如代理的广告站，就不需要重定向了，这个需要具体情况具体对待。
+
+投注区全局改为https：
+投注区原先链接的链接头部是一个全局的常量“BROWSER_IP”，在member_new/app/member/include中的address.mem.php文件中，这里我们稍做修改
+
+$url = $_SERVER['SERVER_PORT']=='443'?"https:":'http:';（判断是443端口还是80端口，取对应的http头）
+$global_vars = array(
+	"BROWSER_IP"		=> $url."//".$_SERVER['SERVER_NAME'],
+	"CASINO"            =>  "SI2",
+);
+
+
+广告站目前是apache的，配置和投注区的配置apache配置一样。由于广告站主域名是没有过转发的，只需要在广告站所在机器上配置ssl即可。
+为了使在取消证书以后，80端口证书仍然可以正常访问，处理链接的方式类似投注区，根据端口的判断来取（https/http）
+
+常见问题：
+
+1.按照程序配置好域名的ssl证书以后，网站是能够正常打开的，但是由于项目里的诸多链接是没有ssl的，且是<iframe>标签内联的，所以会出现打不开的情况，主要分两种：
+（1）我们的链接：针对这种，我们可以自己去买域名的证书，如用作支付的商城域名，可以申请多域名对应一证书，这种耗时要长一点，也可以单域名去申请证书
+支付域名转发配置示例
+server {    
+        
+	listen      443; 
+         
+         
+	ssl on;
+        	
+	ssl_certificate      /root/ssl/nginx/pay1.live6686.com/pay1.live6686.com.crt;
+        
+	ssl_certificate_key  /root/ssl/nginx/pay1.live6686.com/pay1.live6686.com.key;
+        
+	server_name  pay1.live6686.com pay2.live6686.com pay3.live6686.com pay4.live6686.com pay5.live6686.com pay6.live6686.com pay7.live6686.com pay8.live6686.com 		pay9.live6686.com pay10.live6686.com pay11.live6686.com pay12.live6686.com pay13.live6686.com pay14.live6686.com pay15.live6686.com pay16.live6686.com 		pay17.live6686.com pay18.live6686.com pay19.live6686.com pay20.live6686.com pay.lgdzd.top pay.xjlwe.top pay.mingzc7.com pay3.xjlwe.top pay4.xjlwe.top ; 
+        	location / {
+        proxy_pass https://58.64.191.70; 
+       
+			    proxy_set_header Host $host;
+        
+			    proxy_set_header X-Real-IP $remote_addr;
+        
+			    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+       
+			    proxy_set_header Via "nginx";
+        
+		  }
+      
+	 }	
+
+支付的源服务器的配置与配置6686sky.cc的apache证书雷同，重复工作，不再赘述。
+
+（2）第三方链接：首先寻找第三方链接是否有https的解决方案，如果有 直接换上即可，如果没有，像PT电子游戏，这时候可以将内联的域名做成在新窗口打开，也可以解决
+	PT处理方式，在gamehall.php文件里，将<ifarme>标签改为<div>，写上一个自动加载的js，新窗口打开游戏链接
+		    试玩的处理方式类似，在gameplay.php文件里写上自动加载的js
+
+
+2.网站域名众多，在配置没有证书的域名跳转到有证书域名的重定向的时候，要注意项目中这些被重定向的域名是否有传参数，遇到有传参数的域名，不能盲目重定向，否则会导致参数传递中断，功能失效。如广告站左侧的登录窗口，这种情况需要独立配置域名，或者在代码中将传参域名改为不需要重定向的域名。
+
+
+3.在服务器里加入ssl的密钥之后，重启nginx的时候，如果是机器系统更新，默认会开启Selinux，会报错，可以通过命令 setenforce 0 暂时关闭Selinux，再重启nginx就OK.
+
+
+
+手机版 代理 暂时没有配置ssl。
+
+
+
+
+

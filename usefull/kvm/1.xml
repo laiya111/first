@@ -1,0 +1,32 @@
+[root@web8 qemu]# cp /etc/libvirt/qemu/networks/default.xml /etc/libvirt/qemu/networks/default.xml.bk 
+
+[root@web8 qemu]# cat /etc/libvirt/qemu/networks/default.xml
+
+<network>
+  <name>default</name>
+  <uuid>ea07af3d-fd95-444d-a1d2-a0ae5fce43de</uuid>
+  <forward mode='nat'/>   //此处增加mode参数为nat
+  <bridge name='virbr0' stp='on' delay='0' />
+  <mac address='52:54:00:89:DD:12'/>
+  <ip address='192.168.122.1' netmask='255.255.255.0'>
+    <dhcp>
+      <range start='192.168.122.2' end='192.168.122.254' />
+    </dhcp>
+  </ip>
+</network>
+
+[root@web8 qemu]# virsh net-define /etc/libvirt/qemu/networks/default.xml
+[root@web8 qemu]# virsh net-destroy default
+[root@web8 qemu]# virsh net-start default
+
+[root@web8 qemu]# cat  vm.xml
+
+······
+    <interface type='network'>
+      <mac address='52:54:00:66:6e:49'/>
+      <source network='default'/>
+      <model type='virtio'/>  //此处为新增参数mode
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x03' function='0x0'/>
+    </interface>
+······
+

@@ -1,0 +1,28 @@
+凤凰技术-- 小七, [29.12.17 16:05]
+方法一：忽略错误后，继续同步
+该方法适用于主从库数据相差不大，或者要求数据可以不完全统一的情况，数据要求不严格的情况
+解决：
+stop slave;
+#表示跳过一步错误，后面的数字可变
+set global sql_slave_skip_counter =1;
+start slave;
+之后再用mysql> show slave status\G 查看：
+Slave_IO_Running: Yes
+Slave_SQL_Running: Yes
+ok，现在主从同步状态正常了。。。
+
+方式二：指定跳过错误代码，继续同步
+
+主键冲突、表已存在等错误代码如1062,1032,1060等，可以在mysql主配置文件指定略过此类异常并继续下条sql同步，这样也可以避免很多主从同步的异常中断
+
+[mysqld]
+
+slave-skip-errors = 1062,1032,1060
+
+重新启动mysql
+
+service mysqld restart
+
+之后再用mysql> show slave status\G 查看： 
+Slave_IO_Running: Yes 
+Slave_SQL_Running: Yes

@@ -1,0 +1,39 @@
+1.修改root密码：passwd
+
+2.yum更新：yum update
+
+3.安装bash-completion
+
+4.vim /etc/sysctl.conf，加入以下内容：
+net.ipv4.tcp_syncookies = 1
+net.ipv4.tcp_tw_reuse = 1
+net.ipv4.tcp_tw_recycle = 1
+net.ipv4.tcp_fin_timeout = 30
+执行 /sbin/sysctl -p 让参数生效
+
+4.vim /etc/security/limits.conf 增加一下内容
+
+* soft nofile 51200
+* hard nofile 65535
+
+5.vim /etc/pam.d/login 增加以下内容
+session required /lib/security/pam_limits.so
+
+关闭iptables
+
+6.重启机器 reboot
+
+7.ulimit -n 查看
+
+8.安装nginx yum install nginx
+
+9.从原有nginx服务器拷贝nginx配置，拷贝ssl证书，做到配置文件同步
+
+10.查看selinux状态，如果开启 关闭selinux    setenforce 0
+
+11.
+
+
+
+
+

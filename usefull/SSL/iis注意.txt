@@ -1,0 +1,7 @@
+iis最后绑定的时候有的证书无法识别
+需要转换证书文件类型
+
+https://sg.godaddy.com/zh/help/microsoft-iis-8-ssl-4951
+
+
+https://ssl4less.eu/ssl-tools/convert-certificate.html

@@ -1,0 +1,123 @@
+1.Postfix安装
+vi /etc/postfix/main.cf
+# line 75: uncomment and specify hostname
+
+myhostname = linuxprobe.srv.world
+# line 83: uncomment and specify domain name
+
+mydomain = srv.world
+# line 99: uncomment
+
+myorigin = $mydomain
+# line 116: change
+
+inet_interfaces = all
+# line 164: add
+
+mydestination = $myhostname, localhost.$mydomain, localhost, $mydomain
+# line 264: uncomment and specify your local network
+
+mynetworks = 127.0.0.0/8, 10.0.0.0/24
+# line 419: uncomment (use mailboxdir)
+
+home_mailbox = mailbox/
+# line 574: add
+
+smtpd_banner = $myhostname ESMTP
+# add follows to the end
+
+# limit an email size for 10M
+
+message_size_limit = 10485760
+
+# limit a mailbox for 1G
+
+mailbox_size_limit = 1073741824
+# for SMTP-Auth
+
+smtpd_sasl_type = dovecot
+smtpd_sasl_path = private/auth
+smtpd_sasl_auth_enable = yes
+smtpd_sasl_security_options = noanonymous
+smtpd_sasl_local_domain = $myhostname
+smtpd_recipient_restrictions = permit_mynetworks,permit_auth_destination,permit_sasl_authenticated,reject
+
+[root@linuxprobe ~]# systemctl restart postfix
+[root@linuxprobe ~]# systemctl enable postfix
+
+如果Firewalld正在运行，请允许SMTP服务。 SMTP使用25 / TCP。
+[root@dlp ~]# firewall-cmd --add-service=smtp --permanent
+success
+[root@dlp ~]# firewall-cmd --reload
+success 
+
+
+2. Dovecot 安装
+yum -y install dovecot
+
+[root@linuxprobe ~]# vi /etc/dovecot/dovecot.conf
+# line 24: uncomment
+protocols = imap pop3 lmtp
+# line 30: uncomment and change ( if not use IPv6 )
+listen = *
+[root@linuxprobe ~]# vi /etc/dovecot/conf.d/10-auth.conf
+# line 10: uncomment and change ( allow plain text auth )
+disable_plaintext_auth = no
+# line 100: add
+auth_mechanisms = plain login
+[root@linuxprobe ~]# vi /etc/dovecot/conf.d/10-mail.conf
+# line 30: uncomment and add
+mail_location = maildir:~/Maildir
+[root@linuxprobe ~]# vi /etc/dovecot/conf.d/10-master.conf
+# line 96-98: uncomment and add like follows
+# Postfix smtp-auth
+unix_listener /var/spool/postfix/private/auth {
+    mode = 0666
+    user = postfix
+    group = postfix
+}
+[root@linuxprobe ~]# vi /etc/dovecot/conf.d/10-ssl.conf
+# line 8: change (not require SSL)
+ssl = no
+
+[root@linuxprobe ~]# systemctl start dovecot
+[root@linuxprobe ~]# systemctl enable dovecot
+
+如果Firewalld正在运行，请允许POP / IMAP服务。 POP使用110 / TCP，IMAP使用143 / TCP.
+[root@vdevops ~]# firewall-cmd --add-port={110/tcp,143/tcp} --permanent
+success
+[root@vdevops ~]# firewall-cmd --reload
+success 
+
+
+3.  SSL设置
+[1] 首先创建证书，传送门：http://blog.csdn.net/wh211212/article/details/52982917 
+[2] 为SSL配置Postfix和Dovecot。
+
+# add to the end
+smtpd_use_tls = yes
+smtpd_tls_cert_file = /etc/pki/tls/certs/server.crt
+smtpd_tls_key_file = /etc/pki/tls/certs/server.key
+smtpd_tls_session_cache_database = btree:/etc/postfix/smtpd_scache
+[root@linuxprobe ~]# vi /etc/postfix/master.cf
+# line 26-28: uncomment
+smtps       inet   n       -       n       -       -       smtpd
+  -o syslog_name=postfix/smtps
+  -o smtpd_tls_wrappermode=yes
+[root@linuxprobe ~]# vi /etc/dovecot/conf.d/10-ssl.conf
+# line 8: change
+ssl = yes
+# line 14,15: specify certificates
+ssl_cert = </etc/pki/tls/certs/server.crt
+ssl_key = </etc/pki/tls/certs/server.key
+[root@linuxprobe ~]# systemctl restart postfix dovecot
+
+[3] 如果Firewalld正在运行，请允许SMTPS / POP3S / IMAPS服务。 SMTPS使用465 / 
+TCP，POP3S使用995 / TCP，IMAPS使用993 / TCP。
+
+[root@vdevops ~]# firewall-cmd --add-service={pop3s,imaps} --permanent
+success
+[root@vdevops ~]# firewall-cmd --add-port=465/tcp --permanent
+success
+[root@vdevops ~]# firewall-cmd --reload
+success 

@@ -1,0 +1,3277 @@
+: 1506088233:0;vim .zshrc
+: 1506088238:0;vi .zshrc
+: 1506088252:0;source .zshrc
+: 1506088292:0;yum install vim
+: 1506088312:0;source .vimrc
+: 1506088317:0;ll
+: 1506088324:0;la
+: 1506088327:0;vim .vimrc
+: 1506088331:0;ll
+: 1506088374:0;wget https://github.com/git/git/archive/v2.14.1.tar.gz
+: 1506088398:0;tar zxvf v2.14.1.tar.gz
+: 1506088438:0;wget http://ftp.tsukuba.wide.ad.jp/software/gcc/releases/gcc-7.2.0/gcc-7.2.0.tar.gz
+: 1506088473:0;wget http://ftp.gnu.org/gnu/autoconf/autoconf-2.69.tar.gz
+: 1506088488:0;wget http://ftp.gnu.org/gnu/automake/automake-1.15.tar.gz
+: 1506088560:0;wget https://github.com/jemalloc/jemalloc/archive/5.0.1.tar.gz
+: 1506088565:0;ll
+: 1506088575:0;tar zxf 5.0.1.tar.gz
+: 1506088581:0;tar zxf autoconf-2.69.tar.gz
+: 1506088586:0;tar zxf automake-1.15.tar.gz
+: 1506088590:0;tar zxf gcc-7.2.0.tar.gz
+: 1506088618:0;wget http://nginx.org/download/nginx-1.12.1.tar.gz
+: 1506088630:0;tar zxf nginx-1.12.1.tar.gz
+: 1506088632:0;ll
+: 1506088674:0;wget https://openresty.org/download/openresty-1.11.2.5.tar.gz
+: 1506088691:0;wget https://downloads.php.net/\~pollita/php-7.2.0RC2.tar.gz
+: 1506088728:0;wget https://www.percona.com/downloads/Percona-XtraDB-Cluster-LATEST/Percona-XtraDB-Cluster-5.7.18-29.20/source/tarball/Percona-XtraDB-Cluster-5.7.18-29.20.tar.gz
+: 1506088894:0;wget https://www.python.org/ftp/python/3.6.2/Python-3.6.2.tgz
+: 1506088900:0;ll
+: 1506088915:0;wget https://nodejs.org/dist/v8.5.0/node-v8.5.0.tar.gz
+: 1506089972:0;ll
+: 1506089979:0;tar zxf v2.14.1.tar.gz
+: 1506089986:0;tar zxf Python-3.6.2.tgz
+: 1506089994:0;tar zxf Percona-XtraDB-Cluster-5.7.18-29.20.tar.gz
+: 1506090006:0;tar zxf openresty-1.11.2.5.tar.gz
+: 1506090013:0;tar zxf node-v8.5.0.tar.gz
+: 1506090018:0;ll
+: 1506090027:0;rm v2.14.1.tar.gz
+: 1506090031:0;rm Python-3.6.2
+: 1506090034:0;rm Python-3.6.2.tgz
+: 1506090038:0;rm Percona-XtraDB-Cluster-5.7.18-29.20
+: 1506090041:0;rm Percona-XtraDB-Cluster-5.7.18-29.20.tar.gz
+: 1506090046:0;rm openresty-1.11.2.5.tar.gz
+: 1506090049:0;rm gcc-7.2.0.tar.gz
+: 1506090050:0;ll
+: 1506090067:0;rm node-v8.5.0.tar.gz nginx-1.12.1.tar.gz automake-1.15.tar.gz
+: 1506090072:0;tar zxf php-7.2.0RC2.tar.gz
+: 1506090089:0;rm 5.0.1.tar.gz autoconf-2.69.tar.gz 
+: 1506090090:0;ll
+: 1506090095:0;rm php-7.2.0RC2.tar.gz
+: 1506090129:0;wget http://download.redis.io/releases/redis-4.0.2.tar.gz
+: 1506090158:0;wget https://memcached.org/files/memcached-1.5.1.tar.gz
+: 1506090161:0;ll
+: 1506090167:0;tar zxf redis-4.0.2.tar.gz
+: 1506090172:0;tar zxf memcached-1.5.1.tar.gz
+: 1506090174:0;ll
+: 1506090181:0;rm memcached-1.5.1.tar.gz redis-4.0.2.tar.gz
+: 1506090259:0;rpm -ivh http://elrepo.org/linux/kernel/el6/x86_64/RPMS/kernel-ml-4.13.3-1.el6.elrepo.x86_64.rpm
+: 1506090327:0;ll
+: 1506090334:0;vim /etc/grub.conf
+: 1506090346:0;reboot now
+: 1506090470:0;ll
+: 1506090479:0;uname -a 
+: 1506090486:0;rpm -qa | grep kernel
+: 1506090506:0;rpm -e kernel-2.6.32-696.6.3.el6.x86_64
+: 1506090523:0;rpm -e kernel-2.6.32-696.el6.x86_64 --nodepa
+: 1506090524:0;rpm -e kernel-2.6.32-696.el6.x86_64 --nodeps
+: 1506090540:0;rpm -e kernel-firmware-2.6.32-696.6.3.el6.noarch --nodeps
+: 1506090544:0;rpm -qa | grep kernel
+: 1506090560:0;rpm -ivh http://elrepo.org/linux/kernel/el6/x86_64/RPMS/kernel-ml-devel-4.13.3-1.el6.elrepo.x86_64.rpm
+: 1506090569:0;rpm -ivh http://elrepo.org/linux/kernel/el6/x86_64/RPMS/kernel-ml-doc-4.13.3-1.el6.elrepo.noarch.rpm
+: 1506090577:0;rpm -ivh http://elrepo.org/linux/kernel/el6/x86_64/RPMS/kernel-ml-headers-4.13.3-1.el6.elrepo.x86_64.rpm
+: 1506090611:0;rpm -qa | grep kernel
+: 1506090672:0;vim /etc/selinux/config
+: 1506090679:0;ll
+: 1506090687:0;yum install gcc gcc-c++ -y
+: 1506090733:0;ll
+: 1506090736:0;cd autoconf-2.69
+: 1506090737:0;ll
+: 1506090761:0;./configure --prefix=/usr/local/autoconf/2.69
+: 1506090773:0;make -j2 && make install
+: 1506090788:0;yum install autoconf automake
+: 1506090803:0;ll
+: 1506090805:0;./configure --prefix=/usr/local/autoconf/2.69
+: 1506090809:0;make 
+: 1506090812:0;make install
+: 1506090815:0;cd ../
+: 1506090815:0;ll
+: 1506090821:0;cd automake-1.15
+: 1506090829:0;./configure --prefix=/usr/local/automake/1.15
+: 1506090836:0;cd ../
+: 1506090859:0;ln -sf /usr/local/autoconf/2.69/bin/* /usr/bin
+: 1506090864:0;cd -1
+: 1506090868:0;./configure --prefix=/usr/local/automake/1.15
+: 1506090872:0;make 
+: 1506090875:0;make install
+: 1506090892:0;ln -sf /usr/local/automake/1.15/bin/* /usr/bin
+: 1506090895:0;cd ../
+: 1506090896:0;ll
+: 1506090902:0;cd gcc-7.2.0
+: 1506090903:0;ll
+: 1506090920:0;contrib/download_prerequisites
+: 1506090984:0;--prefix=/usr/local/gcc/7.2.0 \\
+--enable-languages=c,c++ \\
+--disable-multilib \\
+--disable-checking \
+: 1506090986:0;./configure \\
+--prefix=/usr/local/gcc/7.2.0 \\
+--enable-languages=c,c++ \\
+--disable-multilib \\
+--disable-checking \\
+--without-isl
+: 1506091011:0;make -j 2
+: 1506091268:0;yum install htop
+: 1506091274:0;htop
+: 1506121025:0;cd gcc-7.2.0
+: 1506121027:0;make install
+: 1506121053:0;cd ../
+: 1506121088:0;ln -sf /usr/local/gcc/7.2.0/bin/* /usr/bin
+: 1506121090:0;gcc -V
+: 1506121092:0;gcc -v
+: 1506121097:0;ll
+: 1506121101:0;cd git-2.14.1
+: 1506121150:0;yum install -y openssl openssl-devel curl curl-devel unzip perl perl-devel expat expat-devel zlib zlib-devel asciidoc xmlto gettext-devel openssh-clients
+: 1506121183:0;make prefix=/usr/local/git all doc
+: 1506121203:0;make prefix=/usr/local/git/2.14.1 all doc
+: 1506121815:0;make prefix=/usr/local/git/2.14.1 install  install-doc install-html
+: 1506121837:0;ln -sf /usr/local/git/2.14.1/bin/git* /usr/bin
+: 1506121840:0;git -V
+: 1506121844:0;git -v
+: 1506121848:0;git --version
+: 1506121858:0;echo "net.core.default_qdisc=fq" >> /etc/sysctl.conf
+: 1506121858:0;echo "net.ipv4.tcp_congestion_control=bbr" >> /etc/sysctl.conf
+: 1506121860:0;sysctl -p
+: 1506121872:0;cd
+: 1506121874:0;ll
+: 1506121877:0;cd jemalloc-5.0.1
+: 1506121882:0;ll
+: 1506121886:0;./autogen.sh
+: 1506121910:0;make && make install
+: 1506121986:0;echo '/usr/local/lib' > /etc/ld.so.conf.d/local.conf
+: 1506121987:0;ldconfig
+: 1506122001:0;cd ../
+: 1506122001:0;ll
+: 1506122003:0;cd Python-3.6.2
+: 1506122004:0;ll
+: 1506122011:0;./configure -h
+: 1506125739:0;ifconfig
+: 1506125743:0;cd ../
+: 1506125747:0;cd Python-3.6.2
+: 1506125757:0;./configure \\
+--prefix=/usr/local/python/3.6.2 \\
+--exec-prefix=/usr/local/python/3.6.2 \\
+--enable-shared \\
+--enable-optimizations
+: 1506125773:0;CXX=g++ ./configure \\
+--prefix=/usr/local/python/3.6.2 \\
+--exec-prefix=/usr/local/python/3.6.2 \\
+--enable-shared \\
+--enable-optimizations
+: 1506125815:0;make -j 2
+: 1506126099:0;yum install -y bzip2-devel curses-devel dbm-devel gdbm-devel xz-devel sqlite sqlite-devel openssl openssl-devel tkinter tcl-devel tk-devel readline readline-devel zlib zlib-devel
+: 1506126112:0;make -j 2
+: 1506126456:0;ll
+: 1506126461:0;cd redis-4.0.2
+: 1506126462:0;ll
+: 1506126474:0;cd src
+: 1506126475:0;ll
+: 1506126482:0;cd ../
+: 1506126483:0;ll
+: 1506126487:0;make
+: 1506126492:0;make --help
+: 1506126548:0;cd 
+: 1506126549:0;ll
+: 1506126595:0;yum install tcl
+: 1506126688:0;cd redis-4.0.2
+: 1506126697:0;make && make install PREFIX=/usr/local/redis/4.0.2
+: 1506126743:0;ll
+: 1506126746:0;cd node-v8.5.0
+: 1506126746:0;ll
+: 1506126768:0;./configure --prefix=/usr/local/node/8.5.0
+: 1506126786:0;ll
+: 1506126791:0;ll tests
+: 1506126796:0;ll src
+: 1506126802:0;ll
+: 1506126812:0;cp redis.conf /etc
+: 1506126819:0;vim /etc/redis.conf
+: 1506126847:0;cd /usr/local/redis/4.0.2/bin
+: 1506126848:0;ll
+: 1506126854:0;./redis-server -h
+: 1506126864:0;./redis-server /etc/redis.conf
+: 1506126872:0;ps aux | grep redis
+: 1506126881:0;lsof -a | grep je
+: 1506126886:0;lsof
+: 1506126891:0;yum install lsof
+: 1506126897:0;lsof -a | grep je
+: 1506126905:0;cd
+: 1506126906:0;ll
+: 1506126953:0;vim /etc/redis.conf
+: 1506127097:0;cd redis-4.0.2
+: 1506127098:0;ll
+: 1506127105:0;make --help
+: 1506127132:0;cat README.md
+: 1506127211:0;make
+: 1506127221:0;make clean
+: 1506127222:0;make
+: 1506127316:0;make jemalloc
+: 1506127321:0;ll
+: 1506127331:0;cd deps
+: 1506127332:0;ll
+: 1506127336:0;make jemalloc
+: 1506127360:0;ll
+: 1506127363:0;ll jemalloc
+: 1506127368:0;ll jemalloc/VERSION
+: 1506127373:0;cat jemalloc/VERSION
+: 1506127378:0;cd ../
+: 1506127383:0;cd jemalloc-5.0.1
+: 1506127384:0;make
+: 1506127385:0;ll
+: 1506127397:0;./configure
+: 1506127407:0;make
+: 1506127473:0;make install
+: 1506127479:0;echo '/usr/local/lib' > /etc/ld.so.conf.d/local.conf
+: 1506127482:0;ldconfig
+: 1506127484:0;cd ../
+: 1506127492:0;lsof -a | grep je
+: 1506127496:0;lsof -n | grep je
+: 1506127499:0;ps aux | grep 
+: 1506127503:0;ps aux | grep redis
+: 1506127515:0;ll
+: 1506127518:0;cd redis-4.0.2
+: 1506127519:0;ll
+: 1506127529:0;make all && make install PREFIX=/usr/local/redis/4.0.2
+: 1506127561:0;make test
+: 1506127573:0;make test > maketest
+: 1506127684:0;make install
+: 1506127754:0;cat maketest| grep jemalloc
+: 1506127766:0;find / -name '*jemalloc*'
+: 1506127838:0;ll
+: 1506127845:0;make --with-jemalloc-prefix
+: 1506127875:0;ll deps
+: 1506127898:0;deps/update-jemalloc.sh
+: 1506128037:0;make dictclean
+: 1506128043:0;make distclean
+: 1506128054:0;make MALLOC=jemalloc
+: 1506128184:0;rm -rf /usr/local/redis
+: 1506128191:0;ps aux | grep redis
+: 1506128195:0;kill 29122
+: 1506128200:0;make PREFIX=/usr/local/redis/4.0.2 install
+: 1506128228:0;/usr/local/redis/4.0.2/bin/redis-server /etc/redis.conf
+: 1506128233:0;lsof -n | grep je
+: 1506128235:0;lsof -n | grep jem
+: 1506128240:0;lsof -n | grep 'jem*'
+: 1506128253:0;lsof -n | grep 'jemalloc'
+: 1506128261:0;lsof -n | grep '*jemalloc*'
+: 1506128304:0;cd ../
+: 1506128305:0;ll
+: 1506128312:0;cd Python-3.6.2
+: 1506128315:0;make install
+: 1506128474:0;cd ../redis-4.0.2
+: 1506128474:0;ll
+: 1506128480:0;cat Makefile
+: 1506128491:0;cd src
+: 1506128492:0;ll
+: 1506128496:0;make -h
+: 1506128525:0;ll
+: 1506128528:0;cd ../deps
+: 1506128529:0;ll
+: 1506128533:0;cat README.md
+: 1506128572:0;cd /usr/local/python/3.6.2/bin
+: 1506128573:0;ll
+: 1506128576:0;./pip3
+: 1506128596:0;find /usr -name 'libpython3.6m.so.1.0'
+: 1506128643:0;cd /etc/ld.so.conf.d
+: 1506128644:0;ll
+: 1506128646:0;cat local.conf
+: 1506128655:0;touch python.conf
+: 1506128659:0;vim python.conf
+: 1506128665:0;ldconfig
+: 1506128670:0;/usr/local/python/3.6.2/bin/pip3
+: 1506128678:0;/usr/local/python/3.6.2/bin/pip3 install glances
+: 1506128702:0;glances
+: 1506128710:0;ll /usr/local/python/3.6.2/bin
+: 1506128724:0;vim ~/.zshrc
+: 1506128775:0;source ~/.zshrc
+: 1506128777:0;glances
+: 1506128787:0;echo $PATH
+: 1506128792:0;vim ~/.zshrc
+: 1506128805:0;source ~/.zshrc
+: 1506128807:0;echo $PATH
+: 1506128867:0;vim ~/.zshrc
+: 1506128884:0;source ~/.zshrc
+: 1506128888:0;echo $PATH
+: 1506128892:0;source ~/.zshrc
+: 1506128894:0;echo $PATH
+: 1506128915:0;find / -name '*jemalloc*'
+: 1506128928:0;ll
+: 1506128931:0;cat local.conf
+: 1506128936:0;ll
+: 1506128955:0;vim ~/.zshrc
+: 1506128976:0;source ~/.zshrc
+: 1506128980:0;echo $PATH
+: 1506128984:0;vim ~/.zshrc
+: 1506129000:0;echo $PATH
+: 1506129002:0;source ~/.zshrc
+: 1506129003:0;echo $PATH
+: 1506129010:0;vim ~/.zshrc
+: 1506129025:0;source ~/.zshrc
+: 1506129027:0;echo $PATH
+: 1506129032:0;glances
+: 1506129051:0;cd 
+: 1506129053:0;ll
+: 1506129067:0;cd Percona-XtraDB-Cluster-5.7.18-29.20
+: 1506129178:0;cmake \\
+-DDOWNLOAD_BOOST=1 \\
+-DWITH_BOOST=/root \\
+-DCMAKE_INSTALL_PREFIX=/usr/local/percona-mysql \\
+-DSYSCONFDIR=/usr/local/percona-mysql/etc \\
+-DMYSQL_DATADIR=/var/lib/percona-mysql \\
+-DMYSQL_UNIX_ADDR=/var/run/percona-mysql/mysqld.sock \\
+-DMYSQL_USER=mysql \\
+-DMYSQL_TCP_PORT=3366 \\
+-DWITH_MYISAM_STORAGE_ENGINE=1 \\
+-DWITH_INNOBASE_STORAGE_ENGINE=1 \\
+-DWITH_MEMORY_STORAGE_ENGINE=1 \\
+-DWITH_PARTITION_STORAGE_ENGINE=1 \\
+-DEXTRA_CHARSETS=all \\
+-DDEFAULT_CHARSET=utf8 \\
+-DDEFAULT_COLLATION=utf8_general_ci \\
+-DENABLED_LOCAL_INFILE=1 \\
+-DWITH_READLINE=system \\
+-DWITH_EDITLINE=0 \\
+-DCMAKE_EXE_LINKER_FLAGS="-ljemalloc" -DWITH_SAFEMALLOC=OFF
+: 1506129214:0;cd
+: 1506129216:0;wget https://cmake.org/files/v3.9/cmake-3.9.3.tar.gz
+: 1506129230:0;ll
+: 1506129234:0;tar zxf cmake-3.9.3.tar.gz
+: 1506129236:0;cd cmake-3.9.3
+: 1506129237:0;ll
+: 1506129254:0;./configure --prefix=/usr/local/cmake/3.9.3
+: 1506129513:0;make install
+: 1506129538:0;ll
+: 1506129540:0;make
+: 1506129567:0;gmake
+: 1506129612:0;./bootstrap
+: 1506129674:0;which gmake
+: 1506129866:0;find /usr -name 'libstdc*'
+: 1506129880:0;cd /etc/ld.so.conf.d
+: 1506129900:0;touch libstdc++.conf
+: 1506129903:0;vim libstdc++.conf
+: 1506129908:0;ld config
+: 1506129912:0;ldconfig
+: 1506129930:0;strings /usr/lib/libstdc++.so.6 | grep GLIBCXX
+: 1506129949:0;strings /usr/lib64/libstdc++.so.6 | grep GLIBCXX
+: 1506129975:0;strings /usr/local/gcc/7.2.0/lib64 | grep GLIBCXX
+: 1506130016:0;cd /usr/local/gcc/7.2.0/lib64
+: 1506130017:0;ll
+: 1506130041:0;cp libstdc++.so.6.0.24 /usr/lib64
+: 1506130050:0;strings /usr/lib64/libstdc++.so.6 | grep GLIBCXX
+: 1506130073:0;cd /usr/lib64
+: 1506130074:0;ll
+: 1506130080:0;ln libstdc++.so.6.0.24 libstdc++.so.6 
+: 1506130084:0;ln -f libstdc++.so.6.0.24 libstdc++.so.6 
+: 1506130085:0;strings /usr/lib64/libstdc++.so.6 | grep GLIBCXX
+: 1506130088:0;cd
+: 1506130089:0;ll
+: 1506130093:0;cd cmake-3.9.3
+: 1506130095:0;gmake
+: 1506130099:0;./bootstrap
+: 1506130128:0;./configure --prefix=/usr/local/cmake/3.9.3
+: 1506130241:0;gmake
+: 1506131354:0;gmake install
+: 1506131371:0;ln -sf /usr/local/cmake/3.9.3/bin/* /usr/bin
+: 1506131373:0;cd ../
+: 1506131376:0;cd Percona-XtraDB-Cluster-5.7.18-29.20
+: 1506131382:0;cmake \\
+-DDOWNLOAD_BOOST=1 \\
+-DWITH_BOOST=/root \\
+-DCMAKE_INSTALL_PREFIX=/usr/local/percona-mysql \\
+-DSYSCONFDIR=/usr/local/percona-mysql/etc \\
+-DMYSQL_DATADIR=/var/lib/percona-mysql \\
+-DMYSQL_UNIX_ADDR=/var/run/percona-mysql/mysqld.sock \\
+-DMYSQL_USER=mysql \\
+-DMYSQL_TCP_PORT=3366 \\
+-DWITH_MYISAM_STORAGE_ENGINE=1 \\
+-DWITH_INNOBASE_STORAGE_ENGINE=1 \\
+-DWITH_MEMORY_STORAGE_ENGINE=1 \\
+-DWITH_PARTITION_STORAGE_ENGINE=1 \\
+-DEXTRA_CHARSETS=all \\
+-DDEFAULT_CHARSET=utf8 \\
+-DDEFAULT_COLLATION=utf8_general_ci \\
+-DENABLED_LOCAL_INFILE=1 \\
+-DWITH_READLINE=system \\
+-DWITH_EDITLINE=0 \\
+-DCMAKE_EXE_LINKER_FLAGS="-ljemalloc" -DWITH_SAFEMALLOC=OFF
+: 1506131508:0;cmake \\
+-DDOWNLOAD_BOOST=1 \\
+-DWITH_BOOST=/root \\
+-DCMAKE_INSTALL_PREFIX=/usr/local/mysql/5.7.18 \\
+-DSYSCONFDIR=/etc \\
+-DMYSQL_DATADIR=/var/lib/mysql \\
+-DMYSQL_UNIX_ADDR=/var/run/mysql/mysqld.sock \\
+-DMYSQL_TCP_PORT=3366 \\
+-DWITH_MYISAM_STORAGE_ENGINE=1 \\
+-DWITH_INNOBASE_STORAGE_ENGINE=1 \\
+-DWITH_PARTITION_STORAGE_ENGINE=1 \\
+-DEXTRA_CHARSETS=all \\
+-DDEFAULT_CHARSET=utf8 \\
+-DDEFAULT_COLLATION=utf8_general_ci \\
+-DENABLED_LOCAL_INFILE=1 \\
+-DWITH_READLINE=system \\
+-DWITH_EDITLINE=0 \\
+-DCMAKE_EXE_LINKER_FLAGS="-ljemalloc"
+: 1506131600:0;cmake install
+: 1506131634:0;ll
+: 1506131647:0;rm CMakeCache.txt
+: 1506131652:0;cmake \\
+-DDOWNLOAD_BOOST=1 \\
+-DWITH_BOOST=/root \\
+-DCMAKE_INSTALL_PREFIX=/usr/local/mysql/5.7.18 \\
+-DSYSCONFDIR=/etc \\
+-DMYSQL_DATADIR=/var/lib/mysql \\
+-DMYSQL_UNIX_ADDR=/var/run/mysql/mysqld.sock \\
+-DMYSQL_TCP_PORT=3366 \\
+-DWITH_MYISAM_STORAGE_ENGINE=1 \\
+-DWITH_INNOBASE_STORAGE_ENGINE=1 \\
+-DWITH_PARTITION_STORAGE_ENGINE=1 \\
+-DEXTRA_CHARSETS=all \\
+-DDEFAULT_CHARSET=utf8 \\
+-DDEFAULT_COLLATION=utf8_general_ci \\
+-DENABLED_LOCAL_INFILE=1 \\
+-DWITH_READLINE=system \\
+-DWITH_EDITLINE=0 \\
+-DCMAKE_EXE_LINKER_FLAGS="-ljemalloc"
+: 1506131696:0;make install
+: 1506132378:0;cd
+: 1506132379:0;wget https://www.percona.com/downloads/Percona-XtraDB-Cluster-LATEST/Percona-XtraDB-Cluster-5.7.19-29.22/source/tarball/Percona-XtraDB-Cluster-5.7.19-29.22.tar.gz
+: 1506132398:0;ll
+: 1506132408:0;tar zxf Percona-XtraDB-Cluster-5.7.19-29.22.tar.gz
+: 1506132413:0;ll
+: 1506132417:0;cd Percona-XtraDB-Cluster-5.7.19-29.22
+: 1506132418:0;ll
+: 1506132444:0;cmake \\
+-DDOWNLOAD_BOOST=1 \\
+-DWITH_BOOST=/root \\
+-DCMAKE_INSTALL_PREFIX=/usr/local/mysql/5.7.18 \\
+-DSYSCONFDIR=/etc \\
+-DMYSQL_DATADIR=/var/lib/mysql \\
+-DMYSQL_UNIX_ADDR=/var/run/mysql/mysqld.sock \\
+-DMYSQL_TCP_PORT=3366 \\
+-DWITH_MYISAM_STORAGE_ENGINE=1 \\
+-DWITH_INNOBASE_STORAGE_ENGINE=1 \\
+-DWITH_PARTITION_STORAGE_ENGINE=1 \\
+-DEXTRA_CHARSETS=all \\
+-DDEFAULT_CHARSET=utf8 \\
+-DDEFAULT_COLLATION=utf8_general_ci \\
+-DENABLED_LOCAL_INFILE=1 \\
+-DWITH_READLINE=system \\
+-DWITH_EDITLINE=0 \\
+-DCMAKE_EXE_LINKER_FLAGS="-ljemalloc"
+: 1506132522:0;make install
+: 1506132642:0;cat CMakeFiles/CMakeError.log
+: 1506132688:0;yum install openldap-devel
+: 1506132694:0;ll
+: 1506132699:0;rm CMakeCache.txt
+: 1506132702:0;cmake \\
+-DDOWNLOAD_BOOST=1 \\
+-DWITH_BOOST=/root \\
+-DCMAKE_INSTALL_PREFIX=/usr/local/mysql/5.7.18 \\
+-DSYSCONFDIR=/etc \\
+-DMYSQL_DATADIR=/var/lib/mysql \\
+-DMYSQL_UNIX_ADDR=/var/run/mysql/mysqld.sock \\
+-DMYSQL_TCP_PORT=3366 \\
+-DWITH_MYISAM_STORAGE_ENGINE=1 \\
+-DWITH_INNOBASE_STORAGE_ENGINE=1 \\
+-DWITH_PARTITION_STORAGE_ENGINE=1 \\
+-DEXTRA_CHARSETS=all \\
+-DDEFAULT_CHARSET=utf8 \\
+-DDEFAULT_COLLATION=utf8_general_ci \\
+-DENABLED_LOCAL_INFILE=1 \\
+-DWITH_READLINE=system \\
+-DWITH_EDITLINE=0 \\
+-DCMAKE_EXE_LINKER_FLAGS="-ljemalloc"
+: 1506132746:0;cat CMakeFiles/CMakeError.log
+: 1506132811:0;cmake \\
+-DDOWNLOAD_BOOST=1 \\
+-DWITH_BOOST=/root \\
+-DCMAKE_INSTALL_PREFIX=/usr/local/mysql/5.7.18 \\
+-DSYSCONFDIR=/etc \\
+-DMYSQL_DATADIR=/var/lib/mysql \\
+-DMYSQL_UNIX_ADDR=/var/run/mysql/mysqld.sock \\
+-DMYSQL_TCP_PORT=3366 \\
+-DWITH_MYISAM_STORAGE_ENGINE=1 \\
+-DWITH_INNOBASE_STORAGE_ENGINE=1 \\
+-DWITH_PARTITION_STORAGE_ENGINE=1 \\
+-DEXTRA_CHARSETS=all \\
+-DDEFAULT_CHARSET=utf8 \\
+-DDEFAULT_COLLATION=utf8_general_ci \\
+-DENABLED_LOCAL_INFILE=1 \\
+-DWITH_READLINE=system \\
+-DWITH_EDITLINE=0 \\
+-DCMAKE_EXE_LINKER_FLAGS="-ljemalloc"
+: 1506132881:0;cat CMakeFiles/CMakeError.log
+: 1506133089:0;rpm -iv hhttps://www.percona.com/downloads/Percona-XtraDB-Cluster-LATEST/Percona-XtraDB-Cluster-5.7.19-29.22/source/redhat/Percona-XtraDB-Cluster-57-5.7.19-29.22.1.generic.src.rpm
+: 1506133093:0;rpm -ivh https://www.percona.com/downloads/Percona-XtraDB-Cluster-LATEST/Percona-XtraDB-Cluster-5.7.19-29.22/source/redhat/Percona-XtraDB-Cluster-57-5.7.19-29.22.1.generic.src.rpm
+: 1506133150:0;rpm -qa | grep percona
+: 1506133157:0;rpm -qa | grep 'percona*'
+: 1506133162:0;rpm -qa | grep '*ercona*'
+: 1506133167:0;mysql
+: 1506133177:0;rpm -ivh https://www.percona.com/downloads/Percona-XtraDB-Cluster-LATEST/Percona-XtraDB-Cluster-5.7.19-29.22/source/redhat/Percona-XtraDB-Cluster-57-5.7.19-29.22.1.generic.src.rpm
+: 1506133276:0;rpm -ivh https://www.percona.com/redir/downloads/percona-release/redhat/latest/percona-release-0.1-4.noarch.rpm
+: 1506133287:0;yum install Percona-XtraDB-Cluster-server
+: 1506133367:0;yum search Percona-Server
+: 1506133436:0;yum install -y scons openssl check bison boost-devel asio-devel libaio-devel ncurses-devel readline-devel pam-devel socat
+: 1506133457:0;groupadd mysql
+: 1506133469:0;useradd -M -g mysql -s /sbin/nologin/ mysql
+: 1506133487:0;rm CMakeCache.txt
+: 1506133491:0;cmake \\
+-DDOWNLOAD_BOOST=1 \\
+-DWITH_BOOST=/root \\
+-DCMAKE_INSTALL_PREFIX=/usr/local/mysql/5.7.18 \\
+-DSYSCONFDIR=/etc \\
+-DMYSQL_DATADIR=/var/lib/mysql \\
+-DMYSQL_UNIX_ADDR=/var/run/mysql/mysqld.sock \\
+-DMYSQL_TCP_PORT=3366 \\
+-DWITH_MYISAM_STORAGE_ENGINE=1 \\
+-DWITH_INNOBASE_STORAGE_ENGINE=1 \\
+-DWITH_PARTITION_STORAGE_ENGINE=1 \\
+-DEXTRA_CHARSETS=all \\
+-DDEFAULT_CHARSET=utf8 \\
+-DDEFAULT_COLLATION=utf8_general_ci \\
+-DENABLED_LOCAL_INFILE=1 \\
+-DWITH_READLINE=system \\
+-DWITH_EDITLINE=0 \\
+-DCMAKE_EXE_LINKER_FLAGS="-ljemalloc"
+: 1506133613:0;rm CMakeCache.txt
+: 1506133614:0;cmake \\
+-DDOWNLOAD_BOOST=1 \\
+-DWITH_BOOST=/root \\
+-DCMAKE_INSTALL_PREFIX=/usr/local/mysql/5.7.18 \\
+-DSYSCONFDIR=/etc \\
+-DMYSQL_DATADIR=/var/lib/mysql \\
+-DMYSQL_UNIX_ADDR=/var/run/mysql/mysqld.sock \\
+-DMYSQL_TCP_PORT=3366 \\
+-DWITH_MYISAM_STORAGE_ENGINE=1 \\
+-DWITH_INNOBASE_STORAGE_ENGINE=1 \\
+-DWITH_PARTITION_STORAGE_ENGINE=1 \\
+-DEXTRA_CHARSETS=all \\
+-DDEFAULT_CHARSET=utf8 \\
+-DDEFAULT_COLLATION=utf8_general_ci \\
+-DENABLED_LOCAL_INFILE=1 \\
+-DWITH_READLINE=system \\
+-DWITH_EDITLINE=0 \\
+-DENABLE_DOWNLOADS=1 \\
+-DCMAKE_EXE_LINKER_FLAGS="-ljemalloc"
+: 1506133707:0;yum install rocksdb-devel
+: 1506133711:0;yum install rocksdb
+: 1506133716:0;yum search rocksdb
+: 1506133749:0;storage/rocksdb/get_rocksdb_files.sh
+: 1506133767:0;cd storage/rocksdb
+: 1506133768:0;ll
+: 1506133777:0;cmake
+: 1506133783:0;cmake 
+: 1506133786:0;make
+: 1506133793:0;./get_rocksdb_files.sh
+: 1506133858:0;cd
+: 1506133862:0;git clone git clone https://github.com/facebook/rocksdb.git
+: 1506133865:0;git clone https://github.com/facebook/rocksdb.git
+: 1506134004:0;yum search rocksdb
+: 1506134011:0;yum install Percona-Server-rocksdb-57.x86_64- y
+: 1506134016:0;yum install Percona-Server-rocksdb-57.x86_64  -y
+: 1506134061:0;cd Percona-XtraDB-Cluster-5.7.19-29.22
+: 1506134062:0;lll
+: 1506134067:0;rm CMakeCache.txt
+: 1506134071:0;cmake \\
+-DDOWNLOAD_BOOST=1 \\
+-DWITH_BOOST=/root \\
+-DCMAKE_INSTALL_PREFIX=/usr/local/mysql/5.7.18 \\
+-DSYSCONFDIR=/etc \\
+-DMYSQL_DATADIR=/var/lib/mysql \\
+-DMYSQL_UNIX_ADDR=/var/run/mysql/mysqld.sock \\
+-DMYSQL_TCP_PORT=3366 \\
+-DWITH_MYISAM_STORAGE_ENGINE=1 \\
+-DWITH_INNOBASE_STORAGE_ENGINE=1 \\
+-DWITH_PARTITION_STORAGE_ENGINE=1 \\
+-DEXTRA_CHARSETS=all \\
+-DDEFAULT_CHARSET=utf8 \\
+-DDEFAULT_COLLATION=utf8_general_ci \\
+-DENABLED_LOCAL_INFILE=1 \\
+-DWITH_READLINE=system \\
+-DWITH_EDITLINE=0 \\
+-DENABLE_DOWNLOADS=1 \\
+-DCMAKE_EXE_LINKER_FLAGS="-ljemalloc"
+: 1506134181:0;rm CMakeCache.txt
+: 1506134181:0;cmake \\
+-DDOWNLOAD_BOOST=1 \\
+-DWITH_BOOST=/root \\
+-DCMAKE_INSTALL_PREFIX=/usr/local/mysql/5.7.18 \\
+-DSYSCONFDIR=/etc \\
+-DMYSQL_DATADIR=/var/lib/mysql \\
+-DMYSQL_UNIX_ADDR=/var/run/mysql/mysqld.sock \\
+-DMYSQL_TCP_PORT=3366 \\
+-DWITH_MYISAM_STORAGE_ENGINE=1 \\
+-DWITH_INNOBASE_STORAGE_ENGINE=1 \\
+-DWITH_PARTITION_STORAGE_ENGINE=1 \\
+-DWITH_TOKUDB=1 \\
+-DWITHOUT_ROCKSDB=1 \\
+-DEXTRA_CHARSETS=all \\
+-DDEFAULT_CHARSET=utf8 \\
+-DDEFAULT_COLLATION=utf8_general_ci \\
+-DENABLED_LOCAL_INFILE=1 \\
+-DWITH_READLINE=system \\
+-DWITH_EDITLINE=0 \\
+-DENABLE_DOWNLOADS=1 \\
+-DCMAKE_EXE_LINKER_FLAGS="-ljemalloc"
+: 1506134228:0;cmake \\
+-DDOWNLOAD_BOOST=1 \\
+-DWITH_BOOST=/root \\
+-DCMAKE_INSTALL_PREFIX=/usr/local/mysql/5.7.18 \\
+-DSYSCONFDIR=/etc \\
+-DMYSQL_DATADIR=/var/lib/mysql \\
+-DMYSQL_UNIX_ADDR=/var/run/mysql/mysqld.sock \\
+-DMYSQL_TCP_PORT=3366 \\
+-DWITH_MYISAM_STORAGE_ENGINE=1 \\
+-DWITH_INNOBASE_STORAGE_ENGINE=1 \\
+-DWITH_PARTITION_STORAGE_ENGINE=1 \\
+-DWITHOUT_ROCKSDB=1 \\
+-DEXTRA_CHARSETS=all \\
+-DDEFAULT_CHARSET=utf8 \\
+-DDEFAULT_COLLATION=utf8_general_ci \\
+-DENABLED_LOCAL_INFILE=1 \\
+-DWITH_READLINE=system \\
+-DWITH_EDITLINE=0 \\
+-DENABLE_DOWNLOADS=1 \\
+-DCMAKE_EXE_LINKER_FLAGS="-ljemalloc"
+: 1506134231:0;rm CMakeCache.txt
+: 1506134232:0;cmake \\
+-DDOWNLOAD_BOOST=1 \\
+-DWITH_BOOST=/root \\
+-DCMAKE_INSTALL_PREFIX=/usr/local/mysql/5.7.18 \\
+-DSYSCONFDIR=/etc \\
+-DMYSQL_DATADIR=/var/lib/mysql \\
+-DMYSQL_UNIX_ADDR=/var/run/mysql/mysqld.sock \\
+-DMYSQL_TCP_PORT=3366 \\
+-DWITH_MYISAM_STORAGE_ENGINE=1 \\
+-DWITH_INNOBASE_STORAGE_ENGINE=1 \\
+-DWITH_PARTITION_STORAGE_ENGINE=1 \\
+-DWITHOUT_ROCKSDB=1 \\
+-DEXTRA_CHARSETS=all \\
+-DDEFAULT_CHARSET=utf8 \\
+-DDEFAULT_COLLATION=utf8_general_ci \\
+-DENABLED_LOCAL_INFILE=1 \\
+-DWITH_READLINE=system \\
+-DWITH_EDITLINE=0 \\
+-DENABLE_DOWNLOADS=1 \\
+-DCMAKE_EXE_LINKER_FLAGS="-ljemalloc"
+: 1506134283:0;rm CMakeCache.txt
+: 1506134283:0;cmake \\
+-DDOWNLOAD_BOOST=1 \\
+-DWITH_BOOST=/root \\
+-DCMAKE_INSTALL_PREFIX=/usr/local/mysql/5.7.18 \\
+-DSYSCONFDIR=/etc \\
+-DMYSQL_DATADIR=/var/lib/mysql \\
+-DMYSQL_UNIX_ADDR=/var/run/mysql/mysqld.sock \\
+-DMYSQL_TCP_PORT=3366 \\
+-DWITH_MYISAM_STORAGE_ENGINE=1 \\
+-DWITH_INNOBASE_STORAGE_ENGINE=1 \\
+-DWITH_PARTITION_STORAGE_ENGINE=1 \\
+-DWITH_TOKUDB=1 \\
+-DWITHOUT_ROCKSDB=1 \\
+-DEXTRA_CHARSETS=all \\
+-DDEFAULT_CHARSET=utf8 \\
+-DDEFAULT_COLLATION=utf8_general_ci \\
+-DENABLED_LOCAL_INFILE=1 \\
+-DWITH_READLINE=system \\
+-DWITH_EDITLINE=0 \\
+-DENABLE_DOWNLOADS=1 \\
+-DCMAKE_EXE_LINKER_FLAGS="-ljemalloc"
+: 1506134390:0;ll storage
+: 1506134397:0;ll storage/tokudb
+: 1506134541:0;ll storage
+: 1506134650:0;rm CMakeCache.txt
+: 1506134651:0;cmake \\
+-DDOWNLOAD_BOOST=1 \\
+-DWITH_BOOST=/root \\
+-DCMAKE_INSTALL_PREFIX=/usr/local/mysql/5.7.18 \\
+-DSYSCONFDIR=/etc \\
+-DMYSQL_DATADIR=/var/lib/mysql \\
+-DMYSQL_UNIX_ADDR=/var/run/mysql/mysqld.sock \\
+-DMYSQL_TCP_PORT=3366 \\
+-DWITH_MYISAM_STORAGE_ENGINE=1 \\
+-DWITH_INNOBASE_STORAGE_ENGINE=1 \\
+-DWITH_PARTITION_STORAGE_ENGINE=1 \\
+-DWITHOUT_ROCKSDB=1 \\
+-DEXTRA_CHARSETS=all \\
+-DDEFAULT_CHARSET=utf8 \\
+-DDEFAULT_COLLATION=utf8_general_ci \\
+-DENABLED_LOCAL_INFILE=1 \\
+-DWITH_READLINE=system \\
+-DWITH_EDITLINE=0 \\
+-DENABLE_DOWNLOADS=1 \\
+-DCMAKE_EXE_LINKER_FLAGS="-ljemalloc"
+: 1506134694:0;make -j 2
+: 1506134766:0;yum install http://www.percona.com/downloads/percona-release/redhat/0.1-4/percona-release-0.1-4.noarch.rpm
+: 1506134805:0;Percona-XtraDB-Cluster-full-57
+: 1506134810:0;yum install -y Percona-XtraDB-Cluster-full-57
+: 1506134831:0;yum remove Percona-Server-client-57-5.7.19-17.1.el6.x86_64
+: 1506134839:0;yum install -y Percona-XtraDB-Cluster-full-57
+: 1506136619:0;vim /etc/init.d/mysql
+: 1506136660:0;service mysql start
+: 1506136679:0;tail -f /var/log/mysqld.log
+: 1506136685:0;tail  /var/log/mysqld.log
+: 1506136702:0;vim /etc/my.cnf.d/my.cnf
+: 1506136715:0;service mysql start
+: 1506136738:0;vim /etc/init.d/mysql
+: 1506136750:0;service mysql start
+: 1506136761:0;vim /etc/init.d/mysql
+: 1506136788:0;/usr/sbin/mysqld --initialize --innodb-page-size=4096 --datadir=/var/mysql --user=mysql
+: 1506136796:0;ll
+: 1506136800:0;cd
+: 1506136801:0;ll
+: 1506136863:0;make
+: 1506136878:0;make -j 2
+: 1506136894:0;CXX=g++ make -j 2
+: 1506136913:0;CXX=c++ make -j 2
+: 1506136921:0;CXX=c++ make -j 4
+: 1506138152:0;service mysql start
+: 1506138162:0;vim /etc/init.d/mysql
+: 1506138178:0;service mysql start
+: 1506138194:0;mysql -uroot -p
+: 1506138281:0;vim /etc/my.cnf.d/my.cnf
+: 1506138341:0;vim /etc/init.d/mysql
+: 1506138399:0;service mysql restart
+: 1506138413:0;mysql -uroot -p
+: 1506138449:0;ln -sf /usr/local/python/3.6.2/bin/* /usr/bin
+: 1506138454:0;pip install mycli
+: 1506138458:0;pip3 install mycli
+: 1506138504:0;mycli -uroot -p
+: 1506138506:0;ll
+: 1506138516:0;source ~/.zshrc
+: 1506138518:0;mycli
+: 1506138522:0;mycli -uroot -p
+: 1506138526:0;mycli -uroot
+: 1506138629:0;mysql -uroot -=p
+: 1506138632:0;mysql -uroot -p
+: 1506138668:0;vim /etc/my.cnf.d/my.cnf
+: 1506138673:0;service mysql restart
+: 1506138679:0;mysql -uroot -p
+: 1506138721:0;vim /etc/my.cnf.d/my.cnf
+: 1506138726:0;service mysql restart
+: 1506138733:0;mycli -uroot 
+: 1506138765:0;ps aux | grep mysql
+: 1506138800:0;service mysql stop
+: 1506138810:0;rm -rf /var/lib/mysql
+: 1506138814:0;service mysql start
+: 1506138987:0;vim /etc/init.d/mysql
+: 1506139005:0;/usr/sbin/mysqld --initialize --datadir=/var/lib/mysql --innodb-page-size=4k --user=mysql
+: 1506139097:0;/usr/sbin/mysqld --initialize --datadir=/var/lib/mysql --innodb-page-size=4096 --user=mysql
+: 1506139131:0;/usr/sbin/mysqld --initialize --innodb-page-size=8k --datadir=/var/mysql --user=mysql
+: 1506139141:0;/usr/sbin/mysqld --initialize --innodb-page-size=16k --datadir=/var/mysql --user=mysql
+: 1506139214:0;vim /etc/my.cnf.d/my.cnf
+: 1506139305:0;ps aux | grep mysql
+: 1506139309:0;service mysql start
+: 1506139317:0;vim /etc/init.d/mysql
+: 1506139332:0;service mysql start
+: 1506139348:0;mysql -uroot -pbuqVFoCvy8.g
+: 1506139387:0;vim /etc/my.cnf.d/my.cnf
+: 1506139393:0;service mysql restart
+: 1506139444:0;vim /etc/my.cnf.d/my.cnf
+: 1506139467:0;service mysql restart
+: 1506139474:0;htop
+: 1506139505:0;vim /etc/init.d/mysql
+: 1506139544:0;ps aux | grep mysql
+: 1506139553:0;vim /etc/init.d/mysql
+: 1506139585:0;vim /etc/hosts
+: 1506139599:0;service mysql restart
+: 1506139604:0;ps aux | grep mysql
+: 1506139612:0;uname -a 
+: 1506139650:0;cd ../
+: 1506139651:0;ll
+: 1506139657:0;cd /root/redis-4.0.2
+: 1506139723:0;ll /usr/local/jemalloc/lib
+: 1506139771:0;make MALLOC=/usr/local/lib/
+: 1506139779:0;make clean
+: 1506139782:0;make distclean
+: 1506139783:0;make MALLOC=/usr/local/lib/
+: 1506139827:0;make PREFIX=/usr/local/redis/4.0.2 install
+: 1506139833:0;ps aux | grep redis
+: 1506139837:0;kill 29122
+: 1506139847:0;/usr/local/redis/4.0.2/bin/redis-server
+: 1506139853:0;ps aux | grep redis
+: 1506139859:0;lsof -n | grep '*jemalloc*'
+: 1506139866:0;lsof -n | grep '*jema*'
+: 1506139878:0;kill 29122
+: 1506139882:0;/usr/local/redis/4.0.2
+: 1506139885:0;make install
+: 1506139898:0;make PREFIX=/usr/local/redis/4.0.2 install
+: 1506139904:0;cd 
+: 1506139906:0;cd redis-4.0.2
+: 1506139909:0;make PREFIX=/usr/local/redis/4.0.2 install
+: 1506139932:0;/usr/local/redis/4.0.2/bin/redis-server
+: 1506139941:0;lsof -n | grep '*jema*'
+: 1506139952:0;/usr/local/redis/4.0.2
+: 1506139954:0;info
+: 1506139973:0;ps
+: 1506139976:0;ps -h
+: 1506139980:0;ps --help
+: 1506140032:0;bin/redis-cli
+: 1506140057:0;cd
+: 1506140059:0;cd memcached-1.5.1
+: 1506140060:0;ll
+: 1506140074:0;./configure --prefix=/usr/local/memcached/1.5.1
+: 1506140087:0;yum install -y libevent libevent-devel
+: 1506140111:0;./configure --prefix=/usr/local/memcached/1.5.1
+: 1506140118:0;make -j 2
+: 1506140127:0;make install
+: 1506140130:0;ll
+: 1506140131:0;cd 
+: 1506140132:0;ll
+: 1506140142:0;cd php-7.2.0RC2
+: 1506140158:0;./configure \\
+--prefix=/usr/local/php/7.2.0 \\
+--localstatedir=/usr/local/var \\
+--sysconfdir=/usr/local/php/7.2.0/etc \\
+--with-config-file-path=/usr/local/php/7.2.0/etc \\
+--with-config-file-scan-dir=/usr/local/php/7.2.0/etc/conf.d \\
+--mandir=/usr/local/php/7.2.0/share/man \\
+--enable-bcmath \\
+--enable-mbstring \\
+--enable-shmop \\
+--enable-sysvmsg \\
+--enable-sysvsem \\
+--enable-sysvshm \\
+--enable-zip \\
+--enable-fpm \\
+--enable-opcache \\
+--disable-phpdbg \\
+--with-xmlrpc \\
+--with-curl \\
+--with-pdo-mysql \\
+--with-openssl \\
+--with-jpeg-dir=lib64 \\
+--without-pear
+: 1506140190:0;yum install libxml2 libxml2-devel -y
+: 1506140216:0;./configure \\
+--prefix=/usr/local/php/7.2.0 \\
+--localstatedir=/usr/local/var \\
+--sysconfdir=/usr/local/php/7.2.0/etc \\
+--with-config-file-path=/usr/local/php/7.2.0/etc \\
+--with-config-file-scan-dir=/usr/local/php/7.2.0/etc/conf.d \\
+--mandir=/usr/local/php/7.2.0/share/man \\
+--enable-bcmath \\
+--enable-mbstring \\
+--enable-shmop \\
+--enable-sysvmsg \\
+--enable-sysvsem \\
+--enable-sysvshm \\
+--enable-zip \\
+--enable-fpm \\
+--enable-opcache \\
+--disable-phpdbg \\
+--with-xmlrpc \\
+--with-curl \\
+--with-pdo-mysql \\
+--with-openssl \\
+--with-jpeg-dir=lib64 \\
+--without-pear
+: 1506140286:0;make -j 2
+: 1506140720:0;make install
+: 1506140803:0;cd ../
+: 1506140805:0;cd openresty-1.11.2.5
+: 1506140806:0;ll
+: 1506140830:0;vim bundle/nginx-1.11.2/src/core/nginx.h
+: 1506140915:0;cd /root
+: 1506140917:0;wget https://github.com/pagespeed/ngx_pagespeed/releases/tag/v1.12.34.2-stable
+: 1506140936:0;ll
+: 1506140943:0;tar zxvf v1.12.34.2-stable
+: 1506140947:0;tar zxf v1.12.34.2-stable
+: 1506140953:0;wget https://github.com/pagespeed/ngx_pagespeed/archive/v1.12.34.2-stable.tar.gz
+: 1506140957:0;ll
+: 1506140961:0;tar zxvf v1.12.34.2-stable.tar.gz
+: 1506141021:0;groupadd -r nginx
+: 1506141021:0;useradd -s /sbin/nologin -g nginx -r nginx
+: 1506141030:0;yum install install zlib zlib-devel pcre-devel
+: 1506141053:0;cd openresty-1.11.2.5
+: 1506141062:0;./configure \\
+--prefix=/usr/local/nginx/1.11.2 \\
+--sbin-path=/usr/local/sbin/nginx \\
+--conf-path=/etc/nginx/nginx.conf \\
+--error-log-path=/var/log/nginx/error.log \\
+--pid-path=/var/run/nginx/nginx.pid \\
+--user=nginx \\
+--group=nginx \\
+--with-http_ssl_module \\
+--with-http_flv_module \\
+--with-http_gzip_static_module \\
+--http-log-path=/var/log/nginx/access.log \\
+--http-client-body-temp-path=/var/tmp/nginx/client \\
+--http-proxy-temp-path=/var/tmp/nginx/proxy \\
+--http-fastcgi-temp-path=/var/tmp/nginx/fcgi \\
+--with-http_stub_status_module \\
+--with-http_v2_module \\
+--with-ld-opt="-ljemalloc" \\
+--add-module=/root/ngx_pagespeed-1.12.34.2-stable
+: 1506141123:0;/root/ngx_pagespeed-1.12.34.2-stable
+: 1506141127:0;wget https://dl.google.com/dl/page-speed/psol/1.12.34.2-x64.tar.gz
+: 1506141133:0;tar -xzvf 1.12.34.2-x64.tar.gz
+: 1506141136:0;cd -1
+: 1506141141:0;./configure \\
+--prefix=/usr/local/nginx/1.11.2 \\
+--sbin-path=/usr/local/sbin/nginx \\
+--conf-path=/etc/nginx/nginx.conf \\
+--error-log-path=/var/log/nginx/error.log \\
+--pid-path=/var/run/nginx/nginx.pid \\
+--user=nginx \\
+--group=nginx \\
+--with-http_ssl_module \\
+--with-http_flv_module \\
+--with-http_gzip_static_module \\
+--http-log-path=/var/log/nginx/access.log \\
+--http-client-body-temp-path=/var/tmp/nginx/client \\
+--http-proxy-temp-path=/var/tmp/nginx/proxy \\
+--http-fastcgi-temp-path=/var/tmp/nginx/fcgi \\
+--with-http_stub_status_module \\
+--with-http_v2_module \\
+--with-ld-opt="-ljemalloc" \\
+--add-module=/root/ngx_pagespeed-1.12.34.2-stable
+: 1506141207:0;gmake
+: 1506150930:0;cd
+: 1506150931:0;ll
+: 1506150938:0;curl git.leyoule1.com
+: 1506150943:0;ifconfig
+: 1506155168:0;ll
+: 1506155187:0;ifconfig
+: 1506155233:0;lsof -n | grep '*jema*'
+: 1506155236:0;lsof -n | grep '*je*'
+: 1506155240:0;lsof -n | grep '*j*'
+: 1506155256:0;vim /etc/my.cnf.d/my.cnf
+: 1506155348:0;vim /etc/percona-xtradb-cluster.conf.d/mysqld_safe.cnf
+: 1506155392:0;service mysql restart
+: 1506155397:0;ls 
+: 1506155399:0;lsof -n | grep '*j*'
+: 1506155402:0;lsof -n | grep '*je*'
+: 1506155408:0;vim /etc/percona-xtradb-cluster.conf.d/mysqld_safe.cnf
+: 1506155434:0;ll
+: 1506155438:0;cd jemalloc-5.0.1
+: 1506155441:0;./configure
+: 1506155451:0;make clean
+: 1506155455:0;make distclean
+: 1506155462:0;./configure
+: 1506155475:0;make -j8 && make install
+: 1506155539:0;vim /etc/percona-xtradb-cluster.conf.d/mysqld_safe.cnf
+: 1506155546:0;ldconfig
+: 1506155562:0;rm /etc/ld.so.conf.d/libstdc++.conf
+: 1506155564:0;ldconfig
+: 1506155586:0;find / -name 'jemalloc*'
+: 1506155593:0;find /usr -name 'jemalloc*'
+: 1506155599:0;/usr/local/bin/jemalloc-config
+: 1506155605:0;/usr/local/bin/jemalloc-config --prefix
+: 1506155613:0;/usr/local/bin/jemalloc-config --libs
+: 1506155642:0;find /usr -name 'libjemalloc*'
+: 1506155654:0;ll /usr/local/lib/libjemalloc.so.2
+: 1506155662:0;vim /etc/percona-xtradb-cluster.conf.d/mysqld_safe.cnf
+: 1506155671:0;service mysql restart
+: 1506155680:0;lsof -n | grep '*je*'
+: 1506155685:0;lsof -n | grep 'libje*'
+: 1506155694:0;ll /usr/local/lib/libjemalloc.so
+: 1506155709:0;vim /etc/percona-xtradb-cluster.conf.d/mysqld_safe.cnf
+: 1506155731:0;service mysql restart
+: 1506155748:0;lsof -na | grep 'libje*'
+: 1506155822:0;lsof -n
+: 1506155891:0;redis-cli
+: 1506155899:0;/usr/local/redis/4.0.2/bin/redis-cli
+: 1506155919:0;ps aux | grep redis
+: 1506155922:0;kill 29122
+: 1506155924:0;cd ../
+: 1506155926:0;cd redis-4.0.2
+: 1506155931:0;make distclean
+: 1506155942:0;make MALLOC=/usr/local/lib/
+: 1506155990:0;make PREFIX=/usr/local/redis/4.0.2 install
+: 1506155998:0;cd /usr/local/redis/4.0.2
+: 1506155999:0;ll
+: 1506156011:0;bin/redis-server /etc/redis.conf
+: 1506156017:0;ps aux | grep redis
+: 1506156020:0;lsof -n | grep jemalloc
+: 1506156030:0;bin/redis-cli
+: 1506156063:0;cd
+: 1506156064:0;ll
+: 1506156084:0;curl git.leyoule1.com
+: 1506156190:0;uname -a 
+: 1506156400:0;yum install lsof-devel
+: 1506156514:0;curl git.leyoule1.com
+: 1506156621:0;ll
+: 1506156650:0;cd openresty-1.11.2.5
+: 1506156651:0;make
+: 1506156658:0;make install
+: 1506156672:0;cd /usr/local/nginx/1.11.2/bin
+: 1506156673:0;ll
+: 1506156998:0;curl git.leyoule1.com
+: 1506157003:0;ifconfig
+: 1506157015:0;curl git.leyoule1.com
+: 1506157223:0;ifconfigu
+: 1506157226:0;ifconfig
+: 1506157229:0;ping 10.99.0.10
+: 1506157235:0;ssh root@10.99.0.10
+: 1506157445:0;uname -a 
+: 1506157479:0;ll
+: 1506157490:0;cd /etc/sysconfig/network-scripts
+: 1506157491:0;ll
+: 1506157585:0;vim ifcfg-eth0
+: 1506157739:0;vim ifcfg-eth1
+: 1506157815:0;ifconfig
+: 1506157821:0;vim ifcfg-eth1
+: 1506157831:0;cat ifcfg-eth1
+: 1506157899:0;ifconfig eth1 up
+: 1506157902:0;ifconfig
+: 1506157905:0;ping 10.99.0.10
+: 1506157925:0;vim /etc/sysconfig/network-scripts/ifcfg-eth1
+: 1506157932:0;ifconfig eth1 up
+: 1506157934:0;ifconfig
+: 1506157990:0;ifconfig -h
+: 1506158010:0;ifconfig
+: 1506158013:0;reboot
+: 1506158107:0;ifconfig
+: 1506160274:0;.ll
+: 1506160275:0;ll
+: 1506160277:0;cd .ssh
+: 1506160278:0;ll
+: 1506160297:0;ssh-keygen -b 2048 -t rsa -C "" 
+: 1506160300:0;ll
+: 1506160304:0;cat id_rsa.pub
+: 1506160376:0;cd /var/www/
+: 1506160378:0;ll
+: 1506160381:0;mkdir -p /var/www/
+: 1506160384:0;cd /var/www/
+: 1506160385:0;ll
+: 1506160388:0;git clone git@git.leyoule1.com:tiger/cp.6686.me.git
+: 1506160401:0;ll
+: 1506160404:0;cd cp.6686.me
+: 1506160404:0;ll
+: 1506160422:0;cd 
+: 1506160423:0;php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+: 1506160423:0;php -r "if (hash_file('SHA384', 'composer-setup.php') === '544e09ee996cdf60ece3804abc52599c22b1f40f4323403c44d44fdfdd586475ca9813a858088ffbc1f233e9b180f061') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+: 1506160423:0;php composer-setup.php
+: 1506160423:0;php -r "unlink('composer-setup.php');"
+: 1506160440:0;ln -s /usr/local/php/7.2.0/bin/* /usr/bin
+: 1506160442:0;php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+: 1506160444:0;php -r "if (hash_file('SHA384', 'composer-setup.php') === '544e09ee996cdf60ece3804abc52599c22b1f40f4323403c44d44fdfdd586475ca9813a858088ffbc1f233e9b180f061') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+: 1506160444:0;php composer-setup.php
+: 1506160454:0;php -r "unlink('composer-setup.php');"
+: 1506160456:0;ll
+: 1506160464:0;mv composer.phar /usr/bin/composer
+: 1506160469:0;cd -1
+: 1506160470:0;ll
+: 1506160473:0;composer install
+: 1506161104:0;ll
+: 1506161111:0;cp .env.example .env.example
+: 1506161115:0;cp .env.example .env
+: 1506161122:0;php artisan key:gen
+: 1506161128:0;php artisan key:gen -vvv
+: 1506161138:0;vim config
+: 1506161202:0;cd config
+: 1506161208:0;touch databases.php
+: 1506161215:0;mv databases.php database.php
+: 1506161217:0;vim database.php
+: 1506161227:0;cd ../
+: 1506161228:0;ll
+: 1506161231:0;vim .env
+: 1506161257:0;ifconfig
+: 1506161270:0;mysql -uroot -p -h 10.99.0.11
+: 1506165131:0;ifconfig
+: 1506165135:0;mysql -uroot -p -h 10.99.0.11
+: 1506165513:0;service iptables stop
+: 1506165515:0;mysql -uroot -p -h 10.99.0.11
+: 1506165882:0;vim .env
+: 1506165925:0;php artisan
+: 1506165930:0;php artisan key:gen
+: 1506165931:0;ll
+: 1506165937:0;php artisan
+: 1506165940:0;php artisan tinker
+: 1506165959:0;vim .env
+: 1506165968:0;php artisan tinker
+: 1506165991:0;cat config/database.php
+: 1506165998:0;vim .env
+: 1506166022:0;vim config/database.php
+: 1506166039:0;php artisan tinker
+: 1506167774:0;git pull
+: 1506167782:0;ll
+: 1506167784:0;cd 
+: 1506167785:0;ll
+: 1506167789:0;cd openresty-1.11.2.5
+: 1506167790:0;ll
+: 1506167807:0;lsof -n | grep jemalloc
+: 1506167813:0;ps aux | grep nginx
+: 1506167842:0;/usr/local/nginx/1.11.2/bin/openresty
+: 1506167849:0;mkdir -p /var/tmp/nginx/
+: 1506167851:0;/usr/local/nginx/1.11.2/bin/openresty
+: 1506167854:0;ps aux | grep nginx
+: 1506167860:0;lsof -n | grep jemalloc
+: 1506167888:0;vim /etc/percona-xtradb-cluster.conf.d/mysqld_safe.cnf
+: 1506167897:0;service mysql restart
+: 1506167903:0;lsof -n | grep jemalloc
+: 1506167928:0;mysqladmin
+: 1506167953:0;mysqlxtest
+: 1506167998:0;ll
+: 1506168005:0;cd /etc/nginx
+: 1506168006:0;ll
+: 1506169791:0;ifconfig
+: 1506170474:0;cd /var/www/
+: 1506170475:0;ll
+: 1506170479:0;cd cp.6686.me
+: 1506170480:0;ll
+: 1506170483:0;git pull
+: 1506170502:0;vim .env
+: 1506170532:0;php artisan
+: 1506170539:0;php artisan migrate:install
+: 1506170604:0;php artisan migrate
+: 1506170652:0;ll
+: 1506170662:0;cd
+: 1506170662:0;ll
+: 1506170672:0;cd Percona-XtraDB-Cluster-5.7.19-29.22
+: 1506170672:0;ll
+: 1506170691:0;cmake \\
+-DDOWNLOAD_BOOST=1 \\
+-DWITH_BOOST=/root \\
+-DCMAKE_INSTALL_PREFIX=/usr/local/mysql/5.7.18 \\
+-DSYSCONFDIR=/etc \\
+-DMYSQL_DATADIR=/var/lib/mysql \\
+-DMYSQL_UNIX_ADDR=/var/run/mysql/mysqld.sock \\
+-DMYSQL_TCP_PORT=3366 \\
+-DWITH_MYISAM_STORAGE_ENGINE=1 \\
+-DWITH_INNOBASE_STORAGE_ENGINE=1 \\
+-DWITH_PARTITION_STORAGE_ENGINE=1 \\
+-DWITHOUT_ROCKSDB=1 \\
+-DEXTRA_CHARSETS=all \\
+-DDEFAULT_CHARSET=utf8 \\
+-DDEFAULT_COLLATION=utf8_general_ci \\
+-DENABLED_LOCAL_INFILE=1 \\
+-DWITH_READLINE=system \\
+-DWITH_EDITLINE=0 \\
+-DENABLE_DOWNLOADS=1 \\
+-DCMAKE_EXE_LINKER_FLAGS="-ljemalloc"
+: 1506170701:0;rm CMakeCache.txt
+: 1506170705:0;cmake \\
+-DDOWNLOAD_BOOST=1 \\
+-DWITH_BOOST=/root \\
+-DCMAKE_INSTALL_PREFIX=/usr/local/mysql/5.7.18 \\
+-DSYSCONFDIR=/etc \\
+-DMYSQL_DATADIR=/var/lib/mysql \\
+-DMYSQL_UNIX_ADDR=/var/run/mysql/mysqld.sock \\
+-DMYSQL_TCP_PORT=3366 \\
+-DWITH_MYISAM_STORAGE_ENGINE=1 \\
+-DWITH_INNOBASE_STORAGE_ENGINE=1 \\
+-DWITH_PARTITION_STORAGE_ENGINE=1 \\
+-DWITHOUT_ROCKSDB=1 \\
+-DEXTRA_CHARSETS=all \\
+-DDEFAULT_CHARSET=utf8 \\
+-DDEFAULT_COLLATION=utf8_general_ci \\
+-DENABLED_LOCAL_INFILE=1 \\
+-DWITH_READLINE=system \\
+-DWITH_EDITLINE=0 \\
+-DENABLE_DOWNLOADS=1 \\
+-DCMAKE_EXE_LINKER_FLAGS="-ljemalloc"
+: 1506170743:0;make -j8
+: 1506171246:0;cd .
+: 1506171247:0;cd
+: 1506171248:0;ll
+: 1506171265:0;wget https://www.percona.com/downloads/Percona-Server-LATEST/Percona-Server-5.7.19-17/source/tarball/percona-server-5.7.19-17.tar.gz
+: 1506171285:0;ll
+: 1506171296:0;tar zxvf percona-server-5.7.19-17.tar.gz
+: 1506171316:0;cd percona-server-5.7.19-17
+: 1506171317:0;ll
+: 1506171324:0;ll storage
+: 1506171351:0;cd ../
+: 1506171387:0;cd Percona-XtraDB-Cluster-5.7.19-29.22
+: 1506171392:0;ll storage
+: 1506171453:0;cd
+: 1506171455:0;wget https://www.percona.com/downloads/Percona-Server-LATEST/Percona-Server-5.7.19-17/source/debian/percona-server-5.7_5.7.19-17.orig.tar.gz
+: 1506171490:0;tar zxvf percona-server-5.7_5.7.19-17.orig.tar.gz
+: 1506171521:0;ll
+: 1506171534:0;cd percona-server-5.7.19-17
+: 1506171535:0;ll
+: 1506171536:0;ll storage
+: 1506171928:0;/usr/bin/mysql_secure_installation
+: 1506171998:0;mysql -uroot -p
+: 1506225902:0;cd Percona-XtraDB-Cluster-5.7.19-29.22
+: 1506225906:0;make -j 4
+: 1506226074:0;cd ../
+: 1506226075:0;ll
+: 1506226086:0;rm Percona-XtraDB-Cluster-5.7.19-29.22.tar.gz
+: 1506226090:0;rm v1.12.34.2-stable.tar.gz
+: 1506226094:0;rm v1.12.34.2-stable
+: 1506226099:0;rm cmake-3.9.3.tar.gz
+: 1506226103:0;rm boost_1_59_0.tar.gz
+: 1506226103:0;ll
+: 1506226114:0;rm percona-server-5.7.19-17.tar.gz
+: 1506226117:0;rm percona-server-5.7_5.7.19-17.orig.tar.gz
+: 1506226118:0;ll
+: 1506226124:0;rm -rf percona-server-5.7.19-17
+: 1506226135:0;rm -rf Percona-XtraDB-Cluster-5.7.19-29.22 Percona-XtraDB-Cluster-5.7.18-29.20
+: 1506226213:0;wget https://www.percona.com/downloads/Percona-XtraDB-Cluster-LATEST/Percona-XtraDB-Cluster-5.7.19-29.22/source/tarball/Percona-XtraDB-Cluster-5.7.19-29.22.tar.gz
+: 1506226233:0;ll
+: 1506226264:0;tar zxvf Percona-XtraDB-Cluster-5.7.19-29.22.tar.gz
+: 1506226274:0;cd Percona-XtraDB-Cluster-5.7.19-29.22
+: 1506226275:0;ll
+: 1506226284:0;cmake -h
+: 1506226458:0;yum install -y scons openssl check bison boost-devel asio-devel libaio-devel.i686 libaio-devel ncurses-devel readline-devel pam-devel socat
+: 1506226483:0;ll
+: 1506226502:0;build-ps/build-binary.sh
+: 1506226525:0;mkdir ./pxc-build
+: 1506226530:0;./build-ps/build-binary.sh ./pxc-build
+: 1506226670:0;yum install boost boost-devel check-devel
+: 1506226675:0;./build-ps/build-binary.sh ./pxc-build
+: 1506226870:0;yum install egcs
+: 1506226953:0;ll
+: 1506226979:0;ll build-ps
+: 1506227024:0;vim build-ps/build-binary.sh
+: 1506227070:0;./build-ps/build-binary.sh ./pxc-build
+: 1506227115:0;find . -name 'gcs_node.cpp'
+: 1506227136:0;ll percona-xtradb-cluster-galera
+: 1506227163:0;ll
+: 1506227170:0;vim CMakeLists.txt
+: 1506227468:0;cmake \\
+-DDOWNLOAD_BOOST=1 \\
+-DWITH_BOOST=/root \\
+-DCMAKE_INSTALL_PREFIX=/usr/local/mysql/5.7.19 \\
+-DSYSCONFDIR=/etc \\
+-DMYSQL_DATADIR=/var/lib/mysql \\
+-DMYSQL_UNIX_ADDR=/var/run/mysql/mysqld.sock \\
+-DMYSQL_TCP_PORT=3366 \\
+-DWITH_MYISAM_STORAGE_ENGINE=0 \\
+-DWITH_INNOBASE_STORAGE_ENGINE=1 \\
+-DWITH_PARTITION_STORAGE_ENGINE=1 \\
+-DWITHOUT_ROCKSDB=1 \\
+-DEXTRA_CHARSETS=all \\
+-DDEFAULT_CHARSET=utf8 \\
+-DDEFAULT_COLLATION=utf8_general_ci \\
+-DENABLED_LOCAL_INFILE=1 \\
+-DWITH_READLINE=system \\
+-DWITH_EDITLINE=0 \\
+-DENABLE_DOWNLOADS=1 \\
+-DCMAKE_EXE_LINKER_FLAGS="-ljemalloc"
+: 1506227581:0;vim CMakeLists.txt
+: 1506227649:0;rm CMakeCache.txt
+: 1506227652:0;cmake \\
+-DDOWNLOAD_BOOST=1 \\
+-DWITH_BOOST=/root \\
+-DCMAKE_INSTALL_PREFIX=/usr/local/mysql/5.7.19 \\
+-DSYSCONFDIR=/etc \\
+-DMYSQL_DATADIR=/var/lib/mysql \\
+-DMYSQL_UNIX_ADDR=/var/run/mysql/mysqld.sock \\
+-DMYSQL_TCP_PORT=3366 \\
+-DWITH_MYISAM_STORAGE_ENGINE=0 \\
+-DWITH_INNOBASE_STORAGE_ENGINE=1 \\
+-DWITH_PARTITION_STORAGE_ENGINE=1 \\
+-DWITHOUT_ROCKSDB=1 \\
+-DEXTRA_CHARSETS=all \\
+-DDEFAULT_CHARSET=utf8 \\
+-DDEFAULT_COLLATION=utf8_general_ci \\
+-DENABLED_LOCAL_INFILE=1 \\
+-DWITH_READLINE=system \\
+-DWITH_EDITLINE=0 \\
+-DENABLE_DOWNLOADS=1 \\
+-DCMAKE_EXE_LINKER_FLAGS="-ljemalloc"
+: 1506227716:0;cmake --help-policy CMP0022
+: 1506227751:0;make -j 2
+: 1506228561:0;yum install libatomic libatomic-devel
+: 1506228573:0;make -j 2
+: 1506233541:0;make clean
+: 1506233548:0;make distclean
+: 1506233557:0;rm CMakeCache.txt
+: 1506233562:0;cmake clean -fdx
+: 1506233569:0;cmake clean 
+: 1506233575:0;cmake \\
+-DCMAKE_CXX_FLAGS=g++ \\
+-DDOWNLOAD_BOOST=1 \\
+-DWITH_BOOST=/root \\
+-DCMAKE_INSTALL_PREFIX=/usr/local/mysql/5.7.19 \\
+-DSYSCONFDIR=/etc \\
+-DMYSQL_DATADIR=/var/lib/mysql \\
+-DMYSQL_UNIX_ADDR=/var/run/mysql/mysqld.sock \\
+-DMYSQL_TCP_PORT=3366 \\
+-DWITH_MYISAM_STORAGE_ENGINE=0 \\
+-DWITH_INNOBASE_STORAGE_ENGINE=1 \\
+-DWITH_PARTITION_STORAGE_ENGINE=1 \\
+-DWITHOUT_ROCKSDB=1 \\
+-DEXTRA_CHARSETS=all \\
+-DDEFAULT_CHARSET=utf8 \\
+-DDEFAULT_COLLATION=utf8_general_ci \\
+-DENABLED_LOCAL_INFILE=1 \\
+-DWITH_READLINE=system \\
+-DWITH_EDITLINE=0 \\
+-DENABLE_DOWNLOADS=1 \\
+-DCMAKE_EXE_LINKER_FLAGS="-ljemalloc"
+: 1506233606:0;cmake \\
+-DCMAKE_CXX_FLAGS=c++ \\
+-DDOWNLOAD_BOOST=1 \\
+-DWITH_BOOST=/root \\
+-DCMAKE_INSTALL_PREFIX=/usr/local/mysql/5.7.19 \\
+-DSYSCONFDIR=/etc \\
+-DMYSQL_DATADIR=/var/lib/mysql \\
+-DMYSQL_UNIX_ADDR=/var/run/mysql/mysqld.sock \\
+-DMYSQL_TCP_PORT=3366 \\
+-DWITH_MYISAM_STORAGE_ENGINE=0 \\
+-DWITH_INNOBASE_STORAGE_ENGINE=1 \\
+-DWITH_PARTITION_STORAGE_ENGINE=1 \\
+-DWITHOUT_ROCKSDB=1 \\
+-DEXTRA_CHARSETS=all \\
+-DDEFAULT_CHARSET=utf8 \\
+-DDEFAULT_COLLATION=utf8_general_ci \\
+-DENABLED_LOCAL_INFILE=1 \\
+-DWITH_READLINE=system \\
+-DWITH_EDITLINE=0 \\
+-DENABLE_DOWNLOADS=1 \\
+-DCMAKE_EXE_LINKER_FLAGS="-ljemalloc"
+: 1506233619:0;which c++
+: 1506233624:0;which c++ -V
+: 1506233637:0;/usr/local/gcc/7.2.0/bin/c++ -V
+: 1506233640:0;/usr/local/gcc/7.2.0/bin/c++ -v
+: 1506233654:0;cmake \\
+-DCMAKE_CXX_FLAGS=/usr/local/gcc/7.2.0/bin/c++ \\
+-DDOWNLOAD_BOOST=1 \\
+-DWITH_BOOST=/root \\
+-DCMAKE_INSTALL_PREFIX=/usr/local/mysql/5.7.19 \\
+-DSYSCONFDIR=/etc \\
+-DMYSQL_DATADIR=/var/lib/mysql \\
+-DMYSQL_UNIX_ADDR=/var/run/mysql/mysqld.sock \\
+-DMYSQL_TCP_PORT=3366 \\
+-DWITH_MYISAM_STORAGE_ENGINE=0 \\
+-DWITH_INNOBASE_STORAGE_ENGINE=1 \\
+-DWITH_PARTITION_STORAGE_ENGINE=1 \\
+-DWITHOUT_ROCKSDB=1 \\
+-DEXTRA_CHARSETS=all \\
+-DDEFAULT_CHARSET=utf8 \\
+-DDEFAULT_COLLATION=utf8_general_ci \\
+-DENABLED_LOCAL_INFILE=1 \\
+-DWITH_READLINE=system \\
+-DWITH_EDITLINE=0 \\
+-DENABLE_DOWNLOADS=1 \\
+-DCMAKE_EXE_LINKER_FLAGS="-ljemalloc"
+: 1506233677:0;ln -sf /usr/local/gcc/7.2.0/bin/* /usr/bin
+: 1506233681:0;which c++ -v
+: 1506233684:0;which c++
+: 1506233698:0;ll /usr/local/bin
+: 1506233706:0;jemalloc.sh
+: 1506233721:0;cmake \\
+-DDOWNLOAD_BOOST=1 \\
+-DWITH_BOOST=/root \\
+-DCMAKE_INSTALL_PREFIX=/usr/local/mysql/5.7.19 \\
+-DSYSCONFDIR=/etc \\
+-DMYSQL_DATADIR=/var/lib/mysql \\
+-DMYSQL_UNIX_ADDR=/var/run/mysql/mysqld.sock \\
+-DMYSQL_TCP_PORT=3366 \\
+-DWITH_MYISAM_STORAGE_ENGINE=0 \\
+-DWITH_INNOBASE_STORAGE_ENGINE=1 \\
+-DWITH_PARTITION_STORAGE_ENGINE=1 \\
+-DWITHOUT_ROCKSDB=1 \\
+-DEXTRA_CHARSETS=all \\
+-DDEFAULT_CHARSET=utf8 \\
+-DDEFAULT_COLLATION=utf8_general_ci \\
+-DENABLED_LOCAL_INFILE=1 \\
+-DWITH_READLINE=system \\
+-DWITH_EDITLINE=0 \\
+-DENABLE_DOWNLOADS=1 \
+: 1506233725:0;rm CMakeCache.txt
+: 1506233727:0;ll
+: 1506233741:0;cat cmake_install.cmake
+: 1506233886:0;make -j 2
+: 1506233902:0;rm CMakeCache.txt
+: 1506233915:0;cmake \\
+-DDOWNLOAD_BOOST=1 \\
+-DWITH_BOOST=/root \\
+-DCMAKE_INSTALL_PREFIX=/usr/local/mysql/5.7.19 \\
+-DSYSCONFDIR=/etc \\
+-DMYSQL_DATADIR=/var/lib/mysql \\
+-DMYSQL_UNIX_ADDR=/var/run/mysql/mysqld.sock \\
+-DMYSQL_TCP_PORT=3366 \\
+-DWITH_MYISAM_STORAGE_ENGINE=0 \\
+-DWITH_INNOBASE_STORAGE_ENGINE=1 \\
+-DWITH_PARTITION_STORAGE_ENGINE=1 \\
+-DWITHOUT_ROCKSDB=1 \\
+-DEXTRA_CHARSETS=all \\
+-DDEFAULT_CHARSET=utf8 \\
+-DDEFAULT_COLLATION=utf8_general_ci \\
+-DENABLED_LOCAL_INFILE=1 \\
+-DWITH_READLINE=system \\
+-DWITH_EDITLINE=0 \\
+-DENABLE_DOWNLOADS=1 \\
+-DCMAKE_EXE_LINKER_FLAGS="-ljemalloc"
+: 1506234028:0;make 
+: 1506249994:0;mysql -uroot -p -h 10.99.0.11
+: 1506250022:0;mycli -uroot -h 10.99.0.11
+: 1506317411:0;cd /var/www/
+: 1506317412:0;ll
+: 1506317416:0;unzip seeds.zip
+: 1506317417:0;ll
+: 1506317425:0;mv seeds cp.6686.me/database/
+: 1506317436:0;rm -rf cp.6686.me/database/seeds
+: 1506317439:0;mv seeds cp.6686.me/database/
+: 1506317440:0;ll
+: 1506317442:0;rm seeds.zip
+: 1506317445:0;cd cp.6686.me
+: 1506317446:0;ll
+: 1506317448:0;php artisan
+: 1506317480:0;php artisan db:seed
+: 1506317490:0;ll database/seeds
+: 1506317521:0;ll database/seeds/AbilitiesTableSeeder
+: 1506317526:0;ll database/seeds/AbilitiesTableSeeder.php
+: 1506317542:0;php artisan db:seed --force
+: 1506317560:0;php artisan tinker
+: 1506317754:0;php artisan db:seed 
+: 1506317766:0;php artisan db:seed -vvv
+: 1506317786:0;php artisan db:seed -h
+: 1506317810:0;cat .env
+: 1506319865:0;ln -sf /usr/local/redis/4.0.2/bin/* /usr/bin
+: 1506319871:0;redis-cli
+: 1506319885:0;redis-server /etc/redis.conf
+: 1506319889:0;redis-cli
+: 1506319896:0;vim /etc/redis.conf
+: 1506319935:0;ifconfig
+: 1506319939:0;vim /etc/redis.conf
+: 1506320044:0;ps aux | grep redis
+: 1506320049:0;kill 13784
+: 1506320067:0;/usr/local/redis/4.0.2/bin/redis-server /etc/redis.conf
+: 1506320092:0;vim /etc/redis.conf
+: 1506320144:0;ps aux | grep redis
+: 1506320149:0;kill 13866
+: 1506320152:0;/usr/local/redis/4.0.2/bin/redis-server 127.0.0.1:6379
+: 1506320163:0;/usr/local/redis/4.0.2/bin/redis-server /etc/redis.conf
+: 1506320209:0;vim /etc/redis.conf
+: 1506320349:0;ps aux | grep redis
+: 1506320353:0;kill 13922
+: 1506320356:0;/usr/local/redis/4.0.2/bin/redis-server /etc/redis.conf
+: 1506320364:0;kill 13922
+: 1506320368:0;vim /etc/redis.conf
+: 1506320441:0;ll /usr/local/memcached/1.5.1/share
+: 1506320444:0;cd
+: 1506320448:0;ll memcached-1.5.1/
+: 1506320479:0;ll memcached-1.5.1/scripts
+: 1506320488:0;ll memcached-1.5.1/t
+: 1506320502:0;find memcached-1.5.1 -name '*.conf'
+: 1506320573:0;cp memcached-1.5.1/t/sasl/memcached.conf /etc/memcached.conf
+: 1506320580:0;vim /etc/memcached.conf 
+: 1506320591:0;rm /etc/memcached.conf
+: 1506320595:0;cd memcached-1.5.1
+: 1506320597:0;cd src
+: 1506320603:0;cd scripts
+: 1506320604:0;ll
+: 1506320614:0;cat memcached.service
+: 1506320622:0;ll
+: 1506320627:0;cat start-memcached
+: 1506320639:0;ll
+: 1506320649:0;cat memcached-init
+: 1506320672:0;cp memcached-init /etc/init.d/memcached
+: 1506320679:0;chmod 775 /etc/init.d/memcached
+: 1506320684:0;vim /etc/init.d/memcached
+: 1506320712:0;ll /usr/share/memcached/scripts/start-memcached
+: 1506320715:0;vim /etc/init.d/memcached
+: 1506320735:0;ln -sf /usr/local/memcached/1.5.1/bin/* /usr/bin
+: 1506320747:0;service memcached start
+: 1506320753:0;ps aux | grep mem
+: 1506320759:0;cd /etc/init.d
+: 1506320760:0;ll
+: 1506320764:0;./memcached start
+: 1506320768:0;vim /etc/init.d/memcached
+: 1506320820:0;find / -name 'start-memcached'
+: 1506320842:0;cat memcached
+: 1506320869:0;ll /usr/local/memcached/1.5.1/bin/
+: 1506320878:0;cp /root/memcached-1.5.1/scripts/start-memcached /usr/local/memcached/1.5.1/bin/
+: 1506320884:0;vim /etc/init.d/memcached
+: 1506320904:0;service memcached start
+: 1506320912:0;vim /etc/init.d/memcached
+: 1506320968:0;service memcached start
+: 1506320979:0;vim /etc/init.d/memcached
+: 1506320986:0;/usr/local/memcached/1.5.1/bin/start-memcached
+: 1506320989:0;ps aux | grep mem
+: 1506320996:0;kill 14311
+: 1506321006:0;/etc/init.d/memcached
+: 1506321009:0;/etc/init.d/memcached start
+: 1506321015:0;vim /etc/init.d/memcached
+: 1506321048:0;cat /root/memcached-1.5.1/scripts/memcached-server.upstart
+: 1506321059:0;ll
+: 1506321072:0;/usr/local/memcached/1.5.1/bin/memcached
+: 1506321082:0;/usr/local/memcached/1.5.1/bin/memcached -u root -m 256
+: 1506321089:0;/usr/local/memcached/1.5.1/bin/memcached -u root -m 256 &
+: 1506321090:0;ll
+: 1506321093:0;ps aux | grep mem
+: 1506321101:0;/usr/local/memcached/1.5.1/bin/memcached -h
+: 1506321190:0;ps aux | grep mem
+: 1506321195:0;kill 14401
+: 1506321214:0;/usr/local/memcached/1.5.1/bin/memcached -d -u root -m 256 -c 2048
+: 1506321447:0;ll
+: 1506321461:0;cd /var/www/
+: 1506321461:0;ll
+: 1506321465:0;cd cp.6686.me
+: 1506321466:0;ll
+: 1506321468:0;cat .env
+: 1506321476:0;mycli -uroot --plqT*yfXO<3-r
+: 1506321479:0;mycli -uroot -plqT*yfXO<3-r
+: 1506321483:0;mycli -uroot lqT*yfXO<3-r
+: 1506321487:0;mycli -uroot 
+: 1506321524:0;mysql -uroot -p
+: 1506321553:0;ll
+: 1506321558:0;cd database
+: 1506321559:0;ll
+: 1506321560:0;cd migrations
+: 1506321561:0;ll
+: 1506321565:0;cat 2017_09_23_000000_create_ubs_abilities_table.php
+: 1506321573:0;cd ../../
+: 1506321574:0;vim .env
+: 1506321582:0;php artisan
+: 1506321593:0;php artisan migrate
+: 1506321631:0;vim .env
+: 1506321641:0;php artisan migrate
+: 1506321711:0;vim .env
+: 1506321719:0;php artisan db:sedd
+: 1506321721:0;php artisan db:seed
+: 1506321861:0;php artisan db:seed --class=UsersTableSeeder
+: 1506321886:0;php artisan db:seed 
+: 1506321894:0;php artisan db:seed --class=AbilitiesTableSeeder
+: 1506321910:0;find . -name 'AbilitiesTableSeeder'
+: 1506321913:0;find . -name 'AbilitiesTableSeeder.*'
+: 1506321923:0;vim database/seeds/AbilitiesTableSeeder.php
+: 1506321948:0;php artisan db:seed --class=AssignedRolesTableSeeder
+: 1506322526:0;composer dump-autoload
+: 1506322531:0;php artisan db:seed
+: 1506322597:0;vim database/seeds/DatabaseSeeder.php
+: 1506322627:0;php artisan db:seed --force
+: 1506322681:0;redis-cli
+: 1506322724:0;redis-cli 
+: 1506322806:0;php artisan db:seed --class WhitelistsTableSeeder --force
+: 1506322866:0;php artisan db:seed --class AssignedRolesTableSeeder
+: 1506322919:0;php artisan php artisan vendor:publish --provider="Silber\Bouncer\BouncerServiceProvider" --tag="migrations"
+: 1506322920:0;php artisan vendor:publish --provider="Silber\Bouncer\BouncerServiceProvider" --tag="migrations"
+: 1506323578:0;mysql -uroot -p
+: 1506323676:0;service mysql start
+: 1506323678:0;service mysql restart
+: 1506324239:0;mycli
+: 1506324301:0;ll
+: 1506324333:0;cat /etc/my.cnf.d/my.cnf
+: 1506324350:0;:q
+: 1506324354:0;tail -f /var/log/mysql/slow.log
+: 1506324373:0;mkdir -p /var/log/mysql
+: 1506324385:0;chown mysql:mysql -R /var/log/mysql
+: 1506324388:0;service mysql restart
+: 1506324414:0;mkdir -p /var/log/mysql
+: 1506324417:0;tail -f /var/log/mysql/slow.log
+: 1506324443:0;service mysql restart
+: 1506324463:0;vim /etc/my.cnf.d/my.cnf
+: 1506324469:0;service mysql restart
+: 1506324498:0;tail -f /var/log/mysql/slow.log
+: 1506324511:0;find / -name 'slow.log'
+: 1506324559:0;cd Percona-XtraDB-Cluster-5.7.19-29.22/
+: 1506324563:0;make -j 2
+: 1506324883:0;make distclear
+: 1506324886:0;make distclean
+: 1506324892:0;make clean
+: 1506324929:0;cmake \\
+-DDOWNLOAD_BOOST=1 \\
+-DWITH_BOOST=/root \\
+-DCMAKE_INSTALL_PREFIX=/usr/local/mysql/5.7.19 \\
+-DSYSCONFDIR=/etc \\
+-DMYSQL_DATADIR=/var/lib/mysql \\
+-DMYSQL_UNIX_ADDR=/var/run/mysql/mysqld.sock \\
+-DMYSQL_TCP_PORT=3366 \\
+-DWITH_INNOBASE_STORAGE_ENGINE=1 \\
+-DWITH_TOKUDB_STORAGE_ENGINE=1 \\
+-DWITH_PARTITION_STORAGE_ENGINE=1 \\
+-DWITHOUT_MYISAM=1 \\
+-DWITHOUT_ROCKSDB=1 \\
+-DEXTRA_CHARSETS=all \\
+-DDEFAULT_CHARSET=utf8 \\
+-DDEFAULT_COLLATION=utf8_general_ci \\
+-DENABLED_LOCAL_INFILE=1 \\
+-DWITH_READLINE=system \\
+-DWITH_EDITLINE=0 \\
+-DENABLE_DOWNLOADS=1 \\
+-DCMAKE_EXE_LINKER_FLAGS="-ljemalloc"
+: 1506324941:0;rm CMakeCache.txt
+: 1506324941:0;cmake \\
+-DDOWNLOAD_BOOST=1 \\
+-DWITH_BOOST=/root \\
+-DCMAKE_INSTALL_PREFIX=/usr/local/mysql/5.7.19 \\
+-DSYSCONFDIR=/etc \\
+-DMYSQL_DATADIR=/var/lib/mysql \\
+-DMYSQL_UNIX_ADDR=/var/run/mysql/mysqld.sock \\
+-DMYSQL_TCP_PORT=3366 \\
+-DWITH_INNOBASE_STORAGE_ENGINE=1 \\
+-DWITH_TOKUDB_STORAGE_ENGINE=1 \\
+-DWITH_PARTITION_STORAGE_ENGINE=1 \\
+-DWITHOUT_MYISAM=1 \\
+-DWITHOUT_ROCKSDB=1 \\
+-DEXTRA_CHARSETS=all \\
+-DDEFAULT_CHARSET=utf8 \\
+-DDEFAULT_COLLATION=utf8_general_ci \\
+-DENABLED_LOCAL_INFILE=1 \\
+-DWITH_READLINE=system \\
+-DWITH_EDITLINE=0 \\
+-DENABLE_DOWNLOADS=1 \\
+-DCMAKE_EXE_LINKER_FLAGS="-ljemalloc"
+: 1506325022:0;make clean
+: 1506325026:0;cmake \\
+-DDOWNLOAD_BOOST=1 \\
+-DWITH_BOOST=/root \\
+-DCMAKE_INSTALL_PREFIX=/usr/local/mysql/5.7.19 \\
+-DSYSCONFDIR=/etc \\
+-DMYSQL_DATADIR=/var/lib/mysql \\
+-DMYSQL_UNIX_ADDR=/var/run/mysql/mysqld.sock \\
+-DMYSQL_TCP_PORT=3366 \\
+-DWITH_INNOBASE_STORAGE_ENGINE=1 \\
+-DWITH_PARTITION_STORAGE_ENGINE=1 \\
+-DWITH_TOKUDB=1 \\
+-DWITHOUT_MYISAM=1 \\
+-DWITHOUT_ROCKSDB=1 \\
+-DEXTRA_CHARSETS=all \\
+-DDEFAULT_CHARSET=utf8 \\
+-DDEFAULT_COLLATION=utf8_general_ci \\
+-DENABLED_LOCAL_INFILE=1 \\
+-DWITH_READLINE=system \\
+-DWITH_EDITLINE=0 \\
+-DENABLE_DOWNLOADS=1 \\
+-DCMAKE_EXE_LINKER_FLAGS="-ljemalloc"
+: 1506325036:0;rm CMakeCache.txt
+: 1506325057:0;rm -rf CMakeFiles/CMakeError.log
+: 1506325062:0;rm -rf CMakeFiles/CMakeOutput.log
+: 1506325065:0;cmake \\
+-DDOWNLOAD_BOOST=1 \\
+-DWITH_BOOST=/root \\
+-DCMAKE_INSTALL_PREFIX=/usr/local/mysql/5.7.19 \\
+-DSYSCONFDIR=/etc \\
+-DMYSQL_DATADIR=/var/lib/mysql \\
+-DMYSQL_UNIX_ADDR=/var/run/mysql/mysqld.sock \\
+-DMYSQL_TCP_PORT=3366 \\
+-DWITH_INNOBASE_STORAGE_ENGINE=1 \\
+-DWITH_PARTITION_STORAGE_ENGINE=1 \\
+-DWITH_TOKUDB=1 \\
+-DWITHOUT_MYISAM=1 \\
+-DWITHOUT_ROCKSDB=1 \\
+-DEXTRA_CHARSETS=all \\
+-DDEFAULT_CHARSET=utf8 \\
+-DDEFAULT_COLLATION=utf8_general_ci \\
+-DENABLED_LOCAL_INFILE=1 \\
+-DWITH_READLINE=system \\
+-DWITH_EDITLINE=0 \\
+-DENABLE_DOWNLOADS=1 \\
+-DCMAKE_EXE_LINKER_FLAGS="-ljemalloc"
+: 1506325135:0;cd
+: 1506325139:0;git clone https://github.com/percona/percona-xtradb-cluster.git
+: 1506325378:0;cd percona-xtradb-cluster
+: 1506325379:0;ll
+: 1506325387:0;cmake \\
+-DDOWNLOAD_BOOST=1 \\
+-DWITH_BOOST=/root \\
+-DCMAKE_INSTALL_PREFIX=/usr/local/mysql/5.7.19 \\
+-DSYSCONFDIR=/etc \\
+-DMYSQL_DATADIR=/var/lib/mysql \\
+-DMYSQL_UNIX_ADDR=/var/run/mysql/mysqld.sock \\
+-DMYSQL_TCP_PORT=3366 \\
+-DWITH_INNOBASE_STORAGE_ENGINE=1 \\
+-DWITH_PARTITION_STORAGE_ENGINE=1 \\
+-DWITH_TOKUDB=1 \\
+-DWITHOUT_MYISAM=1 \\
+-DWITHOUT_ROCKSDB=1 \\
+-DEXTRA_CHARSETS=all \\
+-DDEFAULT_CHARSET=utf8 \\
+-DDEFAULT_COLLATION=utf8_general_ci \\
+-DENABLED_LOCAL_INFILE=1 \\
+-DWITH_READLINE=system \\
+-DWITH_EDITLINE=0 \\
+-DENABLE_DOWNLOADS=1 \\
+-DCMAKE_EXE_LINKER_FLAGS="-ljemalloc"
+: 1506325418:0;make 
+: 1506325475:0;./build-ps/build-binary.sh
+: 1506325509:0;git submodule init
+: 1506325518:0;git submodule update
+: 1506325550:0;rm CMakeCache.txt
+: 1506325555:0;cmake \\
+-DDOWNLOAD_BOOST=1 \\
+-DWITH_BOOST=/root \\
+-DCMAKE_INSTALL_PREFIX=/usr/local/mysql/5.7.19 \\
+-DSYSCONFDIR=/etc \\
+-DMYSQL_DATADIR=/var/lib/mysql \\
+-DMYSQL_UNIX_ADDR=/var/run/mysql/mysqld.sock \\
+-DMYSQL_TCP_PORT=3366 \\
+-DWITH_INNOBASE_STORAGE_ENGINE=1 \\
+-DWITH_PARTITION_STORAGE_ENGINE=1 \\
+-DWITH_TOKUDB=1 \\
+-DWITHOUT_MYISAM=1 \\
+-DWITHOUT_ROCKSDB=1 \\
+-DEXTRA_CHARSETS=all \\
+-DDEFAULT_CHARSET=utf8 \\
+-DDEFAULT_COLLATION=utf8_general_ci \\
+-DENABLED_LOCAL_INFILE=1 \\
+-DWITH_READLINE=system \\
+-DWITH_EDITLINE=0 \\
+-DENABLE_DOWNLOADS=1 \\
+-DCMAKE_EXE_LINKER_FLAGS="-ljemalloc"
+: 1506325741:0;rm CMakeCache.txt
+: 1506325744:0;cmake \\
+-DDOWNLOAD_BOOST=1 \\
+-DWITH_BOOST=/root \\
+-DCMAKE_INSTALL_PREFIX=/usr/local/mysql/5.7.19 \\
+-DSYSCONFDIR=/etc \\
+-DMYSQL_DATADIR=/var/lib/mysql \\
+-DMYSQL_UNIX_ADDR=/var/run/mysql/mysqld.sock \\
+-DMYSQL_TCP_PORT=3366 \\
+-DWITH_INNOBASE_STORAGE_ENGINE=1 \\
+-DWITH_PARTITION_STORAGE_ENGINE=1 \\
+-DWITHOUT_MYISAM=1 \\
+-DWITHOUT_ROCKSDB=1 \\
+-DEXTRA_CHARSETS=all \\
+-DDEFAULT_CHARSET=utf8 \\
+-DDEFAULT_COLLATION=utf8_general_ci \\
+-DENABLED_LOCAL_INFILE=1 \\
+-DWITH_READLINE=system \\
+-DWITH_EDITLINE=0 \\
+-DENABLE_DOWNLOADS=1 \\
+-DCMAKE_EXE_LINKER_FLAGS="-ljemalloc"
+: 1506325785:0;ls cpu
+: 1506325787:0;lscpu
+: 1506325793:0;make -j 2
+: 1506327409:0;cd percona-xtradb-cluster
+: 1506327411:0;make
+: 1506327812:0;yum install -y ncurses
+: 1506327823:0;yum install -y ncurses-devel
+: 1506327859:0;yum install -y imake libxml2-devel expat-devel
+: 1506327947:0;cd percona-xtradb-cluster
+: 1506327953:0;rm CMakeCache.txt
+: 1506327955:0;cmake \\
+-DDOWNLOAD_BOOST=1 \\
+-DWITH_BOOST=/root \\
+-DCMAKE_INSTALL_PREFIX=/usr/local/mysql/5.7.19 \\
+-DSYSCONFDIR=/etc \\
+-DMYSQL_DATADIR=/var/lib/mysql \\
+-DMYSQL_UNIX_ADDR=/var/run/mysql/mysqld.sock \\
+-DMYSQL_TCP_PORT=3366 \\
+-DWITH_INNOBASE_STORAGE_ENGINE=1 \\
+-DWITH_PARTITION_STORAGE_ENGINE=1 \\
+-DWITH_FEDERATED_STORAGE_ENGINE=1 \\
+-DWITH_BLACKHOLE_STORAGE_ENGINE=1 \\
+-DWITHOUT_MYISAM=1 \\
+-DWITHOUT_ROCKSDB=1 \\
+-DEXTRA_CHARSETS=all \\
+-DDEFAULT_CHARSET=utf8 \\
+-DDEFAULT_COLLATION=utf8_general_ci \\
+-DENABLED_LOCAL_INFILE=1 \\
+-DWITH_READLINE=ON \\
+-DWITH_EDITLINE=0 \\
+-DENABLE_DOWNLOADS=1 \\
+-DCMAKE_EXE_LINKER_FLAGS="-ljemalloc"
+: 1506328005:0;rm CMakeCache.txt
+: 1506328007:0;cmake \\
+-DDOWNLOAD_BOOST=1 \\
+-DWITH_BOOST=/root \\
+-DCMAKE_INSTALL_PREFIX=/usr/local/mysql/5.7.19 \\
+-DSYSCONFDIR=/etc \\
+-DMYSQL_DATADIR=/var/lib/mysql \\
+-DMYSQL_UNIX_ADDR=/var/run/mysql/mysqld.sock \\
+-DMYSQL_TCP_PORT=3366 \\
+-DWITH_INNOBASE_STORAGE_ENGINE=1 \\
+-DWITH_PARTITION_STORAGE_ENGINE=1 \\
+-DWITH_FEDERATED_STORAGE_ENGINE=1 \\
+-DWITH_BLACKHOLE_STORAGE_ENGINE=1 \\
+-DWITHOUT_MYISAM=1 \\
+-DWITHOUT_ROCKSDB=1 \\
+-DEXTRA_CHARSETS=all \\
+-DDEFAULT_CHARSET=utf8 \\
+-DDEFAULT_COLLATION=utf8_general_ci \\
+-DENABLED_LOCAL_INFILE=1 \\
+-DWITH_READLINE=system \\
+-DWITH_EDITLINE=system \\
+-DENABLE_DOWNLOADS=1 \\
+-DCMAKE_EXE_LINKER_FLAGS="-ljemalloc"
+: 1506328026:0;rm CMakeCache.txt
+: 1506328026:0;cmake \\
+-DDOWNLOAD_BOOST=1 \\
+-DWITH_BOOST=/root \\
+-DCMAKE_INSTALL_PREFIX=/usr/local/mysql/5.7.19 \\
+-DSYSCONFDIR=/etc \\
+-DMYSQL_DATADIR=/var/lib/mysql \\
+-DMYSQL_UNIX_ADDR=/var/run/mysql/mysqld.sock \\
+-DMYSQL_TCP_PORT=3366 \\
+-DWITH_INNOBASE_STORAGE_ENGINE=1 \\
+-DWITH_PARTITION_STORAGE_ENGINE=1 \\
+-DWITH_FEDERATED_STORAGE_ENGINE=1 \\
+-DWITH_BLACKHOLE_STORAGE_ENGINE=1 \\
+-DWITHOUT_MYISAM=1 \\
+-DWITHOUT_ROCKSDB=1 \\
+-DEXTRA_CHARSETS=all \\
+-DDEFAULT_CHARSET=utf8 \\
+-DDEFAULT_COLLATION=utf8_general_ci \\
+-DENABLED_LOCAL_INFILE=1 \\
+-DWITH_READLINE=system \\
+-DWITH_EDITLINE=0 \\
+-DENABLE_DOWNLOADS=1 \\
+-DCMAKE_EXE_LINKER_FLAGS="-ljemalloc"
+: 1506328125:0;yum install â€ƒ³y   imake libxml2-devel expat-devel libaio libaio-devel bzr bison libtool ncurses5-devel
+: 1506328142:0;rm CMakeCache.txt
+: 1506328146:0;cmake \\
+-DDOWNLOAD_BOOST=1 \\
+-DWITH_BOOST=/root \\
+-DCMAKE_INSTALL_PREFIX=/usr/local/mysql/5.7.19 \\
+-DSYSCONFDIR=/etc \\
+-DMYSQL_DATADIR=/var/lib/mysql \\
+-DMYSQL_UNIX_ADDR=/var/run/mysql/mysqld.sock \\
+-DMYSQL_TCP_PORT=3366 \\
+-DWITH_INNOBASE_STORAGE_ENGINE=1 \\
+-DWITH_PARTITION_STORAGE_ENGINE=1 \\
+-DWITH_FEDERATED_STORAGE_ENGINE=1 \\
+-DWITH_BLACKHOLE_STORAGE_ENGINE=1 \\
+-DWITHOUT_MYISAM=1 \\
+-DWITHOUT_ROCKSDB=1 \\
+-DEXTRA_CHARSETS=all \\
+-DDEFAULT_CHARSET=utf8 \\
+-DDEFAULT_COLLATION=utf8_general_ci \\
+-DENABLED_LOCAL_INFILE=1 \\
+-DWITH_READLINE=system \\
+-DWITH_EDITLINE=0 \\
+-DENABLE_DOWNLOADS=1 \\
+-DCMAKE_EXE_LINKER_FLAGS="-ljemalloc"
+: 1506328196:0;make -j 2
+: 1506328207:0;make clean
+: 1506328213:0;make -j 2
+: 1506328243:0;cmake -v
+: 1506328250:0;cmake --version
+: 1506328448:0;cd percona-xtradb-cluster
+: 1506328449:0;ll
+: 1506328462:0;cat cmake_install.cmake
+: 1506328615:0;yum install cmake
+: 1506328631:0;make clean
+: 1506328638:0;rm CMakeCache.txt
+: 1506328643:0;cmake \\
+-DDOWNLOAD_BOOST=1 \\
+-DWITH_BOOST=/root \\
+-DCMAKE_INSTALL_PREFIX=/usr/local/mysql/5.7.19 \\
+-DSYSCONFDIR=/etc \\
+-DMYSQL_DATADIR=/var/lib/mysql \\
+-DMYSQL_UNIX_ADDR=/var/run/mysql/mysqld.sock \\
+-DMYSQL_TCP_PORT=3366 \\
+-DWITH_INNOBASE_STORAGE_ENGINE=1 \\
+-DWITH_PARTITION_STORAGE_ENGINE=1 \\
+-DWITH_FEDERATED_STORAGE_ENGINE=1 \\
+-DWITH_BLACKHOLE_STORAGE_ENGINE=1 \\
+-DWITHOUT_MYISAM=1 \\
+-DWITHOUT_ROCKSDB=1 \\
+-DEXTRA_CHARSETS=all \\
+-DDEFAULT_CHARSET=utf8 \\
+-DDEFAULT_COLLATION=utf8_general_ci \\
+-DENABLED_LOCAL_INFILE=1 \\
+-DWITH_READLINE=system \\
+-DWITH_EDITLINE=0 \\
+-DENABLE_DOWNLOADS=1 \\
+-DCMAKE_EXE_LINKER_FLAGS="-ljemalloc"
+: 1506328683:0;make -j 2
+: 1506329191:0;make
+: 1506329242:0;yum install gcc gcc-c+
+: 1506329250:0;which gcc
+: 1506329271:0;yum reinstall gcc gcc-c+
+: 1506329276:0;yum reinstall gcc gcc-c++
+: 1506329306:0;make
+: 1506329347:0;list(APPEND CMAKE_CXX_FLAGS "-std=c++03 ${CMAKE_CXX_FLAGS}")
+: 1506329365:0;g++ -std=c++98
+: 1506329374:0;g++ --version
+: 1506329619:0;cd
+: 1506329621:0;wget http://ftp.tsukuba.wide.ad.jp/software/gcc/releases/gcc-6.3.0/gcc-6.3.0.tar.gz
+: 1506329645:0;tar zxvf gcc-6.3.0.tar.gz
+: 1506329675:0;cd gcc-6.3.0
+: 1506329739:0;./configure \\
+--prefix=/usr/local/gcc/7.2.0 \\
+--enable-languages=c,c++ \\
+--disable-multilib \\
+--disable-checking \
+: 1506329751:0;./configure \\
+--prefix=/usr/local/gcc/6.3.0 \\
+--enable-languages=c,c++,go \\
+--disable-multilib \\
+--disable-checking \\
+--without-isl
+: 1506329755:0;ll
+: 1506329772:0;contrib/download_prerequisites
+: 1506330049:0;./configure \\
+--prefix=/usr/local/gcc/6.3.0 \\
+--enable-languages=c,c++,go \\
+--disable-multilib \\
+--disable-checking \\
+--without-isl
+: 1506330077:0;./configure \\
+--prefix=/usr/local/gcc/6.3.0 \\
+--enable-languages=c,c++ \\
+--disable-multilib \\
+--disable-checking \\
+--without-isl
+: 1506330150:0;yum install -y texinfo
+: 1506330156:0;ifconfig
+: 1506330161:0;./configure \\
+--prefix=/usr/local/gcc/6.3.0 \\
+--enable-languages=c,c++ \\
+--disable-multilib \\
+--disable-checking \\
+--without-isl
+: 1506330174:0;yum install -y isl gnattools gotools target-libada target-libgfortran target-libbacktrace target-libgo target-libffi target-zlib target-libjava target-libobjc target-liboffloadmic target-boehm-gc
+: 1506330250:0;make -j 2
+: 1506332291:0;cd gcc-6.3.0
+: 1506332293:0;make install
+: 1506332302:0;make 
+: 1506333890:0;cd ../
+: 1506333891:0;ll
+: 1506333895:0;cd percona-xtradb-cluster
+: 1506333899:0;rm CMakeCache.txt
+: 1506333901:0;make clean
+: 1506333908:0;cmake \\
+-DDOWNLOAD_BOOST=1 \\
+-DWITH_BOOST=/root \\
+
+: 1506333949:0;ln -sf /usr/local/gcc/7.2.0/bin/* /usr/bin
+: 1506333961:0;ln -sf /usr/local/cmake/3.9.3/bin/* /usr/bin
+: 1506333970:0;cmake \\
+-DDOWNLOAD_BOOST=1 \\
+-DWITH_BOOST=/root\
+
+: 1506334010:0;rm CMakeCache.txt
+: 1506334012:0;cmake \\
+-DDOWNLOAD_BOOST=1 \\
+-DWITH_BOOST=/root\
+
+: 1506334113:0;cmake \\
+-DDOWNLOAD_BOOST=1 \\
+-DWITH_BOOST=/root \\
+
+: 1506334119:0;cmake \\
+-DDOWNLOAD_BOOST=1 \\
+-DWITH_BOOST=/root \\
+-DWITHOUT_ROCKSDB=1
+: 1506334137:0;make -j 2
+: 1506334608:0;make
+: 1506334630:0;make -j 2
+: 1506335529:0;j gcc6
+: 1506335533:0;cd gcc-6.3.0
+: 1506335535:0;make -j 2
+: 1506337694:0;ll
+: 1506337698:0;cd /var/www/
+: 1506337700:0;cd cp.6686.me
+: 1506337701:0;ll
+: 1506338027:0;mysql -uroot -p lqT*yfXO<3-r
+: 1506338031:0;mysql -uroot -p 
+: 1506344241:0;make install
+: 1506344289:0;ln -sf /usr/local/gcc/6.3.0/bin/* /usr/bin
+: 1506344291:0;gcc -v
+: 1506344293:0;cd 
+: 1506344294:0;ll
+: 1506344297:0;cd percona-xtradb-cluster
+: 1506344299:0;make clean
+: 1506344305:0;rm CMakeCache.txt
+: 1506344311:0;cmake \\
+-DDOWNLOAD_BOOST=1 \\
+-DWITH_BOOST=/root \\
+-DWITHOUT_ROCKSDB=1
+: 1506344359:0;make -j 2
+: 1506345597:0;make
+: 1506345691:0;cd ../
+: 1506345692:0;ll
+: 1506345696:0;cd Percona-XtraDB-Cluster-5.7.19-29.22
+: 1506345700:0;rm CMakeCache.txt
+: 1506345706:0;make clean
+: 1506345744:0;cmake \\
+-DDOWNLOAD_BOOST=1 \\
+-DWITH_BOOST=/root \\
+-DCMAKE_INSTALL_PREFIX=/usr/local/mysql/5.7.19 \\
+-DSYSCONFDIR=/etc \\
+-DMYSQL_DATADIR=/var/lib/mysql \\
+-DMYSQL_UNIX_ADDR=/var/run/mysql/mysqld.sock \\
+-DMYSQL_TCP_PORT=3366 \\
+-DWITH_INNOBASE_STORAGE_ENGINE=1 \\
+-DWITH_PARTITION_STORAGE_ENGINE=1 \\
+-DWITH_FEDERATED_STORAGE_ENGINE=1 \\
+-DWITH_BLACKHOLE_STORAGE_ENGINE=1 \\
+-DWITHOUT_BLACKHOLE_STORAGE_ENGINE=1 \\
+-DWITHOUT_ROCKSDB=1 \\
+-DEXTRA_CHARSETS=all \\
+-DDEFAULT_CHARSET=utf8 \\
+-DDEFAULT_COLLATION=utf8_general_ci \\
+-DENABLED_LOCAL_INFILE=1 \\
+-DWITH_READLINE=system \\
+-DWITH_EDITLINE=0 \\
+-DENABLE_DOWNLOADS=1
+: 1506345810:0;make 
+: 1506346017:0;htop
+: 1506408473:0;redis-cli
+: 1506414106:0;ll
+: 1506414108:0;cd ../
+: 1506414109:0;ll
+: 1506414115:0;cmake -v
+: 1506414120:0;cmake --version
+: 1506414123:0;gcc -v
+: 1506414137:0;ln -sf /usr/local/gcc/7.2.0/bin/* /usr/bin
+: 1506414140:0;gcc -v
+: 1506414160:0;ll
+: 1506414166:0;rm -rf Percona-XtraDB-Cluster-5.7.19-29.22
+: 1506414171:0;rm Percona-XtraDB-Cluster-5.7.19-29.22.tar.gz
+: 1506414172:0;ll
+: 1506414209:0;yum install -y ftp://rpmfind.net/linux/fedora/linux/releases/26/Everything/x86_64/os/Packages/s/scons-2.5.1-2.fc26.noarch.rpm
+: 1506414238:0;yum install -y check-devel 
+: 1506414271:0;yum install -y openssl check bison boost-devel asio-devel libaio-devel ncurses-devel readline-devel pam-devel socat
+: 1506414328:0;cd percona-xtradb-cluster
+: 1506414329:0;ll
+: 1506414331:0;git submodule init && git submodule update
+: 1506414337:0;mkdir ./pxc-build
+: 1506414346:0;vim ./build-ps/build-binary.sh
+: 1506414386:0;./build-ps/build-binary.sh -j ./pxc-build
+: 1506414416:0;ll
+: 1506414433:0;./build-ps/build-binary.sh ./pxc-build
+: 1506414511:0;ll
+: 1506414514:0;python
+: 1506414517:0;python3
+: 1506414524:0;cd /usr/bin
+: 1506414544:0;ln -sf /usr/bin/pydoc3.6 /usr/bin
+: 1506414553:0;ln -sf /usr/bin/python3.6 /usr/bin/python
+: 1506414556:0;python -v
+: 1506414560:0;python -V
+: 1506414563:0;cd 
+: 1506414568:0;vim /usr/bin/yum
+: 1506414577:0;yum
+: 1506414582:0;./build-ps/build-binary.sh ./pxc-build
+: 1506414585:0;cd percona-xtradb-cluster/
+: 1506414588:0;./build-ps/build-binary.sh ./pxc-build
+: 1506414642:0;cd
+: 1506414643:0;wget https://www.python.org/ftp/python/2.7.14/Python-2.7.14.tgz
+: 1506414646:0;ll
+: 1506414667:0;tar zxf Python-2.7.14.tgz
+: 1506414672:0;cd Python-2.7.14
+: 1506414694:0;./configure \\
+--prefix=/usr/local/python/3.6.2 \\
+--exec-prefix=/usr/local/python/3.6.2 \\
+--enable-shared \
+: 1506414709:0;./configure \\
+--prefix=/usr/local/python/2.7.14 \\
+--exec-prefix=/usr/local/python/2.7.14 \\
+--enable-shared \\
+--enable-optimizations
+: 1506414722:0;CXX=g++ ./configure \\
+--prefix=/usr/local/python/2.7.14 \\
+--exec-prefix=/usr/local/python/2.7.14 \\
+--enable-shared \\
+--enable-optimizations
+: 1506414755:0;make -j 2
+: 1506415009:0;yum search imageop
+: 1506415015:0;yum search imageop-devel
+: 1506415022:0;yum search \*imageop\*
+: 1506415032:0;make install
+: 1506415061:0;ln -sf  /usr/local/python/2.7.14/bin/python /usr/bin
+: 1506415065:0;cd ../percona-xtradb-cluster/
+: 1506415077:0;./build-ps/build-binary.sh ./pxc-build
+: 1506415092:0;cd 
+: 1506415092:0;ll
+: 1506415100:0;yum search xtradb
+: 1506415181:0;ll
+: 1506415197:0;yum remove Percona-XtraDB-Cluster-Server-57
+: 1506415201:0;yum remove Percona-XtraDB-Cluster-
+: 1506415204:0;yum remove Percona-XtraDB-Cluster-\*
+: 1506415270:0;yum install -y Percona-XtraDB-Cluster-57
+: 1506415320:0;yum install -y Percona-XtraDB-Cluster-devel-57
+: 1506415344:0;vim /etc/init.d/mysql
+: 1506415386:0;service mysql start
+: 1506415392:0;ps aux | grep mysql
+: 1506415399:0;kill 12101
+: 1506415400:0;ps aux | grep mysql
+: 1506415406:0;kill -9 12101
+: 1506415408:0;ps aux | grep mysql
+: 1506415412:0;kill -9 12207
+: 1506415415:0;ps aux | grep mysql
+: 1506415422:0;cd /var/lib/mysql
+: 1506415423:0;ll
+: 1506415429:0;cd ../
+: 1506415430:0;ll
+: 1506415438:0;service mysql start
+: 1506415456:0;rm /var/lib/mysql/vultr.guest.pid
+: 1506415458:0;service mysql start
+: 1506415467:0;ps aux | grep mysql
+: 1506415476:0;mysql -uroot -p
+: 1506415523:0;cat /var/www/cp.6686.me/.env
+: 1506415530:0;mysql -uroot -p
+: 1506415580:0;rm -rf /var/lib/mysql
+: 1506415584:0;rm -rf /var/lib/mysql-files
+: 1506415587:0;rm -rf /var/lib/mysql-keyring
+: 1506415590:0;service mysql start
+: 1506415595:0;rm /var/lib/mysql/vultr.guest.pid
+: 1506415601:0;ps aux | grep mysql
+: 1506415614:0;kill -9 12506
+: 1506415620:0;ps aux | grep mysql
+: 1506415624:0;rm /var/lib/mysql/vultr.guest.pid
+: 1506415627:0;service mysql start
+: 1506415978:0;vim /etc/init.d/mysql
+: 1506415991:0;service mysql start
+: 1506416024:0;ll /var/lib/mysql/ib
+: 1506416033:0;rm -rf /var/lib/mysql
+: 1506416036:0;vim /etc/init.d/mysql
+: 1506416081:0;service mysql start
+: 1506416090:0;rm /var/lock/subsys/mysql
+: 1506416092:0;service mysql start
+: 1506416354:0;vim /etc/init.d/mysql
+: 1506416379:0;/usr/sbin/mysqld --initialize --datadir=/var/lib/mysql --user=mysql --innodb-page-size=4k
+: 1506416387:0;/usr/sbin/mysqld --initialize --datadir=/var/lib/mysql --user=mysql --innodb-page-size=8k
+: 1506416395:0;/usr/sbin/mysqld --initialize --datadir=/var/lib/mysql --user=mysql --innodb-page-size=16k
+: 1506416415:0;rm -rf /var/lib/mysql
+: 1506417185:0;vim /etc/init.d/mysql
+: 1506417205:0;vim /etc/my.cnf.d/my.cnf
+: 1506417223:0;service mysql start
+: 1506417245:0;mysql -uroot -p
+: 1506417255:0;ll /var/lib/mysql/
+: 1506417279:0;tail -f /var/lib/mysql/vultr.guest.err
+: 1506417319:0;service mysql start
+: 1506417330:0;rm /var/lib/mysql/vultr.guest.pid
+: 1506417333:0;ps aux | grep mysql
+: 1506417347:0;rm -rf /var/lock/subsys/mysql
+: 1506417349:0;service mysql start
+: 1506417362:0;ll
+: 1506417364:0;ll mysql
+: 1506417372:0;vim /etc/my.cnf.d/my.cnf
+: 1506417376:0;service mysql start
+: 1506417380:0;ll
+: 1506417391:0;rm -rf /var/lib/mysql
+: 1506417392:0;service mysql start
+: 1506417405:0;rm -rf /var/lib/mysql
+: 1506417417:0;rm -rf /var/lock/subsys/
+: 1506417420:0;service mysql start
+: 1506417480:0;vim /etc/my.cnf.d/my.cnf
+: 1506417489:0;vim /etc/init.d/mysql
+: 1506417502:0;rm -rf /var/lock/subsys/
+: 1506417504:0;rm -rf /var/lib/mysql
+: 1506417514:0;/usr/sbin/mysqld --initialize --datadir=/var/lib/mysql --user=mysql
+: 1506417527:0;ps aux | grep mysql
+: 1506417531:0;rm -rf /var/lib/mysql
+: 1506417533:0;rm -rf /var/lock/subsys/
+: 1506417536:0;vim /etc/my.cnf.d/my.cnf
+: 1506417542:0;/usr/sbin/mysqld --initialize --datadir=/var/lib/mysql --user=mysql
+: 1506417553:0;service mysql start
+: 1506417562:0;ll /var/lib/
+: 1506417576:0;touch /var/lib/mysql/vultr.guest.err
+: 1506417578:0;service mysql start
+: 1506417586:0;ll /var/lib/mysql/vultr.guest.pid
+: 1506417591:0;touch /var/lib/mysql/vultr.guest.pid
+: 1506417594:0;service mysql start
+: 1506417601:0;ll mysql
+: 1506417617:0;vim /etc/init.d/mysql
+: 1506417660:0;yum remove Percona-XtraDB-Cluster-\*
+: 1506417670:0;yum install -y Percona-XtraDB-Cluster-devel-57
+: 1506417679:0;yum install -y Percona-XtraDB-Cluster-57
+: 1506417724:0;service mysql start
+: 1506417729:0;ps aux | grep mysql
+: 1506417734:0;kill 14766
+: 1506417738:0;kill 14872
+: 1506417744:0;service mysql stop
+: 1506417754:0;service mysql start
+: 1506417759:0;ps aux | grep mysql
+: 1506417771:0;cat /var/log/mysqld.log
+: 1506417792:0;cat /var/lib/mysql/vultr.guest.err
+: 1506417864:0;service mysql stop
+: 1506417870:0;rm -rf /var/lock/subsys/
+: 1506417872:0;rm -rf /var/lib/mysql
+: 1506417875:0;service mysql start
+: 1506417895:0;mysql -uroot -p
+: 1506418071:0;service mysql restart
+: 1506418085:0;mysql -uroot -p
+: 1506418101:0;vim /etc/my.cnf
+: 1506418108:0;ll
+: 1506418109:0;cd /etc/
+: 1506418110:0;ll
+: 1506418131:0;ll /etc/alternatives/my.cnf
+: 1506418135:0;vim /etc/alternatives/my.cnf
+: 1506418163:0;vim /etc/percona-xtradb-cluster.cnf
+: 1506418170:0;rm /etc/my.cnf
+: 1506418185:0;ln -s /etc/percona-xtradb-cluster.cnf /etc/my.cnf
+: 1506418187:0;service mysql restart
+: 1506418196:0;ps aux | grep mysql
+: 1506418200:0;kill 15470
+: 1506418204:0;service mysql restart
+: 1506418208:0;ll
+: 1506418211:0;ps aux | grep mysql
+: 1506418217:0;kill -9 15470
+: 1506418222:0;service mysql start
+: 1506418226:0;ps aux | grep mysql
+: 1506418232:0;kill -9 15576
+: 1506418235:0;service mysql start
+: 1506418254:0;ll /var/run/mysqld/mysqld.pid
+: 1506418261:0;rm -rf /var/lib/mysql
+: 1506418266:0;rm -rf /var/lock/subsys/
+: 1506418268:0;service mysql start
+: 1506418284:0;tail -f /var/log/mysqld.log
+: 1506418358:0;vim /etc/percona-xtradb-cluster.cnf
+: 1506418363:0;vim /etc/my.cnf
+: 1506418368:0;vim /etc/my.cnf.d/my.cnf
+: 1506418603:0;vim /etc/init.d/mysql
+: 1506418879:0;yum remove Percona-XtraDB-Cluster-\*
+: 1506418910:0;yum install https://www.percona.com/downloads/Percona-XtraDB-Cluster-LATEST/Percona-XtraDB-Cluster-5.7.17-29.20/binary/redhat/6/x86_64/Percona-XtraDB-Cluster-server-57-5.7.17-29.20.3.el6.x86_64.rpm
+: 1506418953:0;rm -rf /var/lock/subsys/
+: 1506418955:0;rm -rf /var/lib/mysql
+: 1506418956:0;ps aux | grep mysql
+: 1506418959:0;service mysql start
+: 1506418974:0;cat /var/log/mysqld.log
+: 1506419151:0;yum remove Percona-XtraDB-Cluster-\*
+: 1506419161:0;yum install -y Percona-XtraDB-Cluster-57
+: 1506419209:0;yum install -y Percona-XtraDB-Cluster-devel-57
+: 1506419218:0;ll
+: 1506419225:0;service mysql start
+: 1506419233:0;rm -rf /var/lib/mysql
+: 1506419240:0;rm -rf /var/lock/subsys/
+: 1506419242:0;service mysql start
+: 1506419252:0;vim /etc/my.cnf.d
+: 1506419262:0;service mysql start
+: 1506419268:0;rm -rf /var/lib/mysql
+: 1506419269:0;service mysql start
+: 1506419312:0;ps aux | grep mysql
+: 1506419324:0;cat /var/log/mysqld.log
+: 1506419389:0;mysql -uroot -p
+: 1506419464:0;service mysql restart
+: 1506419487:0;mysql -uroot -p
+: 1506419491:0;cd /var/www/cp.6686.me
+: 1506419492:0;ll
+: 1506419495:0;vim .env
+: 1506419511:0;mysql -uroot -pQ8ZFkys9nE/]%nxRrsoK6QzcTCazU/h7
+: 1506419551:0;vim .env
+: 1506419576:0;php artisan 
+: 1506419587:0;php artisan  migrate:install
+: 1506419605:0;php artisan migrate
+: 1506419644:0;vim .env
+: 1506419652:0;php artisan iseed
+: 1506419671:0;php artisan iseed abilities
+: 1506419671:0;php artisan iseed assigned_roles
+: 1506419671:0;php artisan iseed banks
+: 1506419671:0;php artisan iseed betslip_2017
+: 1506419671:0;php artisan iseed cashiers_2017
+: 1506419671:0;php artisan iseed failed_jobs
+: 1506419671:0;php artisan iseed jobs
+: 1506419671:0;php artisan iseed lottery_2017
+: 1506419672:0;php artisan iseed lottery_classify
+: 1506419672:0;php artisan iseed lottery_numbers
+: 1506419672:0;php artisan iseed lottery_numbers_limited
+: 1506419672:0;php artisan iseed lottery_numbers_odds
+: 1506419672:0;php artisan iseed lottery_numbers_rebate
+: 1506419672:0;php artisan iseed maintenances
+: 1506419672:0;php artisan iseed marquees
+: 1506419672:0;php artisan iseed migrations
+: 1506419673:0;php artisan iseed notifications
+: 1506419673:0;php artisan iseed payments
+: 1506419673:0;php artisan iseed payments_deposit_ext
+: 1506419673:0;php artisan iseed payments_deposit_offline
+: 1506419673:0;php artisan iseed payments_deposit_online
+: 1506419673:0;php artisan iseed payments_level
+: 1506419673:0;php artisan iseed payments_withdraw_ext
+: 1506419673:0;php artisan iseed payments_withdraw_offline
+: 1506419674:0;php artisan iseed payments_withdraw_online
+: 1506419674:0;php artisan iseed permissions
+: 1506419674:0;php artisan iseed roles
+: 1506419674:0;php artisan iseed users
+: 1506419674:0;php artisan iseed users_betting_limited
+: 1506419674:0;php artisan iseed users_card
+: 1506419674:0;php artisan iseed users_setting
+: 1506419674:0;php artisan iseed users_wallet
+: 1506419675:0;php artisan iseed users_wallet_log_2017
+: 1506419693:0;vim vendor/orangehill/iseed/src/Orangehill/Iseed/IseedCommand.php
+: 1506419707:0;php artisan iseed abilities
+: 1506419707:0;setting
+: 1506419707:0;php artisan iseed users_wallet
+: 1506419723:0;php artisan db:seed
+: 1506419774:0;php artisan db:seed WhitelistsTableSeeder
+: 1506419781:0;php artisan db:seed --class=WhitelistsTableSeeder
+: 1506419939:0;cd
+: 1506419939:0;ll
+: 1506419975:0;mysql -uroot -p
+: 1506420149:0;mysql -uroot -pQ8ZFkys9nE/]%nxRrsoK6QzcTCazU/h7
+: 1506420187:0;service mysql restart
+: 1506420263:0;cd /var/www/cp.6686.me/
+: 1506420272:0;php artisan db:seed -h
+: 1506420277:0;php artisan db:seed --class user
+: 1506420282:0;ll database/seeds
+: 1506420292:0;php artisan db:seed --class UsersTableSeeder
+: 1506420420:0;ll
+: 1506420428:0;cd
+: 1506420429:0;ll
+: 1506420433:0;rm lottery_2017.sql
+: 1506420437:0;rm -rf percona-xtradb-cluster
+: 1506420444:0;rm Python-2.7.14.tgz
+: 1506420447:0;rm gcc-6.3.0.tar.gz
+: 1506420448:0;ll
+: 1506420455:0;ps aux | grep nginx
+: 1506420460:0;kill 2772
+: 1506420464:0;ps aux | grep php
+: 1506420467:0;ll
+: 1506420847:0;vim /etc/my.cnf.d/my.cnf
+: 1506420952:0;mysql -uroot -pQ8ZFkys9nE/]%nxRrsoK6QzcTCazU/h7
+: 1506428187:0;yum install pmm-client
+: 1506428219:0;pmm-admin add mysql --user root --password Q8ZFkys9nE/]%nxRrsoK6QzcTCazU/h7 --host 127.0.0.1 --port 3306
+: 1506428236:0;pmm-admin list
+: 1506428278:0;pmm-admin -h
+: 1506428291:0;pmm-admin configvim /usr/local/percona/pmm-client/pmm.yml
+: 1506428293:0;vim /usr/local/percona/pmm-client/pmm.yml
+: 1506428301:0;find / -name 'pmm.yml'
+: 1506428320:0;touch 
+: 1506428321:0;touch /usr/local/percona/pmm-client/pmm.yml
+: 1506428327:0;pmm-admin add mysql --user root --password Q8ZFkys9nE/]%nxRrsoK6QzcTCazU/h7 --host 127.0.0.1 --port 3306
+: 1506428342:0;pmm-admin -c /usr/local/percona/pmm-client/pmm.yml add mysql --user root --password Q8ZFkys9nE/]%nxRrsoK6QzcTCazU/h7 --host 127.0.0.1 --port 3306
+: 1506433447:0;tail -f /var/log/mysql/slow.log
+: 1506514839:0;redis-cli
+: 1506692300:0;vim /etc/my.cnf.d/my.cnf 
+: 1506692332:0;ifconfig
+: 1506692342:0;vim /etc/my.cnf.d/my.cnf 
+: 1506692532:0;mysql -uroot -p
+: 1506692728:0;vim /etc/my.cnf.d/my.cnf 
+: 1506692757:0;service mysql restart
+: 1506692844:0;find / -name 'libgalera_smm.so'
+: 1506692853:0;vim /etc/my.cnf.d/my.cnf 
+: 1506692874:0;service mysql restart
+: 1506692922:0;ps aux | grep php
+: 1506692925:0;ps aux | grep mysql
+: 1506692933:0;ll /var/run/mysqld/mysqld.pid).
+: 1506692933:0;------------------------------------------------------------
+: 1506692934:0;{17-09-29 13:48} âƒ·ƒ¯ ~ # ps aux | grep php
+: 1506692945:0;ll /var/run/mysqld
+: 1506692950:0;service mysql start
+: 1506692974:0;tail -f /var/log/mysqld.log
+: 1506693012:0;service mysql start
+: 1506693038:0;vim /etc/my.cnf.d/my.cnf 
+: 1506693052:0;ll /usr/lib64/galera3/libgalera_smm.so
+: 1506693054:0;service mysql start
+: 1506693281:0;/etc/init.d/mysql bootstrap-pxc
+: 1506693303:0;mysql -uroot -p
+: 1506693662:0;vim /etc/my.cnf.d/my.cnf 
+: 1506693744:0;service mysql restart
+: 1506693766:0;/etc/init.d/mysql bootstrap-pxc
+: 1506694036:0;CREATE DATABASE jason;
+: 1506694036:0;USE jason;
+: 1506694037:0;CREATE TABLE jjj (id int ,name char(10)) engine=innodb;
+: 1506694038:0;COMMIT
+: 1506694046:0;mysql -uroot -p
+: 1506694762:0;ifconfig 107.182.21.209
+: 1506694765:0;ifconfig
+: 1506695213:0;mysql -urroot -p
+: 1506695233:0;mysql -uroot -p
+: 1506695326:0;ifconfig
+: 1506695401:0;mysql -uroot -p
+: 1506697374:0;yum list installed | percona
+: 1506697379:0;yum list installed | grep percona
+: 1506697628:0;vim /etc/init.d/mysql
+: 1506697698:0;service mysql restart
+: 1506697823:0;mysql -uroot -p
+: 1506697898:0;/etc/init.d/mysql bootstrap-pxc
+: 1506697906:0;ps aux | grep mysql
+: 1506697939:0;tail /var/log/mysqld.log
+: 1506697948:0;ifconfig
+: 1506697987:0;mysql -uroot -p -h 10.99.0.11
+: 1506698028:0;mysql -usst -p -h 10.99.0.11
+: 1506698089:0;vim /etc/hosts
+: 1506698128:0;service mysql restart
+: 1506698151:0;tail -f /var/log/mysqld.log
+: 1506698264:0;service mysql restart
+: 1506698288:0;/etc/init.d/mysql bootstrap-pxc
+: 1506698295:0;tail -f /var/log/mysqld.log
+: 1506698306:0;cat /var/log/mysqld.log
+: 1506698379:0;mysql -uroot -p
+: 1506698411:0;vim /etc/my.cnf.d/my.cnf
+: 1506698630:0;/etc/init.d/mysql bootstrap-pxc
+: 1506698642:0;mysql -uroot -p
+: 1506698665:0;service mysql restart
+: 1506699232:0;vim /etc/my.cnf.d/my.cnf
+: 1506699249:0;service mysql restart
+: 1506699356:0;mysql -uroot -p
+: 1506699543:0;service iptables stop
+: 1506699546:0;service ip6tables stop
+: 1506699550:0;tail -f /var/log/mysqld.log
+: 1506700082:0;service mysql stop
+: 1506700111:0;mysqld_safe  --wsrep-cluster-address="gcomm://"  &
+: 1506700239:0;ps aux | grep mysql
+: 1506700587:0;mysql -uroot -p
+: 1506701427:0;ps aux | grep mysql
+: 1506701481:0;/usr/sbin/mysqld --basedir=/usr --datadir=/var/lib/mysql --plugin-dir=/usr/lib64/mysql/plugin --user=mysql  --log-error=/var/log/mysqld.log --pid-file=/var/run/mysqld/mysqld.pid --socket=/var/lib/mysql/mysql.sock
+: 1506702026:0;mysql -uroot -p
+: 1506702035:0;/etc/init.d/mysql bootstrap-pxc
+: 1506702088:0;ps aux | grep mysql
+: 1506702092:0;/etc/init.d/mysql bootstrap-pxc
+: 1506702095:0;mysql -uroot -p
+: 1506702240:0;vim /etc/my.cnf.d/my.cnf
+: 1506702286:0;mysql -uroot -p
+: 1506702752:0;tail -f /var/log/mysqld.log
+: 1506703023:0;mysql -uroot -p
+: 1506704430:0;/etc/init.d/mysql bootstrap-pxc
+: 1506704433:0;mysql -uroot -p
+: 1506704612:0;ps aux | grep mysql
+: 1506704646:0;service mysql stop
+: 1506704672:0;vim /etc/init.d/mysql
+: 1506704688:0;/etc/init.d/mysql bootstrap-pxc
+: 1506704718:0;service mysql restart
+: 1506704727:0;service mysql stop
+: 1506704744:0;/etc/init.d/mysql bootstrap-pxc
+: 1506704750:0;ps aux | grep mysql
+: 1506704763:0;kill 31084
+: 1506704766:0;mysql -uroot -p
+: 1506705398:0;vim /etc/my.cnf.d/my.cnf
+: 1506705424:0;service mysql stop
+: 1506705461:0;mysql -uroot -p
+: 1506706354:0;service mysql stop
+: 1506706403:0;/etc/init.d/mysql bootstrap-pxc  --wsrep-cluster-address="gcomm://"
+: 1506706410:0;mysql -uroot -p
+: 1506706462:0;service mysql stop
+: 1506706487:0;vim /etc/my.cnf.d/my.cnf
+: 1506706498:0;/etc/init.d/mysql bootstrap-pxc  --wsrep-cluster-address="gcomm://"
+: 1506706504:0;mysql -uroot -p
+: 1506706551:0;service mysql stop
+: 1506706568:0;vim /etc/my.cnf.d/my.cnf
+: 1506706584:0;/etc/init.d/mysql bootstrap-pxc  --wsrep-cluster-address="gcomm://"
+: 1506706589:0;mysql -uroot -p
+: 1506706744:0;service mysql restart
+: 1506706804:0;ifconfig
+: 1506707649:0;vim /etc/my.cnf.d/my.cnf 
+: 1506707689:0;vim /etc/percona-xtradb-cluster.conf.d/wsrep.cnf
+: 1506707771:0;vim /etc/percona-xtradb-cluster.conf.d/mysqld.cnf
+: 1506707782:0;vim /etc/percona-xtradb-cluster.conf.d/mysqld_safe.cnf
+: 1506707861:0;service mysql stop
+: 1506707923:0;/etc/init.d/mysql bootstrap-pxc
+: 1506707952:0;mysql -uroot -p
+: 1506762596:0;ifconfig
+: 1506766985:0;mysqldumpslow
+: 1506767000:0;yum install percona-tollkit\*
+: 1506767036:0;yum search percona
+: 1506767075:0;yum install percona-toolkit\*
+: 1506767084:0;yum install percona-toolkit
+: 1506767094:0;mysqldumpslow
+: 1506767114:0;pt-query-digest
+: 1506767135:0;pt-query-digest /var/log/mysql/slow.log
+: 1506767428:0;myq_status
+: 1506840917:0;redis-cli
+: 1506841221:0;asdf
+: 1506841221:0;as
+: 1506841226:0;ls
+: 1506859286:0;vim /etc/percona-xtradb-cluster.conf.d/wsrep.cnf
+: 1506859953:0;mysql -uroot -p
+: 1506860286:0;vim /etc/percona-xtradb-cluster.conf.d/wsrep.cnf
+: 1506860324:0;service mysql stop
+: 1506860341:0;/etc/init.d/mysql bootstrap-pxc
+: 1506925185:0;ssh sing
+: 1506925771:0;redis-cli
+: 1506929999:0;ll
+: 1506930003:0;ps aux | grep reids
+: 1506930007:0;ps aux | grep redis
+: 1506930012:0;kill 13987
+: 1506930018:0;/usr/local/redis/4.0.2/bin/redis-server 127.0.0.1:6379
+: 1506930018:0;root     29990  0.0  0.0  11064  1732 pts/1    S+   07:00   0:00 redis-cli
+: 1506930018:0;root     30193  0.0  0.0 103380  2064 pts/2    S+   07:40   0:00 grep --color=auto --exclude-dir=.bzr --exclude-dir=CVS --exclude-dir=.git --exclude-dir=.hg --exclude-dir=.svn redis
+: 1506930018:0;------------------------------------------------------------
+: 1506930023:0;ps aux | grep redis
+: 1506930027:0;kill 29990
+: 1506930036:0;/usr/local/redis/4.0.2/bin/redis-server -c /etc/redis.conf
+: 1506930043:0;/usr/local/redis/4.0.2/bin/redis-server -h
+: 1506930050:0;/usr/local/redis/4.0.2/bin/redis-server /etc/redis.conf
+: 1506930056:0;vim /etc/redis.conf
+: 1506930086:0;ps aux | grep redis
+: 1506930089:0;kill 30270
+: 1506930093:0;/usr/local/redis/4.0.2/bin/redis-server /etc/redis.conf
+: 1506930176:0;redis-cli
+: 1506930193:0;ssh sing
+: 1506930479:0;vim /etc/redis.conf
+: 1506930493:0;ps aux | grep redis
+: 1506930499:0;kill 30301
+: 1506930505:0;/usr/local/redis/4.0.2/bin/redis-server /etc/redis.conf
+: 1506930507:0;ps aux | grep redis
+: 1506930546:0;vim /etc/redis.conf
+: 1506931267:0;redis-cli
+: 1506932125:0;vim /etc/redis.conf
+: 1506932189:0;ps aux | grep redis
+: 1506932195:0;kill 30561
+: 1506932202:0;/usr/local/redis/4.0.2/bin/redis-server /etc/redis.conf
+: 1506932211:0;mkdir -p /var/log/redis/
+: 1506932213:0;/usr/local/redis/4.0.2/bin/redis-server /etc/redis.conf
+: 1506932230:0;cat /var/log/redis/redis.log 
+: 1506932241:0;mkdir /var/lib/redis
+: 1506932249:0;/usr/local/redis/4.0.2/bin/redis-server /etc/redis.conf
+: 1506932251:0;ps aux | grep redis
+: 1506932263:0;tail -f /var/log/redis/redis.log
+: 1506932350:0;vim /etc/redis.conf
+: 1506932366:0;ps aux | grep redis
+: 1506932369:0;kill 30792
+: 1506932372:0;/usr/local/redis/4.0.2/bin/redis-server /etc/redis.conf
+: 1506932374:0;tail -f /var/log/redis/redis.log
+: 1506932973:0;redis-cli
+: 1506932984:0;redis-cli -h 10.99.0.10
+: 1506936763:0;redis-cli
+: 1506936766:0;redis-cli -h 10.99.0.10
+: 1506950993:0;ll
+: 1506950998:0;redis-cli
+: 1506951005:0;vim /etc/redis.conf
+: 1506951017:0;ps aux | grep redis
+: 1506951021:0;kill 30841
+: 1506951026:0;/usr/local/redis/4.0.2/bin/redis-server /etc/redis.conf
+: 1506951029:0;redis-cli
+: 1507971502:0;ssh sing
+: 1507971554:0;redis-cli
+: 1507989155:0;htop
+: 1507989201:0;mycli -uroot 
+: 1507989283:0;htop
+: 1507989668:0;mycli -uroot 
+: 1508043961:0;service mysql start
+: 1508043989:0;ps aux | grep mysql
+: 1508046955:0;vim /etc/my.cnf.d/my.cnf
+: 1508046970:0;service mysql stop
+: 1508046995:0;/etc/init.d/mysql bootstrap-pxc
+: 1508047130:0;cat /etc/my.cnf.d/my.cnf
+: 1508047636:0;ps aux | grep mysql
+: 1508049583:0;ll /var/run/mysqld/mysqld.pid
+: 1508049586:0;cat /var/run/mysqld/mysqld.pid
+: 1508050156:0;mysql -uroot -p
+: 1508050331:0;ifconfig
+: 1508050364:0;/usr/local/php/7.2.0/sbin/php-fpm 
+: 1508050381:0;/usr/local/php/7.2.0/etc/
+: 1508050382:0;ll
+: 1508050392:0;cp php-fpm.conf.default php-fpm.conf
+: 1508050396:0;vim php-fpm.conf
+: 1508050420:0;/usr/local/php/7.2.0/sbin/php-fpm 
+: 1508050433:0;ll
+: 1508050443:0;ll php-fpm.d
+: 1508050451:0;cd php-fpm.d
+: 1508050452:0;ll
+: 1508050458:0;cp www.conf.default www.conf
+: 1508050459:0;cd ../
+: 1508050461:0;/usr/local/php/7.2.0/sbin/php-fpm 
+: 1508050483:0;/usr/local/nginx/1.11.2/bin/nginx-xml2pod
+: 1508053017:0;ps aux | grep php-fpm
+: 1508053021:0;kill 18647
+: 1508053026:0;ps aux | grep nginx
+: 1508053664:0;ps aux | grep mysql
+: 1508055117:0;mycli -uroot 
+: 1508055374:0;service mysql stop
+: 1508055379:0;service mysql start
+: 1508055407:0;ps aux | grep mysql
+: 1508055415:0;/etc/init.d/mysql bootstrap-pxc
+: 1508055429:0;ll /var/run/mysqld
+: 1508055481:0;/etc/init.d/mysql bootstrap-pxc
+: 1508055494:0;ps aux | grep mysql
+: 1508055502:0;cd /var/lib/mysql
+: 1508055504:0;ll
+: 1508055527:0;service mysql status
+: 1508055530:0;service mysql start
+: 1508055589:0;tail -f /var/log/mysqld.log
+: 1508055605:0;service mysql start
+: 1508055644:0;cat /var/log/mysql/slow.log 
+: 1508055684:0;cat /var/log/mysqld.log
+: 1508055726:0;df /
+: 1508055836:0;ll
+: 1508055849:0;df /
+: 1508055855:0;df -sh /
+: 1508055858:0;df -h /
+: 1508055900:0;rm vultr-bin.*
+: 1508055904:0;service mysql start
+: 1508055913:0;df /
+: 1508055917:0;ll
+: 1508055939:0;rm vultr-bin.index
+: 1508055949:0;service mysql start
+: 1508055964:0;vim /etc/my.cnf.d/my.cnf
+: 1508055990:0;service mysql start
+: 1508056001:0;cd /etc/percona-xtradb-cluster.conf.d
+: 1508056002:0;ll
+: 1508056008:0;mv wsrep.cnf wsrep
+: 1508056013:0;vim mysqld.cnf
+: 1508056030:0;service mysql start
+: 1508056040:0;vim /etc/my.cnf
+: 1508056044:0;vim /etc/my.cnf.d/my.cnf
+: 1508056051:0;service mysql start
+: 1508056057:0;ps aux | grep mysql
+: 1508056079:0;cd /var/lib
+: 1508056080:0;ll
+: 1508056082:0;cd mysql
+: 1508056083:0;ll
+: 1508056087:0;rm vultr-bin.*
+: 1508056088:0;ll
+: 1508056093:0;service mysql start
+: 1508056101:0;ll
+: 1508056111:0;cat mysqld_safe.pid
+: 1508056113:0;rm mysqld_safe.pid
+: 1508056114:0;ll
+: 1508056115:0;service mysql start
+: 1508056130:0;rm wsrep_recovery.*
+: 1508056131:0;service mysql start
+: 1508056136:0;ll
+: 1508056142:0;cat wsrep_recovery.dvkWRF
+: 1508056204:0;/etc/init.d/mysql bootstrap-pxc
+: 1508056225:0;cat /var/log/mysqld.log
+: 1508056525:0;vim /etc/my.cnf.d/my.cnf
+: 1508056551:0;service mysql start
+: 1508056567:0;vim /etc/percona-xtradb-cluster.conf.d/mysqld.cnf
+: 1508056582:0;vim /etc/percona-xtradb-cluster.conf.d/mysqld_safe.cnf
+: 1508056590:0;vim /etc/percona-xtradb-cluster.conf.d/mysqld_safe.cnf.rpmsave
+: 1508056598:0;rm /etc/percona-xtradb-cluster.conf.d/mysqld_safe.cnf.rpmsave
+: 1508056601:0;service mysql start
+: 1508056704:0;cat /var/log/mysqld.log
+: 1508056755:0;reboot
+: 1508056920:0;service mysql start
+: 1508056947:0;ll
+: 1508056957:0;cd /var/lib/mysql
+: 1508056958:0;ll
+: 1508056965:0;rm wsrep_recovery.*
+: 1508056967:0;service mysql start
+: 1508056972:0;ll
+: 1508056976:0;cat wsrep_recovery.mrCseG
+: 1508057006:0;cd /etc/percona-xtradb-cluster.conf.d
+: 1508057006:0;ll
+: 1508057013:0;mv wsrep wsrep.cnf
+: 1508057014:0;vim wsrep.cnf
+: 1508057022:0;service mysql start
+: 1508057031:0;ll
+: 1508057035:0;vim mysqld
+: 1508057038:0;vim mysqld.cnf
+: 1508057048:0;service mysql start
+: 1508057054:0;ll
+: 1508057059:0;cd /var/lib/mysql
+: 1508057060:0;ll
+: 1508057071:0;rm mysql.sock.lock
+: 1508057075:0;rm mysqld_safe.pid
+: 1508057076:0;service mysql start
+: 1508057083:0;ll
+: 1508057086:0;cat GRA_6_7605.log
+: 1508057095:0;cat GRA_5_7603.log
+: 1508057106:0;cat auto.cnf
+: 1508057114:0;cat 0x00000d97_data.000000
+: 1508057149:0;ll
+: 1508057154:0;rm 0x00000d97_data.000000
+: 1508057157:0;service mysql start
+: 1508057171:0;cd /var/log
+: 1508057171:0;ll
+: 1508057180:0;mv mysqld.log mysqld.log.bak
+: 1508057183:0;service mysql start
+: 1508057190:0;ll
+: 1508057206:0;chmod mysql:mysql mysqld.log
+: 1508057212:0;chown mysql:mysql mysqld.log
+: 1508057215:0;ll
+: 1508057228:0;service mysql start
+: 1508057264:0;cat messages
+: 1508057271:0;ll
+: 1508057280:0;cat messages-20171015
+: 1508057300:0;service mysql start
+: 1508057468:0;ll
+: 1508057488:0;/usr/sbin/mysqld --user=mysql
+: 1508057499:0;mysql -uroot -p
+: 1508057510:0;ps aux | grep mysql
+: 1508057522:0;/usr/sbin/mysqld --user=mysql --base-dir=/usr
+: 1508057533:0;ps aux | grep mysql
+: 1508057535:0;ll
+: 1508057538:0;cd /var/log
+: 1508057539:0;ll
+: 1508057543:0;cat mysqld.log
+: 1508057600:0;vim /etc/percona-xtradb-cluster.conf.d/wsrep.cnf
+: 1508057622:0;service mysql start
+: 1508057672:0;ll
+: 1508057679:0;echo '' > mysqld.log
+: 1508057681:0;service mysql start
+: 1508057689:0;tail -f /var/log/mysqld.log
+: 1508057702:0;vim /etc/init.d/mysql
+: 1508057754:0;service mysql start
+: 1508057758:0;vim /etc/init.d/mysql
+: 1508057824:0;/usr/bin/mysqld_safe --datadir=/var/lib/mysql --pid-file=/var/run/mysqld/mysqld.pid
+: 1508057837:0;cat wsrep_recovery.iNShSZ
+: 1508057845:0;cat /var/lib/mysql/wsrep_recovery.iNShSZ
+: 1508057874:0;/usr/sbin/mysqld --basedir=/usr --datadir=/var/lib/mysql --plugin-dir=/usr/lib64/mysql/plugin --user=mysql --wsrep-provider=/usr/lib64/galera3/libgalera_smm.so --wsrep-new-cluster --log-error=/var/log/mysqld.log --pid-file=/var/run/mysqld/mysqld.pid --socket=/var/lib/mysql/mysql.sock --wsrep_start_position=c7d15609-a29f-11e7-bb3f-4ee63fa303da:44714
+: 1508057951:0;ps aux | grep mysql
+: 1508057958:0;mysql -uroot -p
+: 1508057976:0;service mysql stop
+: 1508058000:0;/etc/init.d/mysql bootstrap-pxc
+: 1508058011:0;ps aux | grep mysql
+: 1508058024:0;vim /etc/percona-xtradb-cluster.conf.d/wsrep.cnf
+: 1508058036:0;service mysql stop
+: 1508058055:0;/etc/init.d/mysql bootstrap-pxc
+: 1508058060:0;ssh sing
+: 1508058276:0;mycli -uroot 
+: 1508058564:0;redis-server /etc/redis.conf
+: 1508058587:0;ifconfig
+: 1508058604:0;ps aux | grep redis
+: 1508058678:0;service iptables stop
+: 1508060365:0;mycli -uroot 
+: 1508060451:0;vim /etc/percona-xtradb-cluster.conf.d/wsrep.cnf
+: 1508060527:0;mycli -uroot 
+: 1508061610:0;date
+: 1508062062:0;tail -f /var/log/mysqld.log
+: 1508065908:0;redis-cli
+: 1508065985:0;vim /etc/my.cnf.d/my.cnf
+: 1508066024:0;service mysql stop
+: 1508066079:0;/etc/init.d/mysql bootstrap-pxc
+: 1508066102:0;ps aux | grep mysql
+: 1508066107:0;kill 11711
+: 1508066110:0;ps aux | grep mysql
+: 1508066114:0;/etc/init.d/mysql bootstrap-pxc
+: 1508066125:0;ifconfig
+: 1508066130:0;tail -f /var/log/mysqld.log
+: 1508066133:0;/etc/init.d/mysql bootstrap-pxc
+: 1508066168:0;ifconfig
+: 1508066174:0;ping 10.99.0.11
+: 1508066268:0;vim /etc/percona-xtradb-cluster.conf.d/wsrep.cnf
+: 1508066305:0;/etc/init.d/mysql bootstrap-pxc
+: 1508066328:0;service iptables stop
+: 1508066333:0;service ip6tables stop
+: 1508066337:0;/etc/init.d/mysql bootstrap-pxc
+: 1508066426:0;vim /etc/percona-xtradb-cluster.conf.d/wsrep.cnf
+: 1508066501:0;/etc/init.d/mysql bootstrap-pxc
+: 1508066536:0;ps aux | grep mysql
+: 1508066544:0;/etc/init.d/mysql stop
+: 1508066552:0;/etc/init.d/mysql start
+: 1508066606:0;/etc/init.d/mysql bootstrap-pxc
+: 1508066624:0;vim /var/lib/mysql/grastate.dat
+: 1508066630:0;/etc/init.d/mysql bootstrap-pxc
+: 1508066660:0;vim /etc/my.cnf.d/my.cnf
+: 1508066669:0;/etc/init.d/mysql bootstrap-pxc
+: 1508066705:0;vim /etc/my.cnf.d/my.cnf
+: 1508066718:0;/etc/init.d/mysql bootstrap-pxc
+: 1508066730:0;vim /etc/my.cnf.d/my.cnf
+: 1508066737:0;/etc/init.d/mysql bootstrap-pxc
+: 1508066994:0;service mysql stop
+: 1508067014:0;vim /var/lib/mysql/grastate.dat
+: 1508067027:0;/etc/init.d/mysql bootstrap-pxc
+: 1508067041:0;vim /var/lib/mysql/grastate.dat
+: 1508067045:0;/etc/init.d/mysql bootstrap-pxc
+: 1508067222:0;mycli -uroot 
+: 1508068135:0;htop
+: 1508154613:0;redis-cli
+: 1508585844:0;mycli -uroot 
+: 1508681942:0;df /
+: 1508681947:0;htop
+: 1508751003:0;redis-cli
+: 1508757710:0;ifconfig
+: 1508757988:0;redis-cli
+: 1509517304:0;cat /var/log/redis/redis.log 
+: 1509517380:0;clear
+: 1509517383:0;cat /var/log/redis/redis.log 
+: 1509517621:0;vim /sys/kernel/mm/transparent_hugepage/enabled
+: 1509517635:0;echo never > /sys/kernel/mm/transparent_hugepage/enabledã€‚
+: 1509517638:0;echo never > /sys/kernel/mm/transparent_hugepage/enable
+: 1509517665:0;echo never > /sys/kernel/mm/transparent_hugepage/enabled
+: 1509517684:0;vim /etc/rc.local
+: 1509518012:0;htop
+: 1509542818:0;cat /var/log/redis/redis.log 
+: 1509542881:0;redis-cli
+: 1509545487:0;netstat -i :6379
+: 1509545516:0;netstat -t :6379
+: 1509545519:0;netstat -t
+: 1509672348:0;vim /sys/kernel/mm/transparent_hugepage/enabled
+: 1509672453:0;redis-cli --latency-history
+: 1509681128:0;redis-cli
+: 1510363381:0;tail -f /var/log/mysql/slow.log
+: 1510713436:0;redis-cli
+: 1511663545:0;vim /etc/my.cnf.d/my.cnf
+: 1511663571:0;service mysql stop
+: 1511663609:0;/etc/init.d/mysql bootstrap-pxc
+: 1511663637:0;ps aux | grep mysql
+: 1511663671:0;/etc/init.d/mysql bootstrap-pxc
+: 1511663693:0;service mysql start
+: 1511663773:0;ll /var/run
+: 1511663785:0;cd /var/run
+: 1511663785:0;ll
+: 1511663787:0;cd mysqld
+: 1511663788:0;ll
+: 1511663797:0;touch /var/run/mysqld/mysqld.pid
+: 1511663797:0;ll
+: 1511663805:0;chown mysql:mysql mysqld.pid
+: 1511663809:0;echo 1 > mysqld.pid
+: 1511663818:0;service mysql start
+: 1511663823:0;ps aux | grep mysql
+: 1511663832:0;/etc/init.d/mysql bootstrap-pxc
+: 1511663834:0;ll
+: 1511663836:0;ps
+: 1511663841:0;ps aux | grep mysql
+: 1511663848:0;service mysql stop
+: 1511664070:0;ll
+: 1511664074:0;cat mysqld.pid.shutdown
+: 1511664077:0;cat mysqld.pid
+: 1511664081:0;rm mysqld.pid
+: 1511664083:0;rm mysqld.pid.shutdown
+: 1511664088:0;service mysql start
+: 1511664131:0;ll
+: 1511664258:0;service mysql start
+: 1511664306:0;vim /etc/my.cnf.d/my.cnf
+: 1511664316:0;service mysql start
+: 1511664401:0;/usr/sbin/mysqld --basedir=/usr --datadir=/var/lib/mysql --plugin-dir=/usr/lib64/mysql/plugin --user=mysql --wsrep-provider=/usr/lib64/galera3/libgalera_smm.so --wsrep-new-cluster --log-error=/var/log/mysqld.log --pid-file=/var/run/mysqld/mysqld.pid --socket=/var/lib/mysql/mysql.sock --wsrep_start_position=c7d15609-a29f-11e7-bb3f-4ee63fa303da:44714
+: 1511664414:0;ps aux | grep mysql
+: 1511664466:0;tail -f /var/log/mysqld.log
+: 1511664471:0;/usr/sbin/mysqld --basedir=/usr --datadir=/var/lib/mysql --plugin-dir=/usr/lib64/mysql/plugin --user=mysql --wsrep-provider=/usr/lib64/galera3/libgalera_smm.so --wsrep-new-cluster --log-error=/var/log/mysqld.log --pid-file=/var/run/mysqld/mysqld.pid --socket=/var/lib/mysql/mysql.sock --wsrep_start_position=c7d15609-a29f-11e7-bb3f-4ee63fa303da:44714
+: 1511664492:0;ifconfig
+: 1511664499:0;ping 10.99.0.11
+: 1511664516:0;telnet 10.99.0.11 3306
+: 1511664645:0;/etc/init.d/mysql bootstrap-pxc
+: 1511664648:0;tail -f /var/log/mysqld.log
+: 1511664702:0;find -name 'grastate.dat'
+: 1511664706:0;find /usr -name 'grastate.dat'
+: 1511664715:0;find /var -name 'grastate.dat'
+: 1511664722:0;/var/lib/mysql/grastate.dat
+: 1511664724:0;vim /var/lib/mysql/grastate.dat
+: 1511664732:0;/etc/init.d/mysql bootstrap-pxc
+: 1511664744:0;ps aux | grep mysql
+: 1511782983:0;redis-cli
+: 1512203239:0;ssh sing
+: 1512269560:0;ll
+: 1512269566:0;redis-cli
+: 1512808326:0;ll
+: 1512808332:0;vim /etc/my.cnf.d/my.cnf
+: 1512808648:0;service mysql stop
+: 1512808676:0;/etc/init.d/mysql bootstrap-pxc
+: 1512808708:0;vim /var/lib/mysql/grastate.dat
+: 1512808714:0;/etc/init.d/mysql bootstrap-pxc
+: 1512878988:0;redis-cli
+: 1513062222:0;htop
+: 1513166449:0;redis-cli
+: 1513240593:0;htop
+: 1513241325:0;sudo vim /etc/hosts
+: 1513243648:0;redis-cli
+: 1513304941:0;mycli -uroot 
+: 1513305944:0;df /var
+: 1513305947:0;df
+: 1513307484:0;vim /etc/my.cnf.d/my.cnf
+: 1513307683:0;service mysql stop
+: 1513307720:0;/etc/init.d/mysql bootstrap-pxc
+: 1513307740:0;vim /var/lib/mysql/grastate.dat
+: 1513307744:0;/etc/init.d/mysql bootstrap-pxc
+: 1513307796:0;tail -f /var/log/mysqld.log
+: 1513307799:0;/etc/init.d/mysql bootstrap-pxc
+: 1513307916:0;vim /etc/my.cnf.d/my.cnf
+: 1513307930:0;tail -f /var/log/mysqld.log
+: 1513307933:0;/etc/init.d/mysql bootstrap-pxc
+: 1513308151:0;tail -f /var/log/mysql/slow.log
+: 1513308173:0;tail -f /var/log/mysql/slow.log -n 100
+: 1513308209:0;ehoc '' > /var/log/mysql/slow.log
+: 1513308216:0;echo '' > /var/log/mysql/slow.log
+: 1513308221:0;cd /var/log
+: 1513308221:0;ll
+: 1513308227:0;rm mysqld.log.bak
+: 1513308228:0;ll
+: 1513315434:0;service mysql stop
+: 1513315473:0;vim /etc/my.cnf.d/my.cnf
+: 1513315482:0;/etc/init.d/mysql bootstrap-pxc
+: 1513315500:0;vim /var/lib/mysql/grastate.dat
+: 1513315504:0;/etc/init.d/mysql bootstrap-pxc
+: 1513315670:0;vim /etc/my.cnf.d/my.cnf
+: 1513425015:0;redis-cli
+: 1513577254:0;ps aux | grep mysql
+: 1513577595:0;mysql -uroot -p
+: 1513577875:0;service mysql stop
+: 1513577904:0;vim /var/lib/mysql/grastate.dat
+: 1513577913:0;/etc/init.d/mysql bootstrap-pxc
+: 1513578106:0;tail -f /var/log/mysqld.log
+: 1513649816:0;mycli -uroot lqT*yfXO<3-r
+: 1513649852:0;Tiger, [Dec 19, 2017 at 10:12:39 AM]:
+: 1513649852:0;...406, 407, 408, 409, 411, 413, 414, 415, 416, 418, 419, 421, 422, 424, 426, 428, 430, 431, 433, 434, 436, 437, 438, 439, 440, 442, 444, 445, 447, 449, 451, 453, 454, 456, 458, 460, 465, 466, 468, 470, 471, 472, 473, 474, 476, 478, 480, 481, 482, 484, 486, 487, 488, 489]
+: 1513649852:0;mysql -uroot -pQ8ZFkys9nE/]%nxRrsoK6QzcTCazU/h7 6686
+: 1513649876:0;mycli -uroot -pQ8ZFkys9nE/]%nxRrsoK6QzcTCazU/h7 6686
+: 1513654253:0;tail -f /var/log/mysqld.log
+: 1513654295:0;htop
+: 1513654368:0;mycli -uroot -pQ8ZFkys9nE/]%nxRrsoK6QzcTCazU/h7 6686
+: 1513654455:0;ps aux | grep mysql
+: 1513654459:0;service mysql stop
+: 1513654486:0;vim /var/lib/mysql/grastate.dat
+: 1513654494:0;/etc/init.d/mysql bootstrap-pxc
+: 1513654579:0;ps aux | grep mysql
+: 1513654598:0;tail -f /var/log/mysqld.log/var/log/mysqld.log
+: 1513654603:0;tail -f /var/log/mysqld.log
+: 1513654859:0;ps aux | grep mysql
+: 1513654864:0;service mysql stop
+: 1513654887:0;vim /var/lib/mysql/grastate.dat
+: 1513654893:0;/etc/init.d/mysql bootstrap-pxc
+: 1513654915:0;tail 
+: 1513654919:0;tail -f /var/log/mysqld.log
+: 1513655569:0;service mysql stop
+: 1513655615:0;vim /var/lib/mysql/grastate.dat
+: 1513655620:0;/etc/init.d/mysql bootstrap-pxc
+: 1513661555:0;tail -f /var/log/mysqld.log
+: 1513661864:0;mycli -uroot -pQ8ZFkys9nE/]%nxRrsoK6QzcTCazU/h7 6686
+: 1513661871:0;ps aux | grep mysql
+: 1513661874:0;service mysql stop
+: 1513661892:0;vim /var/lib/mysql/grastate.dat
+: 1513661897:0;/etc/init.d/mysql bootstrap-pxc
+: 1513661928:0;tail -f /var/log/mysqld.log
+: 1513662033:0;service mysql stop
+: 1513662063:0;ll /var/lib/mysql
+: 1513662115:0;cp -r 6686 6686.bak
+: 1513662118:0;ll
+: 1513662123:0;cd /var/lib/mysql
+: 1513662125:0;cp -r 6686 6686.bak
+: 1513662138:0;ll
+: 1513662143:0;vim /var/lib/mysql/grastate.dat
+: 1513662154:0;/etc/init.d/mysql bootstrap-pxc
+: 1513662159:0;mysql -uroot -pQ8ZFkys9nE/]%nxRrsoK6QzcTCazU/h7 6686
+: 1513662680:0;ifconfig
+: 1513662687:0;service iptables stop
+: 1513662693:0;ps aux | grep mysql
+: 1513662889:0;tail -f /var/log/mysqld.log
+: 1513663568:0;service mysql stop
+: 1513663585:0;/etc/init.d/mysql bootstrap-pxc
+: 1513663620:0;ps aux | grep mysql
+: 1513663626:0;mycli -uroot -pQ8ZFkys9nE/]%nxRrsoK6QzcTCazU/h7 6686
+: 1513663638:0;ll
+: 1513663651:0;mv 6686.bak /root/backup
+: 1513663654:0;ll
+: 1513663661:0;mycli -uroot -pQ8ZFkys9nE/]%nxRrsoK6QzcTCazU/h7 6686
+: 1513663671:0;service mysql stop
+: 1513663696:0;/etc/init.d/mysql bootstrap-pxc
+: 1513663879:0;tail -f /var/log/mysqld.log
+: 1513664490:0;service mysql stop
+: 1513664509:0;/etc/init.d/mysql bootstrap-pxc
+: 1513664523:0;vim /var/lib/mysql/grastate.dat
+: 1513664528:0;/etc/init.d/mysql bootstrap-pxc
+: 1513664546:0;tail -f /var/log/mysqld.log
+: 1513664609:0;tail -f /var/log/mysqld.log -300
+: 1513664613:0;tail -f /var/log/mysqld.log -n 300
+: 1513664926:0;service mysql stop
+: 1513664944:0;vim /var/lib/mysql/grastate.dat
+: 1513664949:0;/etc/init.d/mysql bootstrap-pxc
+: 1513664960:0;tail -f /var/log/mysqld.log -n 300
+: 1513665937:0;ps aux | grep mysql
+: 1513665942:0;vim /etc/my.cnf.d/my.cnf
+: 1513665957:0;vim /etc/percona-xtradb-cluster.cnf
+: 1513665965:0;vim /etc/percona-xtradb-cluster.conf.d/mysqld.cnf
+: 1513665983:0;vim /etc/percona-xtradb-cluster.conf.d/wsrep.cnf
+: 1513666000:0;vim /var/lib/mysql/grastate.dat
+: 1513666007:0;service mysql stop
+: 1513666024:0;vim /var/lib/mysql/grastate.dat
+: 1513666031:0;/etc/init.d/mysql bootstrap-pxc
+: 1513666040:0;ps aux | grep mysql
+: 1513666043:0;/etc/init.d/mysql bootstrap-pxc
+: 1513666055:0;vim /var/lib/mysql/grastate.dat
+: 1513666066:0;/etc/init.d/mysql bootstrap-pxc
+: 1513666108:0;tail -f /var/log/mysqld.log -n 300
+: 1513666111:0;/etc/init.d/mysql bootstrap-pxc
+: 1513666129:0;vim /var/lib/mysql/grastate.dat
+: 1513666155:0;/etc/init.d/mysql bootstrap-pxc
+: 1513666174:0;ll /var/run/mysqld/
+: 1513666176:0;/etc/init.d/mysql bootstrap-pxc
+: 1513666187:0;ifconfig
+: 1513666213:0;tail -f /var/lib/mysql/wsrep_recovery.XQZVtn
+: 1513666223:0;/etc/init.d/mysql bootstrap-pxc
+: 1513666242:0;cd /var/lib/mysql
+: 1513666243:0;ll
+: 1513666248:0;/etc/init.d/mysql bootstrap-pxc
+: 1513666251:0;ll
+: 1513666261:0;cat wsrep_recovery.ZQUTlk
+: 1513666342:0;/etc/init.d/mysql bootstrap-pxc
+: 1513666350:0;service mysql start
+: 1513666356:0;tail -f /var/log/mysqld.log -n 300
+: 1513666362:0;mysqld
+: 1513666367:0;mysqld --user=mysql
+: 1513666443:0;service iptables status
+: 1513666448:0;service iptables stop
+: 1513666458:0;ping 10.99.0.11
+: 1513666473:0;vim /etc/percona-xtradb-cluster.conf.d/wsrep.cnf
+: 1513666491:0;/etc/init.d/mysql bootstrap-pxc
+: 1513666562:0;ifconfig
+: 1513666602:0;service firewalld stop
+: 1513666606:0;/etc/init.d/mysql bootstrap-pxc
+: 1513666614:0;ll
+: 1513666620:0;rm wsrep_recovery.*
+: 1513666622:0;ll
+: 1513666629:0;/etc/init.d/mysql bootstrap-pxc
+: 1513666632:0;ll
+: 1513666637:0;tail wsrep_recovery.rYJZio
+: 1513666643:0;cat wsrep_recovery.rYJZio
+: 1513666664:0;ll
+: 1513666668:0;cat innobackup.backup.log
+: 1513666686:0;ll
+: 1513666703:0;rm mysqld_safe.pid
+: 1513666707:0;/etc/init.d/mysql bootstrap-pxc
+: 1513666727:0;cat /etc/init.d/mysql
+: 1513666824:0;/usr/sbin/mysqld --basedir=/usr --datadir=/var/lib/mysql --plugin-dir=/usr/lib64/mysql/plugin --user=mysql --wsrep-provider=/usr/lib64/galera3/libgalera_smm.so --wsrep-new-cluster --log-error=/var/log/mysqld.log --open-files-limit=65535 --pid-file=/var/run/mysqld/mysqld.pid --socket=/var/lib/mysql/mysql.sock --wsrep_start_position=c7d15609-a29f-11e7-bb3f-4ee63fa303da:231568
+: 1513666830:0;:q
+: 1513666833:0;tail -f /var/log/mysqld.log -n 300
+: 1513666866:0;ifconfig
+: 1513666877:0;ps aux | grep mysql
+: 1513666891:0;service mysql stop
+: 1513666925:0;ll
+: 1513666931:0;vim grastate.dat
+: 1513666936:0;/etc/init.d/mysql bootstrap-pxc
+: 1513666940:0;ll
+: 1513666945:0;mysql -uroot -pQ8ZFkys9nE/]%nxRrsoK6QzcTCazU/h7 6686
+: 1513669318:0;tail -f /var/log/mysqld.log -n 300
+: 1513669331:0;tail -f /var/log/mysqld.log -n 1000
+: 1513669563:0;mysql -uroot -pQ8ZFkys9nE/]%nxRrsoK6QzcTCazU/h7 6686
+: 1513670012:0;tail -f /var/log/mysql/slow.log
+: 1513670021:0;tail -f /var/log/mysql/slow.log -n 100
+: 1513670053:0;tail -f /var/log/mysql/slow.log -n 500
+: 1513670127:0;vim /etc/my.cnf.d/my.cnf
+: 1513670166:0;ps aux | grep mysql
+: 1513670531:0;lsof -i :4567
+: 1513670599:0;cd /var/lib/mysql
+: 1513670600:0;ll
+: 1513670613:0;tail -f innobackup.backup.log
+: 1513670733:0;ll /tmp/pxc_sst_CmDKcFfq/donor_xb_8JEMwa2I/
+: 1513670737:0;ll /tmp/pxc_sst_CmDKcFfq/donor_xb_8JEMwa2I
+: 1513670791:0;tail -f /var/log/mysqld.log -n 1000
+: 1513670878:0;netstat
+: 1513671601:0;tail -f /var/log/mysqld.log -n 1000
+: 1513674066:0;tail -f /var/log/mysqld.log -n 100
+: 1513674710:0;service mysql stop
+: 1513674730:0;vim /etc/my.cnf.d/my.cnf
+: 1513674737:0;vim /var/lib/mysql/grastate.dat
+: 1513674741:0;/etc/init.d/mysql bootstrap-pxc
+: 1513674810:0;tail -f /var/log/mysqld.log -n 100
+: 1513674956:0;mycli -uroot -pQ8ZFkys9nE/]%nxRrsoK6QzcTCazU/h7 6686
+: 1513684215:0;glances
+: 1513684560:0;strace -T -f -p 10102
+: 1513684611:0;strace -h
+: 1513684629:0;strace -p 10102
+: 1513684938:0;htop
+: 1513684946:0;glances
+: 1513686490:0;mycli -uroot -pQ8ZFkys9nE/]%nxRrsoK6QzcTCazU/h7 6686
+: 1513749543:0;redis-server -V
+: 1513749545:0;redis-server -v
+: 1513755536:0;tail -f /var/log/mysqld.log -n 100
+: 1513755549:0;tail -f /var/log/mysql/slow.log -n 1000
+: 1513755580:0;mycli -uroot -pQ8ZFkys9nE/]%nxRrsoK6QzcTCazU/h7 6686
+: 1513762732:0;htop
+: 1513832529:0;ifconfig
+: 1513832978:0;mycli -uroot -pQ8ZFkys9nE/]%nxRrsoK6QzcTCazU/h7 6686
+: 1513833076:0;ifconfig
+: 1513833091:0;mycli -uroot -pQ8ZFkys9nE/]%nxRrsoK6QzcTCazU/h7 6686
+: 1513834020:0;service mysql stop
+: 1513834077:0;vim /var/lib/mysql/grastate.dat
+: 1513834082:0;/etc/init.d/mysql bootstrap-pxc
+: 1513834108:0;mysql -uroot -p
+: 1513914462:0;redis-cli
+: 1513922190:0;git status
+: 1513922235:0;cd /var/www/
+: 1513922236:0;ll
+: 1513926637:0;redis-cli
+: 1514269415:0;ps aux | grep mysql
+: 1514269472:0;service mysql stop
+: 1514269499:0;service mysql bootstrap-pxc
+: 1514269509:0;/etc/init.d/mysql bootstrap-pxc
+: 1514269537:0;vim /var/lib/mysql/grastate.dat
+: 1514269548:0;/etc/init.d/mysql start
+: 1514269574:0;tail -f /var/log/mysqld.log -n 100
+: 1514269577:0;mysqld
+: 1514269581:0;mysqld --user=mysql
+: 1514269597:0;ps aux | grep mysql
+: 1514269601:0;service mysql stop
+: 1514269606:0;ps aux | grep mysql
+: 1514269608:0;service mysql stop
+: 1514269619:0;kill -9 9774
+: 1514269644:0;mysqld --user=mysql
+: 1514269647:0;ps aux | grep mysql
+: 1514269652:0;mycli -uroot -pQ8ZFkys9nE/]%nxRrsoK6QzcTCazU/h7 6686
+: 1514269672:0;tail -f /var/log/mysqld.log -n 100
+: 1514269724:0;/etc/init.d/mysql bootstrap-pxc
+: 1514269739:0;vim /etc/my.cnf.d/my.cnf
+: 1514269757:0;/etc/init.d/mysql bootstrap-pxc
+: 1514269774:0;vim /etc/percona-xtradb-cluster.conf.d/wsrep.cnf
+: 1514269827:0;/etc/init.d/mysql bootstrap-pxc
+: 1514269864:0;vim /etc/init.d/mysql
+: 1514269910:0;mysqld --user=mysql --wsrep-new-cluster
+: 1514269974:0;cd /var/www/
+: 1514269975:0;ll
+: 1514269979:0;cd /var/lib/mysql
+: 1514269979:0;ll
+: 1514269985:0;mv 6686 ../
+: 1514269988:0;cd ../
+: 1514269989:0;ll
+: 1514269993:0;rm -rf mysql
+: 1514270000:0;/etc/init.d/mysql bootstrap-pxc
+: 1514270025:0;service mysql stop
+: 1514270051:0;mv 6686 ./mysql
+: 1514270053:0;ll
+: 1514270055:0;ll mysql
+: 1514270059:0;/etc/init.d/mysql bootstrap-pxc
+: 1514270071:0;mycli -uroot -pQ8ZFkys9nE/]%nxRrsoK6QzcTCazU/h7 6686
+: 1514270106:0;mysql -uroot -p
+: 1514270234:0;mycli -uroot -pQ8ZFkys9nE/]%nxRrsoK6QzcTCazU/h7 6686
+: 1514270370:0;tail -f /var/log/mysqld.log -n 100
+: 1514270728:0;mysql -uroot -pQ8ZFkys9nE/]%nxRrsoK6QzcTCazU/h7 6686
+: 1514270873:0;tail -f /var/log/mysqld.log -n 100
+: 1514270977:0;ll
+: 1514270979:0;cd mysql
+: 1514270979:0;ll
+: 1514270981:0;ll 6686
+: 1514271055:0;service mysql stop
+: 1514271078:0;/etc/init.d/mysql bootstrap-pxc
+: 1514271085:0;mycli -uroot -pQ8ZFkys9nE/]%nxRrsoK6QzcTCazU/h7 6686
+: 1514271117:0;ll
+: 1514271120:0;cd
+: 1514271120:0;ll
+: 1514271128:0;ll backup
+: 1514271130:0;ll
+: 1514271149:0;cp -r backup /var/lib/mysql/cp6686
+: 1514271186:0;service mysql stop
+: 1514271209:0;/etc/init.d/mysql bootstrap-pxc
+: 1514271215:0;mycli -uroot -pQ8ZFkys9nE/]%nxRrsoK6QzcTCazU/h7 6686
+: 1514271239:0;cd /var/lib/mysql
+: 1514271239:0;ll
+: 1514271251:0;chown mysql:mysql -R cp6686
+: 1514271253:0;mycli -uroot -pQ8ZFkys9nE/]%nxRrsoK6QzcTCazU/h7 6686
+: 1514272845:0;ll
+: 1514272847:0;ll cp6686
+: 1514273061:0;innobackupex
+: 1514273141:0;nginx -t
+: 1514273145:0;nginx -v
+: 1514273266:0;mysql -uroot -pQ8ZFkys9nE/]%nxRrsoK6QzcTCazU/h7 6686
+: 1514277422:0;cd /var/lib/mysql
+: 1514277423:0;ll
+: 1514277430:0;cd 6686
+: 1514277431:0;ll
+: 1514277571:0;mycli -uroot -pQ8ZFkys9nE/]%nxRrsoK6QzcTCazU/h7 6686
+: 1514278252:0;ifconfig
+: 1514278254:0;cd
+: 1514278260:0;lsof | grep mysql
+: 1514278350:0;lsof | grep ibdata1
+: 1514278399:0;cd
+: 1514278400:0;ll
+: 1514278419:0;ll backup
+: 1514278578:0;find /proc -name 'ibdata1'
+: 1514278594:0;find /proc -name 'mysql'
+: 1514278598:0;find /proc
+: 1514279967:0;vim /etc/my.cnf.d/my.cnf
+: 1514279981:0;cd /var/lib/mysql
+: 1514279982:0;ll
+: 1514279999:0;cd cp6686me
+: 1514280000:0;ll
+: 1514280026:0;cp ubs_lottery_numbers.frm ubs_lottery_numbers.frm.bak
+: 1514280041:0;cp ubs_lottery_numbers.ibd ubs_lottery_numbers.ibd.bak
+: 1514280044:0;cd ../
+: 1514280045:0;ll
+: 1514280051:0;rm -rf cp6686
+: 1514280052:0;ll
+: 1514280070:0;cp 6686/ubs_lottery_numbers.frm cp6686me
+: 1514280076:0;cp 6686/ubs_lottery_numbers.ibd cp6686me
+: 1514280134:0;service mysql stop
+: 1514280178:0;vim /etc/my.cnf.d/my.cnf
+: 1514280193:0;/etc/init.d/mysql bootstrap-pxc
+: 1514280214:0;php -m
+: 1514280517:0;vim /etc/percona-xtradb-cluster.conf.d/wsrep.cnf
+: 1514280520:0;ps aux | grep mysql
+: 1514280597:0;/etc/init.d/mysql bootstrap-pxc
+: 1514280604:0;service mysql stop
+: 1514280611:0;/etc/init.d/mysql bootstrap-pxc
+: 1514280634:0;vim /var/lib/mysql/galera.cache grastate.dat
+: 1514280653:0;ifconfig
+: 1514280657:0;cd /var/lib/mysql
+: 1514280658:0;ll
+: 1514280663:0;vim grastate.dat
+: 1514280669:0;service mysql stop
+: 1514280675:0;/etc/init.d/mysql bootstrap-pxc
+: 1514280689:0;tail -f /var/log/mysqld.log -n 100
+: 1514280711:0;vim /etc/percona-xtradb-cluster.conf.d/wsrep.cnf
+: 1514280711:0;cd /var/www
+: 1514280712:0;ll
+: 1514280715:0;cd cp.6686.me
+: 1514280716:0;ll
+: 1514280719:0;vim /etc/my.cnf.d/my.cnf
+: 1514280724:0;/etc/init.d/mysql bootstrap-pxc
+: 1514280726:0;cd app
+: 1514280727:0;ll
+: 1514280731:0;tail -f /var/log/mysqld.log -n 100
+: 1514280733:0;cd ../
+: 1514280735:0;ll
+: 1514280760:0;php artisan list
+: 1514280766:0;tail -f /var/log/mysqld.log -n 100
+: 1514280770:0;/etc/init.d/mysql bootstrap-pxc
+: 1514280785:0;service mysql start
+: 1514280799:0;vim /var/lib/mysql/grastate.dat
+: 1514280815:0;mysqld --user=mysql
+: 1514280890:0;mysqld --user=mysql --wsrep-new-cluster
+: 1514280979:0;mycli -uroot -pQ8ZFkys9nE/]%nxRrsoK6QzcTCazU/h7 6686
+: 1514281034:0;mysqlfrm
+: 1514281117:0;rpm -ivh https://dev.mysql.com/get/Downloads/MySQLGUITools/mysql-utilities-1.6.5-1.el6.noarch.rpm
+: 1514281139:0;yum install mysql-connector-python
+: 1514281185:0;yum install mysql-connector-python -y
+: 1514281188:0;rpm -ivh https://dev.mysql.com/get/Downloads/MySQLGUITools/mysql-utilities-1.6.5-1.el6.noarch.rpm
+: 1514281196:0;pip install mysql-connector-python
+: 1514281200:0;pip2 install mysql-connector-python
+: 1514281204:0;pip3 install mysql-connector-python
+: 1514281224:0;rpm -ivh https://dev.mysql.com/get/Downloads/MySQLGUITools/mysql-utilities-1.6.5-1.el6.noarch.rpm
+: 1514281238:0;yum install mysql-utilities
+: 1514281247:0;mysqlfrm
+: 1514281299:0;find /usr -name 'libpython2.7.so.1.0'
+: 1514281311:0;vim /etc/ld.so.conf
+: 1514281338:0;vim /etc/ld.so.conf.d/python.conf
+: 1514281349:0;ldconfig
+: 1514281351:0;mysqlfrm
+: 1514281363:0;python2
+: 1514281372:0;pip2
+: 1514281379:0;pip3 install mysql.utilities
+: 1514281393:0;yum install mysql-utilities-devel
+: 1514281396:0;yum install mysql-utilities
+: 1514281405:0;mysqlfrm
+: 1514281434:0;cd
+: 1514281435:0;wget https://dev.mysql.com/get/Downloads/MySQLGUITools/mysql-utilities-1.5.6.tar.gz
+: 1514281438:0;tar -xvf mysql-utilities-1.5.6.tar.gz
+: 1514281438:0;cd mysql-utilities-1.5.6
+: 1514281440:0;sudo python2.7 setup.py install
+: 1514281446:0;python setup.py install
+: 1514281450:0;mysqlfrm
+: 1514281495:0;mysqlfrm 6686:ubs_lottery_numbers.frm
+: 1514281523:0;mysqlfrm 6686:ubs_lottery_numbers.frm --port=3306
+: 1514281536:0;mysqlfrm 6686:ubs_lottery_numbers.frm --port=3306 --user=mysql
+: 1514281552:0;mysqlfrm 6686:ubs_lottery_numbers.frm --port=3306 --user=mysql --basedir=/usr/bin/mysql
+: 1514281566:0;cd /var/lib/mysql/6686
+: 1514281567:0;ll
+: 1514281587:0;mysqlfrm 6686:ubs_lottery_numbers.frm --port=3306 --user=mysql --basedir=/usr/bin/mysql
+: 1514281601:0;mysqlfrm 6686:ubs_lottery_numbers.frm --port=3333 --user=mysql --basedir=/usr/bin/mysql
+: 1514281614:0;mysqladmin
+: 1514281617:0;mysqlfrm 6686:ubs_lottery_numbers.frm --port=3333 --user=mysql --basedir=/usr/bin/mysql
+: 1514281684:0;mysqlfrm 6686:ubs_lottery_numbers.frm --port=3333 --user=mysql --basedir=/usr/bin/mysql -h
+: 1514281691:0;mysqlfrm -h
+: 1514281786:0;mysqlfrm --port=3333 --user=mysql --basedir=/usr/bin/mysql --server=root:Q8ZFkys9nE/]%nxRrsoK6QzcTCazU/h7@127.0.0.1:3306 6686:ubs_lottery_numbers.frm
+: 1514281833:0;mysqlfrm --port=3333 --user=mysql --basedir=/usr/bin/mysql --server=root:Q8ZFkys9nE/]%nxRrsoK6QzcTCazU/h7@127.0.0.1:3306 /var/lib/mysql/6686/ubs_lottery_numbers.frm
+: 1514281855:0;mysqlfrm --port=3333 --user=mysql --basedir=/usr/bin/mysql /var/lib/mysql/6686/ubs_lottery_numbers.frm
+: 1514281898:0;vim /etc/my.cnf.d/my.cnf
+: 1514281905:0;/etc/init.d/mysql bootstrap-pxc
+: 1514281909:0;ps aux | grep mysql
+: 1514281914:0;service mysql stop
+: 1514281934:0;cd ../cp6686me
+: 1514281934:0;ll
+: 1514281951:0;mv ubs_lottery_numbers.frm.bak ubs_lottery_numbers.frm
+: 1514281960:0;mv ubs_lottery_numbers.ibd.bak ubs_lottery_numbers.ibd
+: 1514281962:0;ll
+: 1514281974:0;/etc/init.d/mysql bootstrap-pxc
+: 1514281981:0;ps aux | grep mysql
+: 1514281985:0;mysqlfrm --port=3333 --user=mysql --basedir=/usr/bin/mysql /var/lib/mysql/6686/ubs_lottery_numbers.frm
+: 1514283331:0;ps aux | grep mysql
+: 1514283432:0;mycli -uroot -pQ8ZFkys9nE/]%nxRrsoK6QzcTCazU/h7 6686
+: 1514283567:0;ps aux | grep mysql
+: 1514283628:0;tail -f /var/log/mysqld.log -n 100
+: 1514283689:0;cd /var/lib/mysql
+: 1514283694:0;cd cp6686me/
+: 1514283695:0;ll
+: 1514283708:0;chown mysql:mysql ./*
+: 1514283709:0;ll
+: 1514283720:0;tail -f /var/log/mysqld.log -n 100
+: 1514283754:0;service mysql stop
+: 1514283771:0;/etc/init.d/mysql bootstrap-pxc
+: 1514283858:0;service iptables stop
+: 1514283983:0;cd ../
+: 1514283984:0;ll
+: 1514283994:0;tail innobackup.backup.log -n 100
+: 1514284012:0;ll
+: 1514284035:0;tail GRA_5_697.log -f -n 100
+: 1514284105:0;tail -f /var/log/mysqld.log -n 100
+: 1514284177:0;vim /etc/percona-xtradb-cluster.conf.d/wsrep.cnf
+: 1514284998:0;mycli -uroot -pQ8ZFkys9nE/]%nxRrsoK6QzcTCazU/h7 6686
+: 1514285252:0;tail -f /var/log/mysqld.log -n 100
+: 1514285321:0;cd ../
+: 1514285321:0;ll
+: 1514285336:0;rm -rf 6686
+: 1514285339:0;service mysql stop
+: 1514285359:0;/etc/init.d/mysql bootstrap-pxc
+: 1514285601:0;ll
+: 1514285602:0;cd
+: 1514285603:0;ll
+: 1514285620:0;tar zxcf backup.tar.gz ./backup
+: 1514285624:0;tar zcvf backup.tar.gz ./backup
+: 1514285669:0;ll
+: 1514285707:0;cd
+: 1514285707:0;ll
+: 1514338664:0;ps aux |less
+: 1514338668:0;htop
+: 1514339218:0;pm2 list
+: 1514339234:0;ifconfig
+: 1514341455:0;cd ../
+: 1514341456:0;ll
+: 1514341462:0;cd cp.6686.me
+: 1514341463:0;ll
+: 1514341466:0;cd ../
+: 1514341470:0;ll
+: 1514341474:0;cd www
+: 1514341475:0;ll
+: 1514344942:0;mysql -u -rootQ8ZFkys9nE/]%nxRrsoK6QzcTCazU/h7
+: 1514344955:0;mysql -u -root -pQ8ZFkys9nE/]%nxRrsoK6QzcTCazU/h7
+: 1514356471:0;vim /etc/percona-xtradb-cluster.conf.d/wsrep.cnf
+: 1514357842:0;mycli -uroot -pQ8ZFkys9nE/]%nxRrsoK6QzcTCazU/h7 6686
+: 1514357849:0;mycli -uroot -pQ8ZFkys9nE/]%nxRrsoK6QzcTCazU/h7 cp6686me
+: 1514357874:0;ll
+: 1514357881:0;mysql -uroot -p
+: 1514357930:0;vim ubs_lottery_classify.sql
+: 1514357946:0;mysql -uroot -p
+: 1514363423:0;history
+: 1514363588:0;mycli -uroot -pQ8ZFkys9nE/]%nxRrsoK6QzcTCazU/h7
+: 1514371506:0;which mysqli
+: 1514371522:0;history
+: 1514371535:0;which mycli
+: 1514371578:0;cd /usr/local/python/3.6.2/bin/
+: 1514371581:0;ll

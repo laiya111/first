@@ -1,0 +1,36 @@
+EPEL（Extra Packages for Enterprise Linux） 是由 Fedora 社区打造，为 RHEL 及衍生发行版如 CentOS等提供高质量软件包的项目。装上了 EPEL，就像在 Fedora 上一样，可以通过 yum install 软件包名，即可安装很多以前需要编译安装的软件、常用的软件或一些比较流行的软件，比如现在流行的nginx、htop、ncdu、vnstat等等，都可以使用EPEL很方便的安装更新。
+
+安装EPEL源
+
+更新：
+
+目前可以直接通过执行命令： yum install epel-release 直接进行安装，如果此命令无法安装可以尝试以下方法
+
+CentOS/RHEL 5 ：
+
+rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-5.noarch.rpm
+CentOS/RHEL 6 ：
+
+rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
+CentOS/RHEL 7 ：
+
+rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+Ok，安装完毕。
+
+使用EPEL源安装软件
+现在就可以执行：yum install 软件包名进行安装了，nginx、htop、ncdu、vnstat等等一些常用的软件都灰常简单的装上了。
+
+
+安装自动补全
+
+ CentOS6.5安装Tab增强版:bash-completion，可补全命令参数；
+
+    因为CentOS官方源并不带有bash-completion的包，所以，为了可用yum安装，增加epel的源，
+
+    首先，使用wget下载epel的rpm包，使用rpm指令安装，之后运行yum安装，代码如下：
+
+[adam@ultraera ~]$ wget http://mirrors.yun-idc.com/epel/6/i386/epel-release-6-8.noarch.rpm
+[adam@ultraera ~]$ sudo rpm -ivh epel-release-6-8.noarch.rpm
+[adam@ultraera ~]$ sudo yum clean all
+[adam@ultraera ~]$ sudo yum makecache
+[adam@ultraera ~]$ sudo yum install -y bash-completion

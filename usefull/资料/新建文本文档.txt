@@ -1,0 +1,13 @@
+http://blog.csdn.net/dufufd/article/details/76486539
+
+http://qkxue.net/tag/Grafana
+
+
+
+
+chou.grafana.net/login
+
+eyJrIjoiNjFjZTYzMGQwNjJlNGQwNTRjZGZjYzU1Y2E2MjMxMzBmYmY2Nzc2ZCIsIm4iOiI2Njg2c2t5Lm5ldCIsImlkIjo4MzY4MX0=
+
+新的安装方式
+nginx   https://openresty.org/cn/installation.html

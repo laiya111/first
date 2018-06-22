@@ -1,0 +1,5 @@
+1.mysql percona  查看密码  /var/log/mysqld.log 
+
+2.更改密码强度  set global validate_password_policy=0;（0最弱 1中  2最强）
+
+3.设置密码   

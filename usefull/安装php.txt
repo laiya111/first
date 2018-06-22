@@ -1,0 +1,39 @@
+1.检查当前安装的PHP包
+yum list installed | grep php
+2.rpm -Uvh http://mirror.webtatic.com/yum/el5/latest.rpm
+  CentOs 6.x
+  rpm -Uvh http://mirror.webtatic.com/yum/el6/latest.rpm
+  CentOs 7.X
+rpm -Uvh https://mirror.webtatic.com/yum/el7/epel-release.rpm
+rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
+
+3.yum install php56w.x86_64 php56w-cli.x86_64 php56w-common.x86_64 php56w-gd.x86_64 php56w-ldap.x86_64 php56w-mbstring.x86_64 php56w-mcrypt.x86_64 php56w-mysql.x86_64 php56w-pdo.x86_64 php56w-devel php56w-devel php56w-pecl-redis.x86_64 php56w-pecl-memcached.x86_64
+
+需要用phpize的时候 ，需要按抓php56w-devel
+
+4.安装php-fpm yum install php56w-fpm
+
+5.安装redis  memcache扩展
+yum install php56w-pecl-redis.x86_64   yum install php56w-pecl-memcached.x86_64
+
+6.安装redis memcache服务
+yum install redis.x86_64
+yum install memcached.x86_64
+
+7.安装suhosin
+wget https://download.suhosin.org/suhosin-0.9.38.tar.gz
+cp -R suhosin-0.9.38 /usr/local/src/suhosin
+cd /usr/local/src/suhosin
+phpize
+./configure --with-php-config=/usr/bin/php-config
+make j16
+make install
+再在 /etc/php.d里面添加suhosin.ini
+
+
+
+yum remove php.x86_64  php-bcmath.x86_64 php-cli.x86_64 php-common.x86_64 php-gd.x86_64  php-ldap.x86_64 php-mbstring.x86_64  php-mcrypt.x86_64  php-mysql.x86_64  php-odbc.x86_64 php-pdo.x86_64 php-pear.noarch php-pecl-memcache.x86_64 php-process.x86_64 php-suhosin.x86_64 php-xml.x86_64 php-xmlrpc.x86_64
+
+
+yum install php56w.x86_64 php56w-cli.x86_64 php56w-common.x86_64 php56w-gd.x86_64 php56w-ldap.x86_64 php56w-mbstring.x86_64 php56w-mcrypt.x86_64 php56w-mysql.x86_64 php56w-pdo.x86_64
+ 
